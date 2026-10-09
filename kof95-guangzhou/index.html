@@ -1731,38 +1731,77 @@ main:has(> #chicken-king-95[data-scene="select"]) { max-width:1156px; }
   #chicken-king-95 :is(.k-title-screen,.k-selection-new) * { scroll-behavior:auto!important; transition:none!important; }
 }
 
-/* 手机战斗区：按钮选择横版；不依赖设备方向锁。 */
-body.k-game-screen { margin:0; overflow:hidden; overscroll-behavior:none; }
+/* M06：手机连点不放大，菜单可滚动；触控战斗禁止浏览器手势。 */
+html { -webkit-text-size-adjust:100%; }
+#chicken-king-95 { touch-action:manipulation; -webkit-touch-callout:none; }
+#chicken-king-95 input, #chicken-king-95 select { font-size:16px; }
+#chicken-king-95 .k-audio-entry { display:block; width:100%; min-height:44px; margin-top:14px; color:var(--k-gold); border-color:#6c583b; background:#211d22; font-size:14px; }
+#chicken-king-95 .k-pair-preview { position:relative; margin:14px 0 0; border:1px solid var(--k-line); border-radius:4px; overflow:hidden; background:#111521; }
+#chicken-king-95 .k-pair-preview canvas { display:block; width:100%; height:auto; aspect-ratio:16/9; image-rendering:pixelated; }
+#chicken-king-95 .k-pair-preview figcaption { display:flex; justify-content:space-between; gap:8px; padding:8px 10px; font-size:11px; color:var(--k-dim); }
+#chicken-king-95 .k-selection-new .k-card-visual { aspect-ratio:16/10; }
+#chicken-king-95 .k-selection-new .k-new-versus { top:100px; font-size:20px; padding:4px; }
+#chicken-king-95 .k-selection-new .k-profile-details { display:none; }
+#chicken-king-95 .k-battle-guide { border-bottom:1px solid var(--k-line); padding-bottom:12px; margin-bottom:12px; }
+#chicken-king-95 .k-battle-guide h4 { color:var(--k-gold); margin:8px 0; }
+#chicken-king-95 .k-battle-guide .k-profile-moves { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+#chicken-king-95 .k-battle-guide .k-profile-move { border:1px solid var(--k-line); padding:8px; }
+#chicken-king-95 .k-battle-guide small { display:block; color:var(--k-dim); font-size:12px; margin-top:6px; }
+#chicken-king-95 .k-now-music { display:block; font-size:11px; color:var(--k-gold); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+@media(max-width:600px) {
+ #chicken-king-95:is([data-scene="title"],[data-scene="select"]) .k-top { min-height:60px; padding:8px 10px; }
+ #chicken-king-95 .k-selection-new { padding:0 10px; }
+ #chicken-king-95 .k-selection-new .k-new-selection-heading { margin:16px 0 12px; }
+ #chicken-king-95 .k-selection-new .k-new-selection-heading h1 { font-size:24px; }
+ #chicken-king-95 .k-selection-new .k-new-selection-heading>p { display:none; }
+ #chicken-king-95 .k-selection-new .k-showcase { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+ #chicken-king-95 .k-selection-new .k-card-role { padding:7px; letter-spacing:0; font-size:11px; min-height:31px; }
+ #chicken-king-95 .k-selection-new .k-editing { font-size:10px; letter-spacing:0; }
+ #chicken-king-95 .k-selection-new .k-card-title { padding:8px 7px; display:block; min-height:53px; }
+ #chicken-king-95 .k-selection-new .k-card-title h2 { font-size:18px; line-height:1.3; }
+ #chicken-king-95 .k-selection-new .k-card-title>span { font-size:9px; letter-spacing:.5px; }
+ #chicken-king-95 .k-selection-new .k-character-copy { padding:8px 7px; min-height:40px; }
+ #chicken-king-95 .k-selection-new .k-profile-identity { font-size:11px; line-height:1.5; }
+ #chicken-king-95 .k-selection-new .k-profile-playstyle,
+ #chicken-king-95 .k-selection-new .k-character-copy blockquote { display:none; }
+ #chicken-king-95 .k-selection-new .k-new-versus { top:104px; }
+ #chicken-king-95 .k-selection-new .k-new-roster-section { margin:14px 0; }
+ #chicken-king-95 .k-selection-new .k-roster-top { gap:4px; flex-wrap:wrap; }
+ #chicken-king-95 .k-selection-new .k-target-picker { flex:1; }
+ #chicken-king-95 .k-selection-new .k-target-picker button { padding:6px 9px; flex:1; font-size:12px; }
+ #chicken-king-95 .k-selection-new .k-new-action-bar { position:sticky; bottom:0; background:#111521f5; padding:10px 0 max(10px,env(safe-area-inset-bottom)); z-index:6; margin-top:14px; }
+ #chicken-king-95 .k-selection-new .k-new-action-bar #c95-back-title { display:none; }
+ #chicken-king-95 .k-selection-new .k-new-action-bar p { margin:0; }
+}
+body.k-game-screen { margin:0; padding:0; overflow:hidden; overscroll-behavior:none; }
 body.k-game-screen main { margin:0; padding:0; max-width:none; }
 #chicken-king-95.k-mobile-battle,
-#chicken-king-95.k-manual-screen { position:fixed; width:var(--screen-w); height:var(--screen-h); max-width:none; max-height:none; margin:0; border:0; box-sizing:border-box; z-index:50; background:#0a0d16; }
-#chicken-king-95.k-mobile-battle { inset:0; overflow:hidden; }
+#chicken-king-95.k-manual-screen { position:fixed; width:var(--screen-w); height:var(--screen-h); max-width:none; max-height:none; margin:0; border:0; border-radius:0; box-sizing:border-box; z-index:50; background:#0a0d16; }
+#chicken-king-95.k-mobile-battle { inset:0; overflow:hidden; touch-action:none; }
 #chicken-king-95.k-manual-screen { inset:auto; left:var(--screen-left); top:var(--screen-top); transform:translate(-50%,-50%); transform-origin:center; overflow:auto; }
 #chicken-king-95.k-manual-screen[data-rotated="true"] { transform:translate(-50%,-50%) rotate(90deg); }
 #chicken-king-95.k-mobile-battle .k-top { height:54px; min-height:54px; padding:4px 8px; display:flex; flex-wrap:nowrap; gap:4px; box-sizing:border-box; }
-#chicken-king-95.k-mobile-battle .k-brand { gap:4px; flex:none; }
-#chicken-king-95.k-mobile-battle .k-monogram,
-#chicken-king-95.k-mobile-battle .k-sub { display:none; }
-#chicken-king-95.k-mobile-battle .k-title { font-size:14px; white-space:nowrap; }
-#chicken-king-95.k-mobile-battle .k-tools { margin-left:auto; display:flex; flex-wrap:nowrap; gap:3px; }
-#chicken-king-95.k-mobile-battle .k-tool { min-height:44px; min-width:44px; padding:4px; font-size:11px; }
+#chicken-king-95.k-mobile-battle .k-brand,
 #chicken-king-95.k-mobile-battle #c95-preview-motion { display:none; }
-#chicken-king-95.k-mobile-battle #c95-game { height:calc(var(--screen-h) - 54px); position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:stretch; }
-#chicken-king-95.k-mobile-battle .k-match { width:100%; aspect-ratio:16/9; flex:none; margin:0; }
+#chicken-king-95.k-mobile-battle .k-tools { width:100%; margin:0; display:flex; flex-wrap:nowrap; gap:4px; justify-content:space-between; }
+#chicken-king-95.k-mobile-battle .k-tool { min-height:44px; min-width:44px; padding:5px; font-size:12px; }
+#chicken-king-95.k-mobile-battle #c95-game { height:calc(var(--screen-h) - 54px); position:relative; overflow:hidden; display:flex; flex-direction:column; }
+#chicken-king-95.k-mobile-battle .k-match { width:100%; aspect-ratio:16/9; flex:none; margin:0; touch-action:none; }
 #chicken-king-95.k-mobile-battle .k-arena { display:block; width:100%; height:100%; aspect-ratio:16/9; }
-#chicken-king-95.k-mobile-battle .k-fight-info { min-height:24px; padding:4px 8px; font-size:11px; }
-#chicken-king-95.k-mobile-battle .k-skill-panel { padding:4px 6px; margin:0; }
-#chicken-king-95.k-mobile-battle .k-skill-title { margin:0 0 2px; font-size:10px; }
+#chicken-king-95.k-mobile-battle .k-fight-info { min-height:30px; padding:4px 8px; font-size:11px; display:flex; flex-wrap:wrap; gap:4px 8px; }
+#chicken-king-95.k-mobile-battle .k-fight-info .k-now-music { width:100%; }
+#chicken-king-95.k-mobile-battle .k-skill-panel { padding:4px 8px; margin:0; }
+#chicken-king-95.k-mobile-battle .k-skill-title { margin:0 0 3px; font-size:11px; }
 #chicken-king-95.k-mobile-battle .k-skill-grid { grid-template-columns:repeat(4,minmax(0,1fr)); gap:4px; }
-#chicken-king-95.k-mobile-battle .k-skill-grid button { min-height:44px; font-size:10px; padding:3px; }
-#chicken-king-95.k-mobile-battle .k-touch { margin-top:auto; padding:5px 8px max(5px,env(safe-area-inset-bottom)); gap:6px; display:grid; grid-template-columns:1fr 1fr; }
+#chicken-king-95.k-mobile-battle .k-skill-grid button { min-height:44px; font-size:11px; padding:3px; touch-action:none; }
+#chicken-king-95.k-mobile-battle .k-touch { margin-top:auto; padding:8px max(8px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left)); gap:6px; display:grid; grid-template-columns:1fr 1fr; }
 #chicken-king-95.k-mobile-battle .k-direction-area { width:144px; }
 #chicken-king-95.k-mobile-battle .k-dir-surface { height:136px; }
 #chicken-king-95.k-mobile-battle .k-dpad { grid-template-columns:repeat(3,44px); grid-template-rows:repeat(3,44px); gap:2px; }
 #chicken-king-95.k-mobile-battle .k-stick { width:128px; height:128px; }
 #chicken-king-95.k-mobile-battle .k-action-side { width:146px; padding-top:8px; justify-self:end; }
 #chicken-king-95.k-mobile-battle .k-action-pad { grid-template-columns:repeat(3,44px); grid-template-rows:repeat(2,44px); gap:5px; }
-#chicken-king-95.k-mobile-battle .k-action-pad button { width:44px; height:44px; font-size:11px; }
+#chicken-king-95.k-mobile-battle .k-action-pad button { width:44px; height:44px; font-size:12px; }
 #chicken-king-95.k-mobile-battle .k-action-pad button::after { display:none; }
 #chicken-king-95.k-mobile-battle .k-action-note { font-size:10px; }
 #chicken-king-95.k-mobile-battle .k-control-mode button { min-height:44px; font-size:11px; }
@@ -1770,36 +1809,54 @@ body.k-game-screen main { margin:0; padding:0; max-width:none; }
 #chicken-king-95.k-mobile-battle .k-command-list,
 #chicken-king-95.k-mobile-battle .k-command-facing,
 #chicken-king-95.k-mobile-battle > .k-controls,
-#chicken-king-95.k-mobile-battle > .k-mixer,
-#chicken-king-95.k-mobile-battle > footer,
-#chicken-king-95.k-mobile-battle > .k-credits { display:none; }
+#chicken-king-95.k-mobile-battle > footer { display:none; }
 #chicken-king-95.k-mobile-battle #c95-status,
 #chicken-king-95.k-mobile-battle #c95-voice-status { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
-#chicken-king-95.k-mobile-battle .k-help-layer { position:absolute; inset:0; z-index:80; overflow:auto; padding:8px; box-sizing:border-box; }
-#chicken-king-95.k-mobile-battle .k-help-content { width:100%; max-width:720px; max-height:calc(var(--screen-h) - 16px); overflow:auto; box-sizing:border-box; }
+#chicken-king-95.k-mobile-battle .k-help-layer { position:absolute; inset:0; z-index:80; overflow:auto; padding:8px; box-sizing:border-box; touch-action:pan-y; }
+#chicken-king-95.k-mobile-battle .k-help-content { width:100%; max-width:720px; max-height:calc(var(--screen-h) - 16px); overflow:auto; box-sizing:border-box; touch-action:pan-y; }
 #chicken-king-95 .k-mobile-settings label { display:block; margin:12px 0; }
-#chicken-king-95 .k-mobile-settings select { min-height:44px; max-width:100%; background:#122036; color:#fff; border:1px solid #768293; }
+#chicken-king-95 .k-mobile-settings select { min-height:44px; max-width:100%; background:#122036; color:#fff; border:1px solid #768293; font-size:16px; }
 #chicken-king-95 .k-mobile-settings button { min-height:44px; }
-#chicken-king-95.k-landscape-battle .k-title { font-size:16px; }
-#chicken-king-95.k-landscape-battle #c95-game { align-items:center; }
-#chicken-king-95.k-landscape-battle .k-match { width:var(--mobile-arena-w); margin:0 auto; }
-#chicken-king-95.k-landscape-battle .k-fight-info { max-width:var(--mobile-arena-w); width:100%; min-height:20px; font-size:10px; padding:2px 4px; box-sizing:border-box; }
-#chicken-king-95.k-landscape-battle #c95-fight-skill-panel { width:var(--mobile-arena-w); box-sizing:border-box; border:0; }
+/* 横版全场：背景铺满，完整战场最大化，操作叠在场景上。 */
+#chicken-king-95.k-landscape-battle { overflow:hidden; }
+#chicken-king-95.k-landscape-battle .k-top { position:absolute; top:calc(var(--arena-top) + var(--arena-h) * .20); left:50%; transform:translateX(-50%); z-index:30; width:auto; min-height:44px; height:44px; padding:0 4px; background:#0c132a55; border:1px solid #b9c6d944; border-radius:10px; }
+#chicken-king-95.k-landscape-battle .k-tool { background:#13203980; border-color:#b9c6d966; font-size:11px; }
+#chicken-king-95.k-landscape-battle #c95-game { position:absolute; inset:0; width:100%; height:100%; display:block; }
+#chicken-king-95.k-landscape-battle .k-match { position:absolute; inset:0; width:100%; height:100%; aspect-ratio:auto; background-image:linear-gradient(#080d1b44,#080d1b44),var(--stage-backdrop); background-position:center; background-size:cover; }
+#chicken-king-95.k-landscape-battle .k-arena { position:absolute; width:var(--mobile-arena-w); height:var(--arena-h); top:var(--arena-top); left:50%; transform:translateX(-50%); }
+#chicken-king-95.k-landscape-battle .k-crt { pointer-events:none; }
+#chicken-king-95.k-landscape-battle .k-fight-info { position:absolute; top:calc(var(--arena-top) + var(--arena-h) * .20 + 48px); left:50%; transform:translateX(-50%); width:min(46%,400px); text-align:center; justify-content:center; color:#ffe5a9; background:#0a0d1655; border-radius:6px; padding:3px 5px; pointer-events:none; }
+#chicken-king-95.k-landscape-battle .k-fight-info .k-move-name,
+#chicken-king-95.k-landscape-battle .k-fight-info .k-difficulty { display:none; }
+#chicken-king-95.k-landscape-battle #c95-fight-skill-panel { position:absolute; bottom:12px; left:50%; transform:translateX(-50%); width:calc(100% - 344px); max-width:460px; border:0; background:transparent; padding:0; z-index:20; }
 #chicken-king-95.k-landscape-battle .k-skill-title { display:none; }
-#chicken-king-95.k-landscape-battle .k-touch { position:absolute; inset:0; margin:0; padding:0 5px 3px; pointer-events:none; display:flex; align-items:flex-end; justify-content:space-between; width:100%; box-sizing:border-box; }
+#chicken-king-95.k-landscape-battle .k-touch { position:absolute; inset:0; margin:0; padding:0 max(10px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left)); pointer-events:none; display:flex; align-items:flex-end; justify-content:space-between; width:100%; box-sizing:border-box; background:transparent; border:0; z-index:20; }
 #chicken-king-95.k-landscape-battle .k-direction-area,
 #chicken-king-95.k-landscape-battle .k-action-side { pointer-events:auto; flex:none; }
-#chicken-king-95.k-landscape-battle .k-action-side { margin-bottom:8px; }
-#chicken-king-95.k-landscape-battle .k-overlay { font-size:11px; padding:8px; }
-#chicken-king-95.k-landscape-battle .k-overlay-title { font-size:22px; }
-#chicken-king-95.k-landscape-battle .k-overlay-actions { gap:4px; flex-wrap:wrap; }
-#chicken-king-95.k-landscape-battle .k-overlay-actions button { min-height:44px; padding:5px 8px; font-size:11px; }
-@media (max-height:650px) and (max-width:600px) {
- #chicken-king-95.k-mobile-battle:not(.k-landscape-battle) .k-match { width:min(100%,calc((var(--screen-h) - 335px)*1.7778)); margin:0 auto; }
+#chicken-king-95.k-landscape-battle .k-action-side { margin-bottom:6px; }
+#chicken-king-95.k-landscape-battle .k-control-mode { background:#0d152355; padding:2px; }
+#chicken-king-95.k-landscape-battle .k-touch button,
+#chicken-king-95.k-landscape-battle .k-skill-grid button { background:#16203966; border-color:#e0e8ff77; color:#fff3d3; text-shadow:0 1px 2px #000; box-shadow:none; }
+#chicken-king-95.k-landscape-battle .k-touch button.is-held,
+#chicken-king-95.k-landscape-battle .k-skill-grid button:active { background:#f5ca7999; color:#101626; }
+#chicken-king-95.k-landscape-battle .k-stick { background:#14223e55; border-color:#d6e5ff88; box-shadow:none; }
+#chicken-king-95.k-landscape-battle .k-action-note { color:#eef4ff; background:#09102155; }
+#chicken-king-95.k-landscape-battle .k-overlay { font-size:12px; padding:12px; z-index:40; }
+#chicken-king-95.k-landscape-battle .k-overlay-title { font-size:28px; }
+#chicken-king-95.k-landscape-battle .k-overlay-actions { gap:8px; flex-wrap:wrap; }
+#chicken-king-95.k-landscape-battle .k-overlay-actions button { min-height:44px; padding:8px 12px; font-size:13px; }
+#chicken-king-95.k-mobile-battle[data-paused="true"] .k-touch,
+#chicken-king-95.k-mobile-battle[data-paused="true"] #c95-fight-skill-panel,
+#chicken-king-95.k-mobile-battle[data-scene="result"] .k-touch,
+#chicken-king-95.k-mobile-battle[data-scene="result"] #c95-fight-skill-panel { visibility:hidden; }
+#chicken-king-95.k-landscape-battle[data-rotated="true"] .k-touch { padding-right:max(10px,env(safe-area-inset-bottom)); padding-left:max(10px,env(safe-area-inset-top)); }
+#chicken-king-95.k-mobile-battle:not(.k-landscape-battle) #c95-help-overlay { touch-action:pan-y; }
+@media(max-height:650px) and (max-width:600px) {
+ #chicken-king-95.k-mobile-battle:not(.k-landscape-battle) .k-match { width:min(100%,calc((var(--screen-h) - 348px)*1.7778)); margin:0 auto; }
 }
 #chicken-king-95 [hidden] { display:none!important; }
-#chicken-king-95.k-landscape-battle .k-touch { background:transparent; border:0; }
-#chicken-king-95.k-landscape-battle[data-rotated="true"] .k-touch { padding-right:max(5px,env(safe-area-inset-bottom)); padding-left:max(5px,env(safe-area-inset-top)); }
+#chicken-king-95.k-landscape-battle .k-top { z-index:60; }
+#chicken-king-95.k-landscape-battle .k-help-layer { z-index:80; }
 
 </style>
   </head>
@@ -1820,6 +1877,7 @@ body.k-game-screen main { margin:0; padding:0; max-width:none; }
           </div>
           <div class="k-tools">
             <button type="button" class="k-tool" id="c95-screen-mode" aria-pressed="false">横版</button>
+            <button type="button" class="k-tool" id="c95-next-music" hidden aria-label="切换下一首战斗音乐">切歌 ♪</button>
             <button type="button" class="k-tool cursor-interaction" id="c95-preview-motion" aria-pressed="false">减少动态</button>
             <button
               type="button"
@@ -1854,7 +1912,7 @@ body.k-game-screen main { margin:0; padding:0; max-width:none; }
         <section class="k-title-screen" id="c95-title-screen" aria-labelledby="c95-title-heading">
           <div class="k-title-grid">
             <figure class="k-title-poster"><img id="c95-cover" alt="鸡头霸王原有主题封面：广州饭店前的老友集结" /><figcaption><span>老地方 · 新传说</span><span>广州老友版</span></figcaption></figure>
-            <div class="k-title-copy"><p class="k-eyebrow">GUANGZHOU AFTER HOURS</p><h1 id="c95-title-heading">今晚宵夜，<br /><em>拳头埋单。</em></h1><p class="k-title-lead">老地方见。揀个老友，<br />同电脑对手过两招。</p><div class="k-title-stats"><span><b>08</b>位老友</span><span><b>03</b>座街场</span><span><b>1P</b>对战电脑</span></div><button type="button" class="k-new-primary cursor-interaction" id="c95-enter" disabled>正在准备角色…</button><p class="k-title-micro">手机触屏开打 · 顶部按钮切横版 · 三局两胜</p></div>
+            <div class="k-title-copy"><p class="k-eyebrow">GUANGZHOU AFTER HOURS</p><h1 id="c95-title-heading">今晚宵夜，<br /><em>拳头埋单。</em></h1><p class="k-title-lead">老地方见。揀个老友，<br />同电脑对手过两招。</p><div class="k-title-stats"><span><b>08</b>位老友</span><span><b>03</b>座街场</span><span><b>1P</b>对战电脑</span></div><button type="button" class="k-new-primary cursor-interaction" id="c95-enter" disabled>正在准备角色…</button><button type="button" class="k-audio-entry" id="c95-enable-music">♪ 点一下开音乐</button><p class="k-title-micro">进入即播选角音乐 · 顶部按钮切横版 · 三局两胜</p></div>
           </div>
           <p class="k-title-loading" id="c95-loading" role="status">正在准备封面、八人图集与街机肖像背景…</p>
         </section>
@@ -1866,11 +1924,11 @@ body.k-game-screen main { margin:0; padding:0; max-width:none; }
               <div class="k-card-title"><h2 id="c95-player-profile-name"></h2><span id="c95-player-profile-en"></span></div>
               <div class="k-card-visual">
                 <img id="c95-player-photo" class="k-portrait-background" alt="" />
-                <canvas id="c95-player-preview" width="420" height="400" role="img" aria-label="1P / 玩家动作展示"></canvas>
-                <small id="c95-player-action">动作展示</small>
+                <canvas hidden id="c95-player-preview" width="420" height="400" role="img" aria-label="1P / 玩家动作展示"></canvas>
+                <small hidden id="c95-player-action">动作展示</small>
               </div>
               <div class="k-character-copy"><p class="k-profile-identity" id="c95-player-profile-identity"></p><p class="k-profile-playstyle" id="c95-player-profile-playstyle"></p><blockquote id="c95-player-profile-quote"></blockquote></div>
-              <details class="k-profile-details" open><summary>简介与招式 <span aria-hidden="true">＋</span></summary><div class="k-profile-content"><p class="k-profile-background" id="c95-player-profile-background"></p><div class="k-profile-moves" id="c95-player-profile-moves"></div></div></details>
+              <details class="k-profile-details"><summary>老友简介 <span aria-hidden="true">＋</span></summary><div class="k-profile-content"><p class="k-profile-background" id="c95-player-profile-background"></p></div></details>
             </article>
             <span class="k-new-versus" aria-hidden="true">VS</span>
             <article class="k-fighter-card" id="c95-cpu-card" aria-labelledby="c95-cpu-profile-name">
@@ -1878,13 +1936,14 @@ body.k-game-screen main { margin:0; padding:0; max-width:none; }
               <div class="k-card-title"><h2 id="c95-cpu-profile-name"></h2><span id="c95-cpu-profile-en"></span></div>
               <div class="k-card-visual">
                 <img id="c95-cpu-photo" class="k-portrait-background" alt="" />
-                <canvas id="c95-cpu-preview" width="420" height="400" role="img" aria-label="CPU / 电脑对手动作展示"></canvas>
-                <small id="c95-cpu-action">动作展示</small>
+                <canvas hidden id="c95-cpu-preview" width="420" height="400" role="img" aria-label="CPU / 电脑对手动作展示"></canvas>
+                <small hidden id="c95-cpu-action">动作展示</small>
               </div>
               <div class="k-character-copy"><p class="k-profile-identity" id="c95-cpu-profile-identity"></p><p class="k-profile-playstyle" id="c95-cpu-profile-playstyle"></p><blockquote id="c95-cpu-profile-quote"></blockquote></div>
-              <details class="k-profile-details" open><summary>简介与招式 <span aria-hidden="true">＋</span></summary><div class="k-profile-content"><p class="k-profile-background" id="c95-cpu-profile-background"></p><div class="k-profile-moves" id="c95-cpu-profile-moves"></div></div></details>
+              <details class="k-profile-details"><summary>老友简介 <span aria-hidden="true">＋</span></summary><div class="k-profile-content"><p class="k-profile-background" id="c95-cpu-profile-background"></p></div></details>
             </article>
           </div>
+          <figure class="k-pair-preview"><canvas id="c95-preview" width="960" height="540" role="img" aria-label="双方在蒲天光共同动态预览"></canvas><figcaption><span>蒲天光 · 老友过招</span><span>1P 与 CPU 同场预览</span></figcaption></figure>
           <section class="k-new-roster-section" aria-label="双方角色选择">
             <div class="k-roster-top"><div class="k-target-picker" aria-label="当前选择对象"><button type="button" id="c95-target-player" aria-pressed="true">选择玩家 1P</button><button type="button" id="c95-target-cpu" aria-pressed="false">选择电脑 CPU</button></div><button type="button" class="k-new-quiet cursor-interaction" id="c95-random" aria-label="随机选择电脑对手">随机电脑 ↻</button></div>
             <p class="k-target-note" id="c95-target-note" aria-live="polite">当前选玩家：点击头像只改变玩家。</p>
@@ -1902,7 +1961,7 @@ body.k-game-screen main { margin:0; padding:0; max-width:none; }
           <div hidden aria-hidden="true">
             <select id="c95-opponent" aria-label="选择电脑对手" tabindex="-1"></select>
             <span id="c95-special-preview"></span><span id="c95-super-preview"></span>
-            <canvas id="c95-preview" width="960" height="280"></canvas>
+
             <span id="c95-name"></span><span id="c95-en"></span><span id="c95-cpu-name"></span><span id="c95-cpu-en"></span><span id="c95-cpu-tag"></span>
           </div>
         </section>
@@ -1913,7 +1972,7 @@ body.k-game-screen main { margin:0; padding:0; max-width:none; }
               id="c95-arena"
               width="960"
               height="540"
-              aria-label="鸡头霸王对战画面，WASD移动，J拳，K重击，U必杀，I超必杀；手机使用下方触屏按键"
+              aria-label="鸡头霸王对战画面，WASD移动，J拳，K重击，U必杀，I超必杀；手机使用屏幕上的触屏按键"
             ></canvas>
             <div class="k-crt" aria-hidden="true"></div>
             <div class="k-arena-hint" id="c95-focus-hint">
@@ -1961,7 +2020,7 @@ body.k-game-screen main { margin:0; padding:0; max-width:none; }
               </div>
             </div>
           </div>
-          <div class="k-fight-info">
+          <div class="k-fight-info"><span id="c95-now-music" class="k-now-music" role="status"></span>
             <span class="k-move-name" id="c95-move"
               >U 必杀技 · I 满气超必杀</span
             ><span class="k-difficulty" id="c95-fight-difficulty"></span>
@@ -2206,7 +2265,7 @@ body.k-game-screen main { margin:0; padding:0; max-width:none; }
           hidden
         >
           <div class="k-help-content">
-            <h3 id="c95-help-title">鸡头霸王 · 点样玩？</h3>
+            <h3 id="c95-help-title">鸡头霸王 · 点样玩？</h3><section class="k-battle-guide"><h4 id="c95-battle-character">战斗招式</h4><div id="c95-battle-moves" class="k-profile-moves"></div></section>
             <div class="k-help-grid">
               <span><kbd>A</kbd><kbd>D</kbd> 左右移动</span
               ><span><kbd>W</kbd> 跳跃 · <kbd>S</kbd> 下蹲</span
@@ -2232,7 +2291,7 @@ body.k-game-screen main { margin:0; padding:0; max-width:none; }
                 id="c95-help-rounds"
               ></span
               >，离开窗口自动暂停。<br /><b>声音：</b
-              >点击开始后播放音乐和英文报幕；下方「声音与演出设置」可分别调音量或改用柔和演出。
+              >首次点击启用音乐；战斗点「切歌」轮换原三首。下方「声音与演出设置」可分别调音量或改用柔和演出。
             </div>
             <button
               type="button"
@@ -6789,6 +6848,15 @@ window.KofAudioLibrary = {
       if(changed&&this._scene==='fight'){this._fightTrack=null;this._chooseFight();this._stopMusic();this._musicCompleted=false;this._ensureMusic();}
       return next;
     }
+    // 临时切下一首，不改变用户的每场随机／指定曲设置，也不解除暂停或静音。
+    nextFightMusic() {
+      const pool=this.getMusicOptions().filter(option=>option.id!=='random');
+      if(!pool.length)return null;
+      const index=pool.findIndex(option=>option.id===this._fightTrack);
+      this._fightTrack=pool[(index+1)%pool.length].id;
+      this._stopMusic();this._musicCompleted=false;this._ensureMusic();
+      return this._fightTrack;
+    }
     setFighters(ids=[]) { this._fighters=ids.slice(0,2); }
     _chooseFight() {
       if(this._fightTrack)return;
@@ -7714,7 +7782,12 @@ function uiScene(scene, reset = false, interact = true) {
   if (interact) J.init();
   m = scene;
   e.dataset.scene = scene;
-  queueMicrotask(() => mobileSceneChanged());
+  queueMicrotask(() => {
+    e.dataset.paused=String(g);
+    if(scene==='title'||scene==='select')mobileHorizontal=false;
+    mobileSceneChanged();
+    if(scene==='title'||scene==='select'){window.scrollTo(0,0);e.scrollTop=0;}
+  });
   J.setScene?.(scene, { fighters: [h, p], ...(scene === "result" ? {winner: oe.winner} : {}) });
 }
 function uiMove(name, description, label) {
@@ -7736,11 +7809,6 @@ function uiCard(side, character) {
   if (source) image.src = source;
   image.alt = character.name + "的街机肖像背景";
   t(side + "-preview").setAttribute("aria-label", character.name + (side === "player" ? "，面向右侧" : "，面向左侧") + "动作展示");
-  const box = t(side + "-profile-moves"); box.replaceChildren();
-  const moves = oe.getMoveList(character.id);
-  if (character.skills?.length) character.skills.forEach((skill, index) => box.append(uiMove(skill.name, skill.description, String.fromCharCode(65 + index))));
-  else box.append(uiMove(moves.specialName, moves.description, "必杀"));
-  box.append(uiMove(moves.superName, "能量满格后按 I 发动。" + (character.id === "maoshen" ? "九命是招式名，不提供复活。" : ""), "大招"));
 }
 function uiSelection() {
   uiCard("player", i[h]); uiCard("cpu", i[p]);
@@ -7757,19 +7825,24 @@ function uiSelection() {
 function uiRenderSelection() {
   if (!v) return;
   const time = r ? 0 : b, action = r ? "idle" : time % 7 < 4 ? "idle" : "walk";
-  for (const side of ["player", "cpu"]) {
-    const ctx = t(side + "-preview").getContext("2d"), id = side === "player" ? h : p;
-    ctx.clearRect(0, 0, 420, 400);
-    ctx.fillStyle = "#0007"; ctx.beginPath(); ctx.ellipse(210, 356, 76, 10, 0, 0, Math.PI * 2); ctx.fill();
-    Y(ctx, id, action, time, 210, 357, side === "player" ? 1 : -1, 2.95);
-    t(side + "-action").textContent = r ? "稳定站姿" : action === "idle" ? "原有待机 · 呼吸效果" : "原有逐帧步伐";
+  // 双方在同一个蒲天光街场里展示，独立于实际战斗场景选择。
+  l.imageSmoothingEnabled=false;
+  window.KofStage.draw(l,time,{stage:0,camera:0,shake:0,flash:0});
+  l.save();l.translate(0,(window.KofStage.groundOffsets || [])[0] || 0);
+  for(const [id,x,facing] of [[h,285,1],[p,675,-1]]) {
+    const sway=r?0:Math.sin(time*1.4)*12*facing;
+    l.fillStyle='#0007';l.beginPath();l.ellipse(x+sway,444,42,8,0,0,Math.PI*2);l.fill();
+    Y(l,id,action,time,x+sway,window.KofSettings.floor,facing,2);
   }
+  l.restore();
+  t('preview').setAttribute('aria-label',i[h].name+'与'+i[p].name+'在蒲天光共同动态预览');
 }
 function uiTitle() {
   _(); g = false; S = false; X.reset();
   uiScene("title", true);
   t("title-screen").hidden = false; t("selection").hidden = true; t("game").hidden = true;
   for (const id of ["pause", "select"]) t(id).hidden = true;
+  t('next-music').hidden=true;
   for (const id of ["pause-overlay", "result-overlay", "help-overlay"]) t(id).hidden = true;
   t("enter").focus({preventScroll:true}); Q("已返回游戏入口");
 }
@@ -7896,16 +7969,21 @@ function ce() {
 // 新人按原图四招独立选择；电脑每次出招自主选择，原五人不变。
 function syncSkillUI() {
   const skills=oe.getSkills(h),active=oe.skillChoices?.[h]??i[h].defaultSkill??0;
-  t("skill-panel").hidden=!skills.length;t("fight-skill-panel").hidden=!skills.length;
+  t("skill-panel").hidden=true;t("fight-skill-panel").hidden=!skills.length;
   for(const [name,cast] of [["skill-picker",false],["fight-skills",true]]){
     const box=t(name);
     if(box.dataset.character!==h){
       box.replaceChildren();box.dataset.character=h;
-      skills.forEach((skill,index)=>{const button=document.createElement("button");button.type="button";button.textContent=(cast?index+1:String.fromCharCode(65+index))+" · "+skill.name;button.dataset.skill=String(index);button.setAttribute("aria-label",(cast?"释放":"选择")+skill.name);button.addEventListener("click",()=>chooseAndCast(index,cast));box.append(button);});
+      skills.forEach((skill,index)=>{const button=document.createElement("button");button.type="button";button.textContent=(cast?index+1:String.fromCharCode(65+index))+" · "+skill.name;button.dataset.skill=String(index);button.setAttribute("aria-label",(cast?"释放":"选择")+skill.name);button.addEventListener('pointerdown',event=>{if(cast){event.preventDefault();chooseAndCast(index,true);}});button.addEventListener("click",event=>{if(!cast||event.detail===0)chooseAndCast(index,cast);});box.append(button);});
     }
     [...box.children].forEach((button,index)=>button.setAttribute("aria-pressed",String(index===active)));
   }
   t("skill-tip").textContent=skills[active]?.description||"";
+  const guide=t('battle-moves');guide.replaceChildren();
+  if(skills.length)skills.forEach((skill,index)=>guide.append(uiMove(skill.name,skill.description,String.fromCharCode(65+index))));
+  else {const move=oe.getMoveList(h);guide.append(uiMove(move.specialName,move.description,'必杀'));}
+  guide.append(uiMove(i[h].superName,'能量满格后点超杀；也可按 I。','大招'));
+  t('battle-character').textContent=i[h].name+' · 战斗招式';
   t("special-preview").textContent=oe.getMoveList(h).specialName;
   for(const [key,name] of [["forward",oe.getMoveList(h).specialName],["back",skills[1]?.name||"后撤反击"],["up",skills[2]?.name||"升龙迎击"]]){
     const label=t("command-"+key)?.previousElementSibling;if(label)label.textContent=skills.length?name:({forward:"招牌必杀",back:"后撤反击",up:"升龙迎击"})[key];
@@ -7938,6 +8016,7 @@ function de() {
     (t("game").hidden = !1),
     (t("pause").hidden = !1),
     (t("select").hidden = !1),
+    (t("next-music").hidden = !1),
     (t("pause-overlay").hidden = !0),
     (t("result-overlay").hidden = !0),
     (t("help-overlay").hidden = !0),
@@ -7962,6 +8041,7 @@ function fe() {
     (t("game").hidden = !0),
     (t("pause").hidden = !0),
     (t("select").hidden = !0),
+    (t("next-music").hidden = !0),
     (t("pause-overlay").hidden = !0),
     (t("result-overlay").hidden = !0),
     (t("help-overlay").hidden = !0),
@@ -7973,6 +8053,7 @@ function he(e) {
   "fight" === m &&
     "result" !== oe.phase &&
     ((g = e),
+    (document.getElementById('chicken-king-95').dataset.paused=String(g)),
     _(),
     (t("pause-overlay").hidden = !g),
     (t("pause").textContent = g ? "继续" : "暂停"),
@@ -8052,6 +8133,7 @@ function pe() {
       (t("sound").textContent = J.enabled ? "♪ 声音开" : "♪ 静音"),
       t("sound").setAttribute("aria-pressed", String(J.enabled)),
       J.enabled && J.play("select"),
+      g && J.suspend(),
       (t("voice-status").textContent = J.enabled
         ? "声音已开启"
         : "声音已静音"));
@@ -8060,7 +8142,7 @@ for (const e of ["music", "effects", "voice"]) {
   const n = t(e + "-volume");
   ((J[e + "Volume"] = Number(n.value) / 100),
     n.addEventListener("input", () => {
-      (J.init(),
+      (!g && J.init(),
         (J[e + "Volume"] = Number(n.value) / 100),
         (t(e + "-value").textContent = n.value + "%"));
     }));
@@ -8076,6 +8158,9 @@ for (const side of ["player", "cpu"]) t("target-" + side).addEventListener("clic
 });
 t("preview-motion").addEventListener("click", () => {
   r = !r; t("intensity").value = r ? "soft" : "full"; uiSelection(); uiRenderSelection();
+});
+for(const side of ['player','cpu'])t(side+'-card').addEventListener('click',()=>{
+  selectionTarget=side;J.init();J.play('select');le();
 });
 if (matchMedia("(max-width:600px)").matches) e.querySelectorAll(".k-profile-details").forEach(details => {details.open=false;});
 uiScene("title", false, false);
@@ -8787,12 +8872,15 @@ function mobileSceneChanged() {
   e.style.setProperty('--screen-h', logicalHeight + 'px');
   e.style.setProperty('--screen-left', (view?.offsetLeft || 0) + width / 2 + 'px');
   e.style.setProperty('--screen-top', (view?.offsetTop || 0) + height / 2 + 'px');
-  // 横版两侧为触控区，中间完整显示16:9战场，四招位于战场下方。
-  const arenaWidth = Math.max(180, Math.min(logicalWidth - 304, (logicalHeight - 126) * 16 / 9));
+  // 横版战场不为按键预留空位；完整16:9画面最大化，控件叠加在场景中。
+  const arenaWidth = Math.min(logicalWidth, logicalHeight * 16 / 9);
   e.style.setProperty('--mobile-arena-w', arenaWidth + 'px');
-  t('screen-mode').textContent = mobileHorizontal ? '恢复竖版' : '横版';
+  e.style.setProperty('--arena-h', arenaWidth * 9 / 16 + 'px');
+  e.style.setProperty('--arena-top', (logicalHeight - arenaWidth * 9 / 16) / 2 + 'px');
+  e.style.setProperty('--stage-backdrop', 'url("' + window.CustomArt.stages[u].src + '")');
+  t('screen-mode').textContent = mobileHorizontal ? '竖版' : '横版';
   t('screen-mode').setAttribute('aria-pressed', String(mobileHorizontal));
-  t('focus-hint').textContent = compact ? '左手移动 · 右手出招 · 点上方“横版”切换' : 'WASD移动 · J/K出招 · U必杀 · I超杀';
+  t('focus-hint').textContent = compact ? '左手移动 · 右手出招 · 横版可放大战场' : 'WASD移动 · J/K出招 · U必杀 · I超杀';
   t('skill-title').textContent = compact || matchMedia('(pointer:coarse)').matches ? '选择常用必杀招式' : '玩家U键招式';
   t('skill-explanation').textContent = '这里选常用必杀；战斗中也可直接点四招按钮。';
   t('fight-skills-title').textContent = '四招直达 · 点按钮出招，满气后点超杀';
@@ -8833,7 +8921,7 @@ for (const option of J.getMusicOptions()) {
   const item = document.createElement('option'); item.value = option.id; item.textContent = option.title; musicPicker.append(item);
 }
 musicPicker.value = J.getDiagnostics().fightMode;
-musicPicker.addEventListener('change', () => {J.init(); J.setFightMusic(musicPicker.value);});
+musicPicker.addEventListener('change', () => {if(!g)J.init(); J.setFightMusic(musicPicker.value);});
 const settings = document.createElement('div'); settings.className = 'k-mobile-settings';
 const label = document.createElement('label');label.textContent = '战斗音乐 ';label.append(musicPicker);settings.append(label);
 const existingMix = t('mixer');
@@ -8847,6 +8935,56 @@ t('help-overlay').querySelector('.k-help-content').append(settings);
 t('credits').hidden=false;
 t('credits-content').textContent='标题／选人／结算音乐：Juhani Junkala / SubspaceAudio、MintoDog；战斗音乐为用户指定的三首曲目；报幕与音效：Kenney及既有候选作者，现成报幕与音效采用CC0。K.O.和Super Combo沿用原游戏内置录音。角色与场景为本游戏既有素材，八人肖像按用户参考制作。';
 e.kofGame.mobile = {setHorizontal: mobileSetHorizontal, getState: () => ({horizontal: mobileHorizontal, rotated:e.dataset.rotated==='true', viewport:{...mobileViewport}})};
+
+// 触控保护只作用于游戏。菜单能滚动，战斗多指操作不触发网页缩放。
+e.addEventListener('dblclick', event => event.preventDefault());
+for(const name of ['gesturestart','gesturechange'])e.addEventListener(name,event=>{
+  if(m==='fight'||m==='result')event.preventDefault();
+},{passive:false});
+e.addEventListener('touchmove',event=>{
+  if((m==='fight'||m==='result')&&t('help-overlay').hidden&&event.touches.length>1)event.preventDefault();
+},{passive:false});
+e.addEventListener('touchend',event=>{
+  // 这些操作由pointer事件完成，阻止旧iOS把快速第二次操作解释成缩放。
+  if(event.target.closest('[data-key],.k-stick,#c95-fight-skills'))event.preventDefault();
+},{passive:false});
+e.addEventListener('contextmenu',event=>{
+  if(m==='fight'||m==='result')event.preventDefault();
+});
+
+function mobileAudioStatus() {
+  const diag=J.getDiagnostics();
+  t('enable-music').hidden=diag.enabled&&diag.contextState==='running'&&diag.musicActive;
+  t('enable-music').textContent=diag.enabled?'♪ 点一下开音乐':'♪ 点一下开启音乐';
+  const track=J.library.music[diag.fightTrack];
+  t('next-music').title='下一首 · 当前：'+(track?.title||'开场随机');
+  t('next-music').setAttribute('aria-label','切换下一首战斗音乐');
+  t('now-music').textContent=track?'正在播放：'+track.title:'每场从原三首战斗音乐中随机选择';
+}
+function mobileUnlockAudio(enable=false) {
+  if(enable)J.enabled=true;
+  if(!J.enabled||g)return;
+  J.init();mobileAudioStatus();
+}
+t('enable-music').addEventListener('click',()=>mobileUnlockAudio(true));
+t('next-music').addEventListener('click',()=>{
+  // 暂停期间不调用init：init会解除声音层暂停。
+  if(!g)J.init();
+  const key=J.nextFightMusic();mobileAudioStatus();
+  Q('已切换：'+(J.library.music[key]?.title||'战斗音乐'));
+});
+e.addEventListener('pointerup',event=>{
+  if(event.target.closest('#c95-sound,#c95-next-music,#c95-enable-music'))return;
+  if(J.enabled&&J.ctx?.state!=='running'&&!g)mobileUnlockAudio();
+},{capture:true});
+e.addEventListener('keydown',event=>{
+  if(['Enter','Space'].includes(event.code)&&J.enabled&&J.ctx?.state!=='running'&&!g)mobileUnlockAudio();
+},{capture:true});
+// 允许播放的浏览器直接起音乐；被策略阻止时保留点击提示，不编造自动播放成功。
+mobileUnlockAudio();
+document.addEventListener('WeixinJSBridgeReady',()=>mobileUnlockAudio());
+setInterval(mobileAudioStatus,700);
+mobileAudioStatus();
 mobileResize();
 
 // 素材就绪检查、主循环和画面协作。这是共享闭包片段，由 build.py 按 manifest.json 组装，勿单独加载。
