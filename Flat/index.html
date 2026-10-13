@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080c1d">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="application-name" content="灵魂头打飞机">
+<title>灵魂头打飞机 · 南沙仔来袭</title>
+<link rel="stylesheet" href="./style.css?v=1.1.1">
+</head>
+<body>
+<main id="app" aria-label="灵魂头打飞机手机游戏">
+<div id="boot-panel" role="status" aria-live="polite"><div class="boot-card">
+ <div class="boot-tag">SOUL PILOT · FLAT 1.1.1</div>
+ <h2 id="boot-title">请打开游戏网页</h2>
+ <p id="boot-message">游戏脚本尚未运行。若你正在预览 HTML 附件，请改用游戏的正式网页链接。</p>
+ <noscript><p class="boot-noscript"><strong>当前环境没有运行 JavaScript。</strong><br>这不是角色照片还在下载，游戏需要能执行脚本的浏览器环境。</p></noscript>
+ <p class="boot-tip"><strong>一直停在这里？</strong><br>请用 Safari 打开已经发布的游戏网页链接，而不是微信或“文件”中的 .html 附件预览。</p>
+ <small id="boot-detail">角色照片与游戏同站托管，音效内置，无第三方素材服务。</small>
+ <button id="boot-retry" type="button" class="start-btn" hidden>重新尝试</button>
+</div></div>
+
+<canvas id="world" aria-label="游戏区域：按住拖动灵魂头，自动射击南沙仔"></canvas>
+<section id="menu" class="screen">
+ <div class="topline"><div class="eyebrow"><i class="status-dot"></i> SOUL PILOT · 01</div><button type="button" class="icon-btn sound-control" aria-label="关闭声音"></button></div>
+ <div class="brand"><div class="edition">南沙仔来袭</div><h1>灵魂头<br><span>打飞机</span></h1><div class="brand-badge">原脸出战 ↗</div><p class="brand-sub">一根手指，整片天空。Diu 到佢服。</p></div>
+ <div class="figure-board"><canvas id="poster" width="840" height="540" aria-label="灵魂头战机与不同形态的南沙仔"></canvas><div class="diu-label">diu! diu!</div></div>
+ <div class="face-labels"><div class="face-chip"><img id="hero-chip" alt="图1：灵魂头"><div><small>你操控的主角</small>灵魂头</div></div><div class="face-chip"><img id="enemy-chip" alt="图2：南沙仔"><div><small>敌人 · 广州南沙</small>南沙仔</div></div></div>
+ <div class="settings-block"><div class="settings-head"><span>选择难度</span><span id="difficulty-note">4 格护盾 · 标准弹幕</span></div><div class="difficulty" role="group" aria-label="选择游戏难度"><button type="button" data-diff="easy" aria-pressed="false">轻松玩</button><button type="button" data-diff="normal" class="active" aria-pressed="true">来真的</button><button type="button" data-diff="hard" aria-pressed="false">癫一点</button></div></div>
+ <button type="button" id="start" class="start-btn" disabled><span id="start-label">角色载入中…</span><svg viewBox="0 0 24 24"><path d="m9 5 10 7-10 7z"/></svg></button>
+ <div class="menu-bottom"><button type="button" id="boss-start" class="text-btn" disabled>直接挑战 Boss ↗</button><span class="best">最高 <b id="menu-best" class="mono">000000</b></span><button type="button" id="help-open" class="text-btn">怎么玩 ⓘ</button></div>
+ <p class="instructions">按住屏幕拖动 · 自动连射 · 点击「爆发」清屏<br>原照片五官保留 · 电子 diu 音效 · 即开即玩</p>
+</section>
+<div id="hud" class="hud" hidden>
+ <div class="hud-top"><div><div class="score-label">SCORE / 得分</div><div id="score" class="score mono">000000</div></div><div class="hud-buttons"><button type="button" class="icon-btn sound-control" aria-label="关闭声音"></button><button type="button" id="pause" class="icon-btn" aria-label="暂停游戏"><svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button></div></div>
+ <div class="hud-second"><div id="hearts" class="hearts" aria-label="护盾"></div><div id="wave" class="wave mono">第 01 波 · 00:00</div></div>
+ <div id="boss-hud" class="boss-hud" hidden><div class="boss-head"><span>南沙仔 · 巨无霸</span><span id="boss-percent" class="mono">100%</span></div><div class="boss-track"><div id="boss-fill" class="boss-fill"></div></div></div>
+</div>
+<div id="dock" class="dock" hidden>
+ <button type="button" id="nova" class="nova-btn" aria-label="爆发清屏"><svg viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7z"/></svg><span>爆发</span><b id="nova-count" class="nova-count">2</b></button>
+ <div class="dock-center"><div id="weapon" class="weapon">LV.1 · 双线火力</div><div id="drag-hint" class="drag-hint">按住任意位置拖动</div></div><div class="autofire"><i></i>自动连射</div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<section id="pause-screen" class="overlay" hidden><div class="panel screen-fade"><div class="panel-tag">TAKE A BREATH</div><h2>先饮啖水 ☕</h2><p>灵魂头已悬停，南沙仔也不许偷袭。</p><button type="button" id="resume" class="start-btn">继续 Diu</button><button type="button" id="restart-pause" class="secondary-btn">重新开始</button><button type="button" id="home-pause" class="secondary-btn">返回首页</button></div></section>
+<section id="over-screen" class="overlay" hidden><div class="panel screen-fade"><div id="result-tag" class="panel-tag">MISSION REPORT</div><h2 id="result-title">歇一阵，再起飞。</h2><div class="result-hero"><img id="result-photo" alt="灵魂头原照片头像"><div><div id="result-score" class="result-number mono">000000</div><div id="record-label" class="new-record">最高纪录 · 000000</div></div></div><p id="result-caption">南沙仔有备而来，灵魂头下次再 Diu。</p><div class="result-grid"><div><strong id="result-kills" class="mono">0</strong><small>击退南沙仔</small></div><div><strong id="result-time" class="mono">00:00</strong><small>坚持时间</small></div><div><strong id="result-wave" class="mono">1</strong><small>抵达波次</small></div></div><button type="button" id="retry" class="start-btn">再来一局 ↗</button><button type="button" id="home-over" class="secondary-btn">返回首页</button></div></section>
+<section id="help" class="overlay" hidden><div class="panel screen-fade"><div class="panel-tag">PILOT HANDBOOK</div><h2>手指一滑，开 Diu。</h2><div class="help-rows"><div class="help-row"><div class="help-num">01</div><div><strong>拖动灵魂头</strong><p>按住屏幕任意位置滑动，战机会跟着移动。自动开火，不用狂戳屏幕。</p></div></div><div class="help-row"><div class="help-num">02</div><div><strong>躲弹幕，捡补给</strong><p>W 升级火力，＋恢复护盾，S 提供临时无敌。不同装甲里的脸，都是南沙仔。</p></div></div><div class="help-row"><div class="help-num">03</div><div><strong>扛不住就点「爆发」</strong><p>清除敌方子弹并大范围反击。闯关每 60 秒迎战巨无霸；首页也能直接挑战 Boss。</p></div></div></div><p class="help-footer">声音会在你点击开始后启用，可随时静音。电脑：方向键 / WASD 移动，空格爆发，P 或 Esc 暂停。仅使用原图裁切，不重绘或拉伸五官。</p><button type="button" id="help-close" class="start-btn">知道了，起飞</button></div></section>
+<div id="load-error" role="alert" hidden></div>
+</main>
+<div class="footnote">灵魂头打飞机 / 南沙仔来袭<br>拖动 / WASD 移动 · 空格爆发<br>原照片角色 · 无第三方依赖</div>
+<script>
+// Keep this first bootstrap ES5-compatible so even a later parse error is explained.
+(function () {
+ var state = window.__flatBoot = {version:'1.1.1', stage:'bootstrap', loaded:false, error:null};
+ var timer;
+ document.getElementById('boot-title').textContent = '正在启动游戏';
+ document.getElementById('boot-message').textContent = '正在加载角色照片，通常只需片刻。';
+ state.fail = function (message, detail) {
+  state.stage = 'failed'; state.error = detail || message;
+  clearTimeout(timer);
+  document.getElementById('boot-panel').hidden = false;
+  document.getElementById('boot-title').textContent = '游戏未能启动';
+  document.getElementById('boot-message').textContent = message;
+  document.getElementById('boot-detail').textContent = detail || '请在 Safari 中打开正式网页链接后重试。';
+  document.getElementById('boot-retry').hidden = false;
+ };
+ state.complete = function () {
+  state.stage = 'ready'; state.loaded = true; state.error = null;
+  clearTimeout(timer); document.getElementById('boot-panel').hidden = true;
+ };
+ document.getElementById('boot-retry').onclick = function () { location.reload(); };
+ window.addEventListener('error', function (event) {
+  if (!state.loaded) state.fail('启动脚本运行失败；当前打开环境可能不兼容。', event.message || '启动异常');
+ });
+ window.addEventListener('unhandledrejection', function (event) {
+  if (!state.loaded) state.fail('游戏初始化没有完成。', String(event.reason && event.reason.message || event.reason || '初始化异常'));
+ });
+ timer = setTimeout(function () {
+  if (!state.loaded) state.fail('启动已超时，不必继续等待。请检查当前窗口是否为附件预览。', '启动阶段：' + state.stage);
+ }, 10000);
+})();
+</script>
+<script src="./game.js?v=1.1.1"></script>
+</body>
+</html>
