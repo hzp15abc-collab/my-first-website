@@ -7,14 +7,12 @@
   <meta name="color-scheme" content="dark">
   <title>ULTRAL-MAN · iPhone 3D 体感实验</title>
   <link rel="stylesheet" href="./style.css">
-  <script defer src="./tf.min.js"></script>
-  <script defer src="./pose-detection.min.js"></script>
   <script type="module" src="./app.mjs"></script>
 </head>
 <body>
   <main>
     <header class="masthead">
-      <div class="eyebrow"><span class="status-dot"></span> G1b · W5 隔离实验</div>
+      <div class="eyebrow"><span class="status-dot"></span> G1b · W8 隔离实验</div>
       <h1>光之巨人<span> 3D 体感实验室</span></h1>
       <p>两个 3D 引擎，同一个动作模型、场景及测量条件。</p>
       <div class="notice">这是技术选型实验，不是正式游戏。仅成年人自愿参与摄像头测试，不采集儿童影像。</div>
@@ -23,7 +21,7 @@
       <div class="panel-heading"><span class="step">01</span><h2 id="setup-title">选择候选与工况</h2></div>
       <div class="control-grid">
         <label>引擎<select id="candidate"><option value="T1">T1 · Three.js</option><option value="T2">T2 · Babylon.js</option></select></label>
-        <label>工况<select id="mode"><option value="render">A · 仅 3D 渲染（不使用相机）</option><option value="infer">B · 仅真实姿态推理</option><option value="combined" selected>C · 3D + 真实姿态推理</option></select></label>
+        <label>工况<select id="mode"><option value="render">A · 仅 3D 渲染（不使用相机）</option><option value="infer">B · 仅真实姿态推理</option><option value="combined" selected>C · 3D + 真实姿态推理</option><option value="synthetic">内部自检 · 无相机（合成人形）</option></select></label>
         <label class="wide">实验轮次<select id="protocol"><option value="quick">快速试验 · 30 秒</option><option value="positive">正例引导 · 4 类各 20 次</option><option value="negative">负例观测 · 10 分钟</option><option value="endurance">连续 3 局 × 2 分钟</option><option value="anomaly">异常观察 · 手动停止</option></select></label>
       </div>
       <div class="privacy" id="privacy">相机视频只在本设备实时推理，不上传、不保存、不录音；离开、切换、旋转或停止会停流。所选相机工况仅在成人点击同意后申请权限。</div>
@@ -44,6 +42,9 @@
           <span>本地镜像</span>
         </div>
         <div class="stage-caption"><span id="gesture">未识别</span><span id="clock">00:00</span></div>
+        <div id="stage-overlay" class="stage-overlay" role="status" aria-live="polite">
+          <strong id="overlay-title">等待开始</strong><span id="overlay-detail">选择工况并点击「开始实验」。</span>
+        </div>
       </div>
       <div class="prompt" id="prompt" aria-live="polite">请保持全身舒适站立，动作轻柔、无接触。无需力量、速度或跳跃。</div>
       <div class="stage-actions">
@@ -75,6 +76,7 @@
     <section class="panel protocol" aria-labelledby="protocol-title">
       <div class="panel-heading"><span class="step">04</span><h2 id="protocol-title">W3 完整真机验证指引</h2></div>
       <p>先在同一台 iPhone Safari、同一位置与光线，分别用 T1、T2 跑同样工况与轮次。结果须独立复核；页面不会自动签 PASS。</p>
+      <p><strong>内部自检：</strong>只运行自动生成的几何人形与真实模型推理，完全不调用相机，只适合启动排障。不能证明真人姿态准确率、真实相机权限或 iPhone 通过。</p>
       <ol>
         <li><strong>性能对照：</strong>分别运行 A 仅渲染、B 仅真实推理、C 两者并行的快速试验。C 的 3D 帧时门槛 P50 ≤33.3 ms、P95 ≤50 ms。</li>
         <li><strong>正例：</strong>C 工况选择「正例引导」，以自己身体的左右为准，四类轻柔姿态各 20 次，每次先回到自然站立，再按提示做动作。预期每类 ≥90%、总重复误触 ≤1；提示对照不是独立真实标注，须另外核对是否按提示完成。</li>

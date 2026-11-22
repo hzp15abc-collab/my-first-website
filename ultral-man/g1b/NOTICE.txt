@@ -35,6 +35,14 @@ The official TensorFlow.js UMD contains these third-party modules:
 * seedrandom 3.0.5 — Copyright 2019 David Bau, MIT.
 Their full license notices are reproduced in licenses/.
 
+W8 CSP compatibility modification: the embedded MIT-licensed
+regenerator-runtime 0.13.7 global-export fallback in tf.min.js alone
+was changed from dynamic Function construction to a direct assignment
+to globalThis.regeneratorRuntime. This single local shim change avoids
+dynamic code evaluation blocked by the strict script policy; the
+original licenses, copyright credits, and all other dependency code
+are retained. No unsafe-eval policy relaxation is included.
+
 TensorFlow.js Models, @tensorflow-models/pose-detection 2.1.3 —
 Copyright 2023 Google LLC, Apache-2.0.
 https://github.com/tensorflow/tfjs-models/tree/f588523c083f4254050cd76c23ea18bd8fdef934
