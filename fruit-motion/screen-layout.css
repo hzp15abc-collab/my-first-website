@@ -1,0 +1,25 @@
+/* Camera, game and full screen are one responsive, unpadded surface. */
+#app { width:100%; height:100vh; height:100dvh; overflow:hidden; margin:0; }
+#app:fullscreen { width:100%; height:100%; margin:0; }
+#app:-webkit-full-screen { width:100%; height:100%; margin:0; }
+#app::backdrop { background:#102b26; }
+#camera,#gameCanvas { position:absolute; inset:0; width:100%; height:100%; margin:0; padding:0; border:0; }
+#camera { object-fit:cover; object-position:50% 50%; transform-origin:50% 50%; transform:scaleX(-1); }
+
+/* Whole-app control. A narrow portrait HUD can use the pause-menu button. */
+.fullscreen-control { min-height:44px; display:inline-flex; align-items:center; justify-content:center; gap:5px; }
+.fullscreen-control .fullscreen-symbol { font-size:19px; line-height:1; }
+.hud-fullscreen { min-width:44px; min-height:44px; }
+#fullscreenNotice { position:absolute; z-index:20; inset:0; display:flex; align-items:center; justify-content:center; padding:calc(12px + env(safe-area-inset-top)) calc(14px + env(safe-area-inset-right)) calc(12px + env(safe-area-inset-bottom)) calc(14px + env(safe-area-inset-left)); background:#071b20b8; overflow:auto; }
+.fullscreen-note-card { max-height:100%; overflow:auto; width:min(100%,520px); align-items:stretch; gap:12px; text-align:left; }
+.fullscreen-note-card h2 { font-size:clamp(21px,4vw,30px); margin:0; }
+.fullscreen-note-card p { margin:0; font-size:14px; line-height:1.5; }
+.fullscreen-note-card strong { font-weight:800; }
+.fullscreen-note-card .fullscreen-dismiss { min-height:44px; }
+.fullscreen-note-card .fullscreen-tv-hint { opacity:.86; font-size:13px; }
+@media(max-width:600px) and (orientation:portrait) {
+  .hud-fullscreen { display:none; }
+}
+@media(max-height:430px) and (orientation:landscape) {
+  .fullscreen-note-card { padding:16px 22px; gap:8px; }
+}

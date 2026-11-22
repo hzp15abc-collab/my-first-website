@@ -1,0 +1,292 @@
+/* JUICE ARCADE — coherent high-contrast cabinet UI, independently selected
+   against the V1.5 reference board. Never transform the video or game canvas. */
+:root {
+  --arcade:#171a36; --panel:#212644; --gold:#ffbc45; --gold-edge:#fed16d;
+  --cyan:#77e9f7; --cream:#fff4d7; --muted:#b9c5df; --ink:#161a34;
+  --shadow:0 24px 80px #080b20a6;
+  color-scheme:dark;
+  font-family:ui-rounded,"SF Pro Rounded","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif;
+}
+html,body,#app { background:var(--arcade); color:var(--cream); }
+#app::backdrop { background:var(--arcade); }
+.world {
+  background:radial-gradient(ellipse at 24% 18%,#373b68 0,transparent 44%),
+    radial-gradient(ellipse at 83% 86%,#184657 0,transparent 43%),
+    linear-gradient(155deg,#161931,#101429 65%,#171e38);
+}
+.world::before,.world::after {
+  width:60vmax;height:60vmax;bottom:-37vmax;left:-19vmax;
+  border:1px solid #77e9f722;
+  box-shadow:0 0 0 35px #77e9f708,0 0 0 70px #77e9f707;
+}
+.world::after {left:auto;right:-24vmax;bottom:auto;top:-42vmax;border-color:#ffbc4533;
+  box-shadow:0 0 0 35px #ffbc4508,0 0 0 70px #ffbc4507;}
+.arcade-grid {
+  position:absolute;inset:0;opacity:.27;
+  background-image:radial-gradient(circle,#cbd6f053 1px,transparent 1.5px);
+  background-size:32px 32px;
+  mask-image:linear-gradient(160deg,#000 8%,transparent 65%,#000);
+}
+/* Center stays the camera's natural live color; only the outer HUD zones
+   receive a subtle contrast shade. No tint/glass filter over the player. */
+.camera-shade {
+  background:linear-gradient(180deg,#100f2b45 0,transparent 20%,transparent 83%,#100f2b4d 100%);
+}
+.overlay { background:#0a0d2224; }
+#app:is([data-screen="paused"],[data-screen="settings"]) .overlay { background:#0b0e296e; }
+.menu-card {
+  background:linear-gradient(150deg,#282d50,#191d39 64%,#202844);
+  border:1px solid #7788b35c;
+  box-shadow:0 0 0 4px #0a0d251e,0 22px 72px #090c22ad,inset 0 1px 0 #d3dbff19;
+  border-radius:26px;
+  backdrop-filter:none;
+}
+.menu-card h2 {color:var(--cream);font-weight:900;letter-spacing:-.035em;}
+.menu-card p,.small-card p {color:#d8e0f4;}
+.hero-card {
+  display:flex;flex-direction:column;gap:8px;
+  width:min(100%,440px);max-width:none;
+  padding:23px 24px 19px;
+  border-color:#febc5270;
+  box-shadow:0 0 0 5px #03061a32,0 25px 86px #070b20bd,inset 0 1px 0 #ffe0a937;
+}
+.hero-card::before {
+  inset:0; border-radius:26px;
+  background:linear-gradient(125deg,#ffbc450a,transparent 42%);
+}
+.kicker {
+  font-size:12px; color:var(--gold-edge); letter-spacing:.18em;
+  font-weight:900;line-height:1.2;gap:9px;
+}
+.kicker-dot {width:7px;height:7px;background:var(--gold);box-shadow:0 0 0 3px #ffbc4522;}
+.edition-chip {color:#ccd7f3;letter-spacing:.06em;font-size:11px;border-left:1px solid #8093b859;padding-left:9px;}
+.hero-brand {width:100%;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.hero-fruits {width:min(100%,320px);height:auto;margin:3px 0 0;filter:none;}
+.hero-fruits img {width:100%;height:auto;display:block;}
+.hero-card h1 {
+  font-size:clamp(51px,13vw,69px); line-height:.99; letter-spacing:-.07em;
+  color:#fff9e9; margin:0 0 5px;
+  text-shadow:0 4px 0 #0f1226,0 6px 0 #a972273f;
+}
+.hero-card h1 span {color:var(--gold);}
+.hero-brand .subtitle {margin:5px 0 0;font-size:clamp(15px,4vw,19px);color:#f8e9c5;font-weight:750;}
+.hero-caption {font-size:12px;font-weight:650;letter-spacing:.035em;color:var(--muted);}
+.hero-card .play-buttons {gap:11px;margin-top:9px;}
+.mode-picker {gap:9px;margin:0 0 1px;}
+.mode-option {
+  background:#11162e;border:1px solid #53648189;color:#dce4f7;
+  box-shadow:0 3px 0 #0c1027;min-height:56px;border-radius:12px;
+}
+.mode-option small { color:#adbddd; }
+.mode-option[aria-pressed="true"] {
+  background:linear-gradient(145deg,#3e372c,#2e2d37);
+  color:#fff1c6;border-color:var(--gold-edge);
+  box-shadow:inset 0 0 0 1px #ffbc4538,0 3px 0 #0c1027;
+}
+.mode-option[aria-pressed="true"] small {color:#efce91;}
+.primary-button {
+  color:#252136;background:linear-gradient(180deg,#ffda75,#ffbc45 55%,#f7ad3d);
+  border:1px solid #ffe49d; border-radius:13px;
+  box-shadow:0 4px 0 #b76525,0 8px 18px #090b2264,inset 0 1px 0 #fff5c5;
+  font-weight:900;min-height:56px;
+}
+.primary-button .button-symbol {font-size:28px;line-height:1;color:#4c341c;}
+.primary-button .button-end {color:#77481f;}
+.primary-button small {color:#57391f;opacity:1;}
+.primary-button:disabled {background:#a38b54;color:#252136;border-color:#cfb26b;box-shadow:none;}
+.secondary-button {
+  min-height:48px;background:#12172e;border:1px solid #778ab686;color:var(--cream);
+  border-radius:13px;box-shadow:0 3px 0 #0b1026;
+}
+.text-button {font-weight:750;color:#dfe6f9;font-size:14px;}
+.menu-links {gap:4px 11px;justify-content:center;}
+.menu-links .text-button {min-height:44px;border-radius:10px;padding:5px 11px;}
+.menu-links .text-button:hover {background:#8199d620;color:var(--gold-edge);}
+.hero-card .menu-links {margin:4px 0 0;border-top:1px solid #8da0cd28;width:100%;padding-top:3px;}
+.privacy-note {margin:0;color:#bac8e4;justify-content:center;text-align:center;font-weight:600;}
+.privacy-note span {color:var(--cyan);}
+.eyebrow {color:var(--gold-edge);font-size:12px;letter-spacing:.13em;}
+.instruction-list li>span {background:var(--gold);color:var(--ink);border-radius:9px;}
+.instruction-list small {color:#c8d4ed;}
+.small-card {gap:15px;}
+.loader {border-color:#fed16d30;border-top-color:var(--gold);}
+.arcade-badge {
+  width:62px;height:62px;border-radius:18px;display:grid;place-items:center;
+  color:var(--gold);font-size:36px;line-height:1;font-weight:950;
+  border:1px solid #ffbc45a8;background:linear-gradient(155deg,#ffd57724,#120e2570);
+  box-shadow:0 5px 0 #11162c,0 8px 16px #080c25ad;
+}
+.result-badge {border-radius:50%;background:radial-gradient(circle at 30% 20%,#fff1b5,#ffbc45 56%,#ba6a26);color:#503324;border:2px solid #fff0bd;text-shadow:0 2px 0 #ffd77c;}
+.final-score {
+  background:#10152e;border:1px solid #ffbc454d;border-radius:14px;
+  padding:12px 18px;color:var(--gold-edge);box-shadow:inset 0 1px 8px #070a1c;
+}
+.final-score span {color:#bdcbe6;letter-spacing:.09em;font-size:12px;}
+.final-score strong {font-size:clamp(54px,12vw,85px);text-shadow:0 3px 0 #7a482a;}
+.best-line b {color:var(--gold-edge);}
+/* Result is a clean cabinet panel. Preserve the canvas box and game state;
+   replay naturally shows the live surface again. */
+#app[data-screen="result"] #gameCanvas {visibility:hidden;}
+.countdown-overlay {background:#100f2b1c;}
+.countdown span {color:var(--gold-edge);text-shadow:0 6px 0 #a15a29,0 14px 30px #080c24b8;}
+.countdown p {color:var(--cream);text-shadow:0 2px 6px #12152f;}
+
+/* Stable, peripheral gameplay chrome. All positions are CSS pixels; avoid
+   resizing the shared geometry or the collision/render surfaces. */
+.hud {gap:8px;}
+.hud-block {
+  background:#14182fea;border:1px solid #ffbc4585;border-radius:12px;
+  padding:8px 14px; min-width:92px;
+  box-shadow:0 3px 0 #0a0d2388,0 5px 12px #0a0b2455;
+  backdrop-filter:none;
+}
+.hud-label {font-size:12px;letter-spacing:.04em;color:#d6dff5;font-weight:750;}
+.hud-label i {display:inline-block;width:7px;height:7px;background:var(--gold);border-radius:2px;transform:rotate(45deg);}
+.score-block strong {color:#ffe38c;font-size:clamp(27px,5.5vw,43px);}
+.timer-block {border-color:#77e9f770;min-width:89px;}
+.timer-block strong {color:#c4faff;font-size:clamp(27px,5.5vw,41px);}
+.timer-track {height:4px;background:#d8e9f82d;margin-top:4px;}
+.timer-track span {background:var(--cyan);}
+.hud-actions {gap:7px;}
+.icon-button {
+  border:1px solid #879dc27a;background:#171d36ee;
+  color:#fff3d2;border-radius:12px;backdrop-filter:none;
+  box-shadow:0 3px 0 #0c102c91;
+}
+.bottom-status {
+  background:#151a31e8;color:#ecf1ff;border-color:#8ca2c55c;
+  font-size:12px;box-shadow:0 3px 12px #0c0e244d;
+}
+.tracking-prompt,.pill,.calibrate-card,.diagnostic-legend {
+  background:#191f3bee;border:1px solid #91a6dd70;color:var(--cream);
+  box-shadow:0 10px 28px #0a0c285e;backdrop-filter:none;
+}
+.tracking-prompt strong,.diagnostic-legend strong {color:var(--gold-edge);}
+.tracking-prompt small,.diagnostic-legend small,.diagnostic-legend p,.diagnostic-key {color:#dae5f9;}
+.calibration {background:transparent;}
+.calibrate-card {border-radius:17px;text-shadow:none;}
+.calibrate-card p,.calibrate-card .safety-hint {color:#d4dff6;}
+.guide-head,.guide-body,.guide-arms {border-color:#c5f7ffa6;filter:drop-shadow(0 1px 1px #111c36);}
+.ready-check span {background:#10152e;border-color:#cbd7ef41;color:#ffd16d;}
+.ready-check span.ready {color:#c6f9e0;background:#17493b;border-color:#7aebce7a;}
+.ready-check span.raised {color:#e7ffc0;background:#245e3e;border-color:#a8f08c;box-shadow:0 0 0 1px #a8f08c3b;}
+.gesture-start {display:grid;grid-template-columns:auto minmax(70px,1fr);gap:10px;align-items:center;margin:3px auto 11px;max-width:380px;min-height:21px;}
+.gesture-start #startGestureText {color:#c4faff;font-size:clamp(13px,2.5vw,16px);font-weight:800;white-space:nowrap;text-align:left;}
+.gesture-progress {position:relative;height:9px;overflow:hidden;border-radius:999px;background:#10152e;border:1px solid #91a6dd66;}
+.gesture-progress>span {position:absolute;inset:0;transform:scaleX(0);transform-origin:left center;background:linear-gradient(90deg,#71ddea,#d8ff99);border-radius:inherit;}
+.gesture-progress.holding {border-color:#a8f08c;}
+.calibrate-card .manual-start {width:100%;min-height:44px;}
+.calibrate-card .manual-start:disabled {opacity:.52;cursor:default;}
+@media(max-height:480px) and (orientation:landscape) {
+  .gesture-start {margin-block:2px 6px;min-height:17px;gap:9px;}
+  .gesture-start #startGestureText {font-size:12px;}
+  .gesture-progress {height:8px;}
+}
+.diagnostic-button {background:#191e3b;border-color:#91a6dd70;color:var(--cream);box-shadow:0 2px 0 #0c1029;}
+.diagnostic-button[aria-pressed="true"] {background:var(--cyan);color:#15213b;border-color:#bef7ff;}
+.fullscreen-note-card {border-color:#ffbc457a;}
+
+/* Audio panel is a usable sound desk, not a decorative overlay. */
+.settings-card {max-width:540px;gap:10px;padding:18px 22px;}
+.settings-card .settings-desc {color:#bdcce9;font-size:13px;}
+.settings-group {
+  background:#11162d;border-color:#7085b14d;border-radius:14px;padding:12px;
+  min-width:0;
+}
+.settings-group>label {color:#ffe4a2;font-weight:850;}
+.settings-group select {
+  background:#252c49;border:1px solid #7e93c26b;color:#fff4dc;border-radius:10px;
+  min-height:44px;padding:8px 10px;font-weight:700;font-size:15px;
+}
+.range-row {color:#d5e1f7;}
+.range-row label span {color:var(--gold-edge);}
+.range-row input {accent-color:var(--gold);}
+.preview-button {
+  color:var(--cyan);border:1px solid #77e9f76b;background:#24475c50;border-radius:10px;
+  min-height:44px;
+}
+.music-track-info {color:#bccbe8;min-height:1.35em;}
+.music-status {color:#a7f2f5;}
+.motion-control input {accent-color:var(--gold);}
+.motion-control small {color:#becde8;}
+.music-credits {color:#b8c7e2;}
+.music-credits summary {min-height:44px;color:#dfe8fb;}
+.music-credits a {color:var(--gold-edge);}
+
+@media (min-aspect-ratio:6/5) {
+  .hero-card {
+    width:min(100%,800px);display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);
+    column-gap:30px;row-gap:14px;padding:26px 30px 20px;
+  }
+  .hero-card .kicker {grid-column:1/-1;justify-self:start;}
+  .hero-card .hero-brand {grid-column:1;grid-row:2;align-self:center;}
+  .hero-card .play-buttons {grid-column:2;grid-row:2;align-self:center;margin:0;}
+  .hero-card .menu-links {grid-column:1/-1;grid-row:3;}
+  .hero-card .privacy-note {grid-column:1/-1;grid-row:4;}
+  .hero-card h1 {font-size:clamp(55px,7vw,80px);}
+  .hero-fruits {width:min(100%,360px);}
+  .hero-card .subtitle {font-size:18px;}
+  .hero-card .primary-button {min-height:67px;}
+  .hero-card .secondary-button {min-height:50px;}
+}
+@media (max-height:480px) and (orientation:landscape) {
+  .hero-card {
+    width:min(100%,748px);max-width:none;gap:7px 25px;
+    grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);padding:13px 22px 11px;
+  }
+  .hero-card .kicker {justify-self:center;}
+  .hero-card h1 {font-size:clamp(42px,8vw,58px);margin:0;}
+  .hero-fruits {width:min(100%,265px);height:auto;margin:0;}
+  .hero-card .subtitle {font-size:15px;margin:2px 0;}
+  .hero-caption {font-size:11px;}
+  .hero-card .primary-button {min-height:58px;padding:9px 12px;font-size:18px;}
+  .hero-card .secondary-button {min-height:44px;padding:8px 10px;}
+  .hero-card .mode-option {min-height:48px;}
+  .hero-card .play-buttons {gap:9px;}
+  .hero-card .menu-links {margin:2px 0 0;padding-top:0;}
+  .hero-card .text-button {min-height:44px;padding:5px 10px;}
+  .hero-card .privacy-note {margin:0;line-height:1.25;font-size:11px;}
+  .small-card {padding:12px 22px;gap:8px;}
+  .small-card h2 {font-size:26px;}
+  .small-card p {font-size:14px;}
+  .arcade-badge {width:42px;height:42px;border-radius:14px;font-size:27px;}
+  .result-badge {border-radius:50%;}
+  .final-score {padding:7px 12px;}
+  .final-score strong {font-size:45px;}
+  .compact {min-height:44px;padding:8px 12px;font-size:17px;}
+  .hud-block {min-width:76px;padding:6px 12px;}
+  .score-block strong,.timer-block strong {font-size:30px;}
+  .timer-block {min-width:80px;}
+  .settings-card {width:min(100%,744px);max-width:744px;gap:6px 12px;padding:11px 15px;}
+  .settings-card .settings-group {padding:8px 10px;gap:5px;}
+  .settings-card h2 {font-size:23px;}
+  .settings-card .music-track-info,.settings-card .music-status {font-size:11px;}
+  .settings-card .music-credits summary {min-height:44px;}
+  .settings-card>.primary-button {position:static;}
+}
+@media (max-height:350px) and (orientation:landscape) {
+  .hero-card {gap:4px 18px;padding:9px 15px;}
+  .hero-fruits {width:min(100%,215px);}
+  .hero-card h1 {font-size:44px;}
+  .hero-caption {display:none;}
+  .hero-card .menu-links {margin:0;}
+}
+@media (max-height:700px) and (orientation:portrait) {
+  .hero-card {padding:16px 19px 13px;gap:7px;}
+  .hero-fruits {width:min(100%,255px);}
+  .hero-card h1 {font-size:52px;margin-bottom:2px;}
+  .hero-card .play-buttons {gap:9px;margin-top:5px;}
+  .hero-card .menu-links {margin:0;}
+  .hero-card .primary-button {min-height:54px;padding:10px 12px;}
+  .hero-card .mode-option {min-height:48px;}
+}
+@media (max-width:370px) and (orientation:portrait) {
+  .hero-card {padding-inline:15px;}
+  .hero-card .text-button {padding-inline:7px;}
+  .hud {left:calc(8px + env(safe-area-inset-left));right:calc(8px + env(safe-area-inset-right));gap:4px;}
+  .hud-block {min-width:69px;padding:6px 9px;}
+  .timer-block {min-width:76px;}
+  .hud-actions {gap:5px;}
+  .icon-button {width:44px;height:44px;}
+  .settings-card {padding:14px;}
+}
