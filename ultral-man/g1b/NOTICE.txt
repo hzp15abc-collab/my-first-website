@@ -1,0 +1,55 @@
+ULTRAL-MAN G1b · isolated T1/T2 experiment
+
+This is an experimental comparison, not the official game. The project
+does not represent or reproduce any licensed media character or brand.
+The original shared scene.glb contains project-generated primitives and
+materials, supplied for this authorized experiment; no downloaded mesh,
+texture, music, images or third-party character assets are included.
+
+Open-source software and model credits
+--------------------------------------
+Three.js 0.187.0 — Copyright 2010–2026 Three.js Authors. MIT.
+https://github.com/mrdoob/three.js/tree/7e89746a687bb88271253698fa108b1dd59825d0
+See licenses/three-LICENSE.txt and t1.bundle.js.LEGAL.txt.
+
+Babylon.js @babylonjs/core and @babylonjs/loaders 9.37.1 —
+Copyright The Babylon.js team. Apache-2.0.
+https://github.com/BabylonJS/Babylon.js
+See licenses/babylonjs-core-LICENSE.txt, babylonjs-loaders-LICENSE.txt,
+and babylonjs-core-NOTICE.txt; the latter credits the package's optional
+decoder components. Full Draco and meshoptimizer license texts are
+retained; the decoder assets themselves are not distributed here.
+
+TensorFlow.js 4.22.0 and its core, converter, data, CPU, WebGL and
+layers modules — Copyright Google LLC and the TensorFlow.js contributors.
+Apache-2.0; TensorFlow.js Layers also has MIT components and credits
+François Chollet, Google LLC and the contributors. See the complete
+licenses/tfjs-LICENSE.txt and licenses/tfjs-layers-LICENSE.txt.
+https://github.com/tensorflow/tfjs/tree/5f8c90682cb59baff9b948028371dbbc85119243
+
+The official TensorFlow.js UMD contains these third-party modules:
+* core-js 3.29.1 — © 2014–2023 Denis Pushkarev (zloirock.ru), MIT.
+* regenerator-runtime 0.13.7 — © 2014-present Facebook, Inc., MIT.
+* long 4.0.0 — Apache-2.0 (see licenses/long-LICENSE.txt and the
+  original source credit in the module).
+* seedrandom 3.0.5 — Copyright 2019 David Bau, MIT.
+Their full license notices are reproduced in licenses/.
+
+TensorFlow.js Models, @tensorflow-models/pose-detection 2.1.3 —
+Copyright 2023 Google LLC, Apache-2.0.
+https://github.com/tensorflow/tfjs-models/tree/f588523c083f4254050cd76c23ea18bd8fdef934
+The UMD includes emitted TypeScript helper code, copyright Microsoft
+Corporation, permissive license notice retained in licenses/tslib-*.
+See licenses/pose-detection-LICENSE.txt. This experiment uses MoveNet
+only; no MediaPipe SDK, WebGPU peer, or other engine is hosted.
+
+MoveNet SinglePose Lightning v4, TensorFlow.js graph model —
+Google, Apache-2.0, unmodified JSON and two binary weight shards.
+Original model card:
+https://storage.googleapis.com/movenet/MoveNet.SinglePose%20Model%20Card.pdf
+Exact official published variation:
+https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4
+See licenses/tfjs-LICENSE.txt for the Apache-2.0 terms.
+
+No license notice above implies endorsement by these authors.
+All software and model files are distributed subject to their own licenses.

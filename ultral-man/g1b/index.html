@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; media-src 'self' blob:; font-src 'self'; worker-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="color-scheme" content="dark">
+  <title>ULTRAL-MAN · iPhone 3D 体感实验</title>
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./tf.min.js"></script>
+  <script defer src="./pose-detection.min.js"></script>
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <main>
+    <header class="masthead">
+      <div class="eyebrow"><span class="status-dot"></span> G1b · W5 隔离实验</div>
+      <h1>光之巨人<span> 3D 体感实验室</span></h1>
+      <p>两个 3D 引擎，同一个动作模型、场景及测量条件。</p>
+      <div class="notice">这是技术选型实验，不是正式游戏。仅成年人自愿参与摄像头测试，不采集儿童影像。</div>
+    </header>
+    <section class="panel controls" aria-labelledby="setup-title">
+      <div class="panel-heading"><span class="step">01</span><h2 id="setup-title">选择候选与工况</h2></div>
+      <div class="control-grid">
+        <label>引擎<select id="candidate"><option value="T1">T1 · Three.js</option><option value="T2">T2 · Babylon.js</option></select></label>
+        <label>工况<select id="mode"><option value="render">A · 仅 3D 渲染（不使用相机）</option><option value="infer">B · 仅真实姿态推理</option><option value="combined" selected>C · 3D + 真实姿态推理</option></select></label>
+        <label class="wide">实验轮次<select id="protocol"><option value="quick">快速试验 · 30 秒</option><option value="positive">正例引导 · 4 类各 20 次</option><option value="negative">负例观测 · 10 分钟</option><option value="endurance">连续 3 局 × 2 分钟</option><option value="anomaly">异常观察 · 手动停止</option></select></label>
+      </div>
+      <div class="privacy" id="privacy">相机视频只在本设备实时推理，不上传、不保存、不录音；离开、切换、旋转或停止会停流。所选相机工况仅在成人点击同意后申请权限。</div>
+      <label class="consent"><input type="checkbox" id="consent"><span>我是成年人，自愿进行这次本地摄像头实验。</span></label>
+      <div class="buttons">
+        <button id="start" class="primary" type="button">开始实验</button>
+        <button id="stop" class="secondary" type="button" disabled>停止 / 停流</button>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite">等待开始。建议 iPhone Safari 横屏，保证周围空间充足。</p>
+    </section>
+    <section class="panel stage-panel" aria-labelledby="stage-title">
+      <div class="panel-heading"><span class="step">02</span><h2 id="stage-title">实时实验画面</h2><span id="source" class="chip">尚未启动</span></div>
+      <div class="stage-wrap" id="stage-wrap">
+        <canvas id="stage" width="960" height="540" aria-label="原创 3D 巨人及城市对照场景"></canvas>
+        <div id="no-render" class="no-render" hidden>仅姿态推理：不呈现 3D 画面</div>
+        <div class="viewfinder" id="viewfinder" hidden>
+          <video id="camera" playsinline muted autoplay aria-label="仅本地成人相机预览"></video>
+          <span>本地镜像</span>
+        </div>
+        <div class="stage-caption"><span id="gesture">未识别</span><span id="clock">00:00</span></div>
+      </div>
+      <div class="prompt" id="prompt" aria-live="polite">请保持全身舒适站立，动作轻柔、无接触。无需力量、速度或跳跃。</div>
+      <div class="stage-actions">
+        <label class="toggle"><input id="preview" type="checkbox" checked> 显示本地相机预览</label>
+        <span id="phase" class="muted">未开始</span>
+      </div>
+    </section>
+    <section class="panel" aria-labelledby="metric-title">
+      <div class="panel-heading"><span class="step">03</span><h2 id="metric-title">匿名本地测量</h2><span class="chip pending">未验收</span></div>
+      <div class="metric-grid">
+        <div class="metric"><span>3D 帧间隔 P50 / P95</span><strong id="frame-metric">—</strong><small id="frame-count">0 个区间</small></div>
+        <div class="metric"><span>模型推理耗时 P50 / P95</span><strong id="infer-metric">—</strong><small id="infer-count">0 次推理</small></div>
+        <div class="metric"><span>有效跟踪 / 推理帧</span><strong id="track-metric">—</strong><small>实际模型输入</small></div>
+        <div class="metric"><span>事件 / 手势变化</span><strong id="event-metric">—</strong><small>非中立去重 / 识别变化</small></div>
+        <div class="metric"><span>输入样本起点→提交绘制（代理）</span><strong id="latency-metric">—</strong><small>不是可见端到端反馈延迟</small></div>
+        <div class="metric"><span>加载（不含相机授权等待）</span><strong id="load-metric">—</strong><small id="error-metric">0 条运行错误</small></div>
+      </div>
+      <p class="fineprint">不捕获或记录影像、设备指纹及身份。结果只在页面内存，不自动发送。推理时间、绘制提交时间均不能替代真实动作到可见反馈延迟。</p>
+      <details>
+        <summary>查看本轮证据与未验证项</summary>
+        <pre id="report" tabindex="0">尚未产生测量数据。</pre>
+        <div class="buttons">
+          <button id="copy" class="secondary" type="button" disabled>复制匿名摘要</button>
+          <button id="copy-raw" class="secondary" type="button" disabled>复制含原始计时的匿名结果</button>
+        </div>
+        <p id="copy-status" class="muted" aria-live="polite"></p>
+      </details>
+    </section>
+    <section class="panel protocol" aria-labelledby="protocol-title">
+      <div class="panel-heading"><span class="step">04</span><h2 id="protocol-title">W3 完整真机验证指引</h2></div>
+      <p>先在同一台 iPhone Safari、同一位置与光线，分别用 T1、T2 跑同样工况与轮次。结果须独立复核；页面不会自动签 PASS。</p>
+      <ol>
+        <li><strong>性能对照：</strong>分别运行 A 仅渲染、B 仅真实推理、C 两者并行的快速试验。C 的 3D 帧时门槛 P50 ≤33.3 ms、P95 ≤50 ms。</li>
+        <li><strong>正例：</strong>C 工况选择「正例引导」，以自己身体的左右为准，四类轻柔姿态各 20 次，每次先回到自然站立，再按提示做动作。预期每类 ≥90%、总重复误触 ≤1；提示对照不是独立真实标注，须另外核对是否按提示完成。</li>
+        <li><strong>负例：</strong>C 工况选择「负例观测」，静止、自然转身或活动、短暂遮挡等非目标动作 10 分钟；不刻意做四类目标姿态。目标误触 ≤1 次。</li>
+        <li><strong>多局：</strong>C 工况选择「连续 3 局」，同一轮连续 6 分钟，每局 2 分钟。目标 0 崩溃或超 1 秒冻结、0 非预期重载。</li>
+        <li><strong>加载、异常：</strong>同网络冷加载 3 次，首次导航到可用 P95 ≤15 秒（排除成人授权操作等待）。异常观察：分别进行相机拒绝、旋转、后台、退出各 3 次，核对拒绝提示、停流 ≤1 秒及无残留触发；离开后需重新主动确认。</li>
+        <li><strong>外部复核：</strong>独立测量真实动作到可见反馈（P50 ≤120 ms、P95 ≤250 ms），跟踪丢失 500 ms 内暂停、恢复 2 秒内重新跟踪或明确重标定、网络完整记录及舒适/可读性。若无可信内存接口、完整网络与真实影像观察证据，仍记 UNVERIFIED。</li>
+      </ol>
+      <div class="notice">可以随时停下。勿录制儿童影像；不要将摄像画面、个人信息或设备资料分享为实验结果。</div>
+    </section>
+    <footer>原创资产与共同模型 · T3 已停止 · 本页无正式游戏验收结论<br><a href="./NOTICE.txt">实验资源许可与出处</a></footer>
+  </main>
+</body>
+</html>

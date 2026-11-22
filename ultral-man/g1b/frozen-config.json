@@ -1,0 +1,54 @@
+{
+  "protocol": "W3-D3",
+  "seed": 20261122,
+  "asset": {
+    "path": "asset/scene.glb",
+    "sha256": "9a73e9b020a4e8e4672cc2a8dbbf30029bcde6cd0a468402a4fde729f26a1d53",
+    "bytes": 693828,
+    "hero": "HeroRoot",
+    "monster": "MonsterRoot",
+    "buildings": 16,
+    "triangles": 17320,
+    "provenance": "Original Blender geometry; no third-party asset."
+  },
+  "input": {
+    "source": "input/synthetic/pose_fixture.mp4",
+    "sha256": "ac7a8c3d120ebdb1527c9f218ac9ae6bdb541a958defc4aef91aac14d2a20f99",
+    "format": "H264, 480x270, 12fps, 6 seconds, anonymous synthetic geometric mannequin",
+    "labelsPerSecond": ["neutral", "left_raise", "right_raise", "cross", "horizontal_vertical", "neutral"],
+    "accuracyClaim": "Synthetic proxy only; not a real-person or iPhone accuracy test."
+  },
+  "moveNet": {
+    "package": "@tensorflow-models/pose-detection@2.1.3",
+    "tfjs": "@tensorflow/tfjs@4.22.0",
+    "type": "SinglePose.Lightning v4",
+    "backend": "webgl",
+    "enableSmoothing": false,
+    "poseSamplePolicy": "One estimate at a time; new decoded video timestamps only; no fallback backend.",
+    "modelUrl": "input/movenet/model.json",
+    "modelHash": "c65a3447162efa0c42af29498a4b151f4415b36ff3ae6fae2b28a32e840dcbfb",
+    "shards": ["b42c3232bf13b0efc691d3f0693dd3fc74404f709b1deee0a271828af6dbbea2", "8253ab965aa3122c08f331777ca395ce9ca19bb9e7cb278b99de1c46dbdeb6dc"]
+  },
+  "candidates": {
+    "T1": {"engine": "three@0.187.0", "lockSha256": "838949aad4e06bdec66a98b5635f21295c0f8de2fd817feefdec0a758c6fc0b3"},
+    "T2": {"engine": "@babylonjs/core@9.37.1 plus loaders@9.37.1", "lockSha256": "269a993943a2e08bab57990fadaa12a8ce56f6623d2593c89cab1cc1d315f077"},
+    "T3": {"engine": "three@0.187.0 plus @mediapipe/tasks-vision@1.2.3", "state": "STOP pending independent privacy/license review; not executable"}
+  },
+  "scene": {
+    "width": 960,
+    "height": 540,
+    "camera": {"position": [0, 8.5, 17.5], "target": [0, 2, 0], "verticalFovDegrees": 42, "near": 0.1, "far": 100},
+    "ambient": {"color": "#ffffff", "intensity": 0.65},
+    "directional": {"position": [-4, 9, 6], "color": "#ffffff", "intensity": 1.4},
+    "shadows": false,
+    "particles": {"maxVisible": 32, "deterministic": true}
+  },
+  "measurement": {
+    "modes": ["render", "infer", "combined"],
+    "warmupSeconds": 3,
+    "proxyMeasurementSeconds": 12,
+    "proxyQualification": "Partial proxy smoke measurements; W3 full numerical thresholds remain reserved for target hardware and full protocol.",
+    "timing": "performance.now; report raw durations, sample counts, p50 and p95; never substitute inference time for gesture-to-visible latency",
+    "network": "Local same-origin static assets only; record every attempted request including blocked attempts; no camera/mic or storage in synthetic mode"
+  }
+}
