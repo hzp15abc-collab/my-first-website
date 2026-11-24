@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'none'; connect-src 'none'; img-src 'none'; media-src 'none'; worker-src 'none'; frame-src 'none'; object-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>一次图形能力诊断 · W63</title>
+  <script type="module" src="./capability.mjs"></script>
+</head>
+<body>
+  <main>
+    <h1>一次图形能力诊断</h1>
+    <p>版本：W63-capability-1</p>
+    <p>不是游戏，不需要摄像头或麦克风。不安装、不登录、不改变设置，结果不会由本页面保存或发送。</p>
+    <p>请保持页面在前台，主动点击一次。开始后不要刷新或重复测试；最多等待约 30 秒。</p>
+    <button id="start" type="button" disabled>开始能力检测</button>
+    <p id="progress" role="status" aria-live="polite">脚本尚未就绪；如果无法开始，请报告未运行，不要重试。</p>
+    <h2>结果</h2>
+    <dl>
+      <dt>安全上下文</dt><dd id="secure">NOT_RUN · 未检查</dd>
+      <dt>WebGL2</dt><dd id="gl">NOT_RUN · 未运行</dd>
+      <dt>WebGL2 清理</dt><dd id="gl-cleanup">NOT_ACQUIRED · 未获取</dd>
+      <dt>WebGPU</dt><dd id="gpu">NOT_RUN · 未运行</dd>
+      <dt>WebGPU 清理</dt><dd id="gpu-cleanup">NOT_ACQUIRED · 未获取</dd>
+    </dl>
+    <p>你可以自愿手工回复上述结果。此结果仅对应本次默认浏览器的图形能力，不证明游戏、模型或性能已通过。</p>
+  </main>
+</body>
+</html>
