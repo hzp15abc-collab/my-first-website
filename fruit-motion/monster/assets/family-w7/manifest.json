@@ -1,0 +1,222 @@
+{
+  "schema": 1,
+  "scope": "private family named character art pilot; actual generated images only; not approved release",
+  "rows": [
+    {
+      "id": "paw-patrol-chase",
+      "label": "Chase",
+      "series": "paw-patrol",
+      "file": "sprites/paw-patrol-chase.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "69ca345a822d5bcb223289b53041e0b857682d98560f19b5566d7ca6db1d4751",
+      "bytes": 60040,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "b7b7f3c0db3f5cd8bdedaf0ddf7a5a99ea1b99e78a520bd0ad821d95e27449b8",
+      "source_sheet": "exec-491651b9-ce3b-460e-9472-235f536eadd9.png",
+      "source_cell": {
+        "row": 0,
+        "col": 0
+      }
+    },
+    {
+      "id": "paw-patrol-marshall",
+      "label": "Marshall",
+      "series": "paw-patrol",
+      "file": "sprites/paw-patrol-marshall.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "8cda0472b055426e5698bfd51cc1fa660252dd04fdb4019a0e4495fe7cce28f5",
+      "bytes": 61051,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "b7b7f3c0db3f5cd8bdedaf0ddf7a5a99ea1b99e78a520bd0ad821d95e27449b8",
+      "source_sheet": "exec-491651b9-ce3b-460e-9472-235f536eadd9.png",
+      "source_cell": {
+        "row": 0,
+        "col": 1
+      }
+    },
+    {
+      "id": "paw-patrol-skye",
+      "label": "Skye",
+      "series": "paw-patrol",
+      "file": "sprites/paw-patrol-skye.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "0bab78e6929fbe2d3376037230a56487f2e1109412c9630388c7933a8c5e0770",
+      "bytes": 68866,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "b7b7f3c0db3f5cd8bdedaf0ddf7a5a99ea1b99e78a520bd0ad821d95e27449b8",
+      "source_sheet": "exec-491651b9-ce3b-460e-9472-235f536eadd9.png",
+      "source_cell": {
+        "row": 0,
+        "col": 2
+      }
+    },
+    {
+      "id": "paw-patrol-rubble",
+      "label": "Rubble",
+      "series": "paw-patrol",
+      "file": "sprites/paw-patrol-rubble.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "000299c602004d39b5127c46bc13847f9c20e3c9600dc490e13b313633389f13",
+      "bytes": 64559,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "b7b7f3c0db3f5cd8bdedaf0ddf7a5a99ea1b99e78a520bd0ad821d95e27449b8",
+      "source_sheet": "exec-491651b9-ce3b-460e-9472-235f536eadd9.png",
+      "source_cell": {
+        "row": 1,
+        "col": 0
+      }
+    },
+    {
+      "id": "paw-patrol-rocky",
+      "label": "Rocky",
+      "series": "paw-patrol",
+      "file": "sprites/paw-patrol-rocky.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "3a1f232c5209d9970071cb6ff9c35cca255e571d778f9515d385a7b251a97fe1",
+      "bytes": 64363,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "b7b7f3c0db3f5cd8bdedaf0ddf7a5a99ea1b99e78a520bd0ad821d95e27449b8",
+      "source_sheet": "exec-491651b9-ce3b-460e-9472-235f536eadd9.png",
+      "source_cell": {
+        "row": 1,
+        "col": 1
+      }
+    },
+    {
+      "id": "paw-patrol-zuma",
+      "label": "Zuma",
+      "series": "paw-patrol",
+      "file": "sprites/paw-patrol-zuma.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "0a152077b3e7bae92e5e6eba94cc0b4f98ee771fb257c5083d3761d05ab0434b",
+      "bytes": 63128,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "b7b7f3c0db3f5cd8bdedaf0ddf7a5a99ea1b99e78a520bd0ad821d95e27449b8",
+      "source_sheet": "exec-491651b9-ce3b-460e-9472-235f536eadd9.png",
+      "source_cell": {
+        "row": 1,
+        "col": 2
+      }
+    },
+    {
+      "id": "super-wings-jett",
+      "label": "Jett",
+      "series": "super-wings",
+      "file": "sprites/super-wings-jett.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "b38e068cae002cf88dee04617279f73047e396435fa8afe205a735a26d851922",
+      "bytes": 71572,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "d6224e3d5dc7a9cc8483378c6fb3b177aa029c7c54ae2c61346699b36d5e69af",
+      "source_sheet": "exec-87c34694-9d80-4248-aa9e-ba1e5af9b99f.png",
+      "source_cell": {
+        "row": 0,
+        "col": 0
+      }
+    },
+    {
+      "id": "super-wings-dizzy",
+      "label": "Dizzy",
+      "series": "super-wings",
+      "file": "sprites/super-wings-dizzy.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "258f03bd03920c3625b96541b2a0e7a02e3f2a9b0216023aa38288c5444366c7",
+      "bytes": 67990,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "d6224e3d5dc7a9cc8483378c6fb3b177aa029c7c54ae2c61346699b36d5e69af",
+      "source_sheet": "exec-87c34694-9d80-4248-aa9e-ba1e5af9b99f.png",
+      "source_cell": {
+        "row": 0,
+        "col": 1
+      }
+    },
+    {
+      "id": "super-wings-donnie",
+      "label": "Donnie",
+      "series": "super-wings",
+      "file": "sprites/super-wings-donnie.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "3539ddeef2a390e15878274a0eff455ff34430d1182c8abbe72998c7b8034120",
+      "bytes": 80556,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "d6224e3d5dc7a9cc8483378c6fb3b177aa029c7c54ae2c61346699b36d5e69af",
+      "source_sheet": "exec-87c34694-9d80-4248-aa9e-ba1e5af9b99f.png",
+      "source_cell": {
+        "row": 0,
+        "col": 2
+      }
+    },
+    {
+      "id": "super-wings-jerome",
+      "label": "Jerome",
+      "series": "super-wings",
+      "file": "sprites/super-wings-jerome.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "7a35dcac1b9338483676c565d3266e9daf1cee82512a4f9c4db84a7d0bb4a6ad",
+      "bytes": 67002,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "d6224e3d5dc7a9cc8483378c6fb3b177aa029c7c54ae2c61346699b36d5e69af",
+      "source_sheet": "exec-87c34694-9d80-4248-aa9e-ba1e5af9b99f.png",
+      "source_cell": {
+        "row": 1,
+        "col": 0
+      }
+    },
+    {
+      "id": "super-wings-paul",
+      "label": "Paul",
+      "series": "super-wings",
+      "file": "sprites/super-wings-paul.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "de6a84f168a6cd59b2300ac2344f885e46ed34d8b0af4d70563b01f8836f57e5",
+      "bytes": 73586,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "d6224e3d5dc7a9cc8483378c6fb3b177aa029c7c54ae2c61346699b36d5e69af",
+      "source_sheet": "exec-87c34694-9d80-4248-aa9e-ba1e5af9b99f.png",
+      "source_cell": {
+        "row": 1,
+        "col": 1
+      }
+    },
+    {
+      "id": "super-wings-mira",
+      "label": "Mira",
+      "series": "super-wings",
+      "file": "sprites/super-wings-mira.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "0badc3d033bff1caa97b1a45ee3d621027168ce35b758cdf7908f82681d2e254",
+      "bytes": 77589,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "d6224e3d5dc7a9cc8483378c6fb3b177aa029c7c54ae2c61346699b36d5e69af",
+      "source_sheet": "exec-87c34694-9d80-4248-aa9e-ba1e5af9b99f.png",
+      "source_cell": {
+        "row": 1,
+        "col": 2
+      }
+    }
+  ]
+}

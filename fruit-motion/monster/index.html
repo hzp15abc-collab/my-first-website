@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="description" content="使用设备前置摄像头的亲子体感双主题游戏。无账户、无付费服务、动作在本机识别。">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'">
-  <title>果果星球 · 双世界 V2.0 研发候选</title>
+  <title>果果星球 · 怪兽世界 · V2.3</title>
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" type="image/svg+xml" href="./assets/icons/fruit-planet.svg">
   <link rel="stylesheet" href="./styles.css">
@@ -37,19 +37,19 @@
 
     <section class="overlay" data-panel="intro">
       <div class="menu-card hero-card">
-        <div class="kicker"><span class="kicker-dot"></span> 双世界 · MOTION ARCADE <span class="edition-chip">V2.0</span></div>
+        <div class="kicker"><span class="kicker-dot"></span> 双世界 · MOTION ARCADE <span class="edition-chip">V2.3 重力玩法</span></div>
         <div class="hero-brand">
           <div class="hero-fruits" id="fruitThemeArt" aria-hidden="true"><img src="./assets/art/arcade-fruit-mark.svg" alt="" width="420" height="168"></div>
-          <div class="monster-theme-art" id="monsterThemeArt" aria-hidden="true" hidden><img src="./assets/monster/art/fire-dragon.png" alt="" loading="lazy"><img src="./assets/monster/art/robot.png" alt="" loading="lazy"><img src="./assets/monster/art/guardian-blue.png" alt="" loading="lazy"></div>
+          <div class="monster-theme-art" id="monsterThemeArt" aria-hidden="true" hidden><img src="./assets/family-w7/sprites/paw-patrol-chase.png" alt="" loading="lazy"><img src="./assets/family-w7/sprites/super-wings-jett.png" alt="" loading="lazy"><img src="./assets/family-w8/sprites/ultraman-hero-ultraman-zero.png" alt="" loading="lazy"></div>
           <h1><span id="themeTitleMain">果果</span><span id="themeTitleAccent">星球</span></h1>
           <p class="subtitle" id="themeSubtitle">挥挥小手，切出满满果汁！</p>
           <span class="hero-caption" id="themeCaption">3 分钟欢乐运动 · 节奏随心选</span>
-          <small id="monsterArtStatus" class="monster-status" role="status" hidden>正在准备原创角色素材…</small>
+          <small id="monsterArtStatus" class="monster-status" role="status" hidden>正在校验24张角色图片…</small><button id="monsterArtRetry" class="text-button" type="button" hidden>重试角色校验</button><small id="candidateNotice" class="monster-status" hidden>24角色体验版 · 真重力抛物与彩星反馈。</small>
         </div>
         <div class="play-buttons">
           <div class="theme-picker" role="group" aria-label="选择游戏世界">
             <button class="theme-option" type="button" id="fruitTheme" aria-pressed="true"><span>🍉 水果世界</span><small>果汁街机</small></button>
-            <button class="theme-option" type="button" id="monsterTheme" aria-pressed="false"><span>🛡 怪兽世界</span><small>能量冒险</small></button>
+            <button class="theme-option" type="button" id="monsterTheme" aria-pressed="false"><span>🛡 怪兽世界</span><small>24角色试验</small></button>
           </div>
           <div class="mode-picker" role="group" aria-label="游戏难度">
             <button class="mode-option" id="activeMode" type="button" aria-pressed="true"><span>⚡ 活力</span><small id="activeHint">轻快抛果</small></button>
@@ -72,9 +72,9 @@
 
     <section class="overlay settings-overlay" data-panel="settings" hidden>
       <div class="menu-card settings-card">
-        <div class="eyebrow">SOUND STUDIO · V2.0</div><h2>选一首喜欢的节奏</h2><p class="settings-desc" id="themeSettingsDesc">5 首成品音乐 · 两套十果独立音色 · 独立音量。</p><p class="settings-camera-note" id="settingsCameraNote" hidden>游戏已暂停，摄像头仍开启；离开页面会关闭。</p>
+        <div class="eyebrow">SOUND STUDIO · V2.3</div><h2>选一首喜欢的节奏</h2><p class="settings-desc" id="themeSettingsDesc">5 首成品音乐 · 两套十果独立音色 · 独立音量。</p><p class="settings-camera-note" id="settingsCameraNote" hidden>游戏已暂停，摄像头仍开启；离开页面会关闭。</p>
         <div class="settings-group"><label for="musicStyle">♫ 背景音乐</label><select id="musicStyle"><option value="groove">水果迪斯科</option><option value="off">关闭音乐</option></select><small id="musicTrackInfo" class="music-track-info"></small><div class="range-row"><label for="musicVolume">音乐音量 <span id="musicVolumeValue">55%</span></label><input id="musicVolume" type="range" min="0" max="100" value="55" step="5"></div><button class="preview-button" id="previewMusic" type="button">试听音乐</button><small class="music-status" id="musicStatus" role="status" hidden></small></div>
-        <div class="settings-group"><label for="effectsStyle">✦ 游戏音效</label><select id="effectsStyle"><option value="juice">街机果汁 · 实录材质</option><option value="chime">泡泡乐园 · 轻柔玩具</option><option value="off">关闭音效</option></select><small id="monsterEffectsHint" hidden>每只怪兽的出现与击败均有独立声音；守护者误切显示禁止提示。</small><div class="range-row"><label for="effectsVolume">音效音量 <span id="effectsVolumeValue">75%</span></label><input id="effectsVolume" type="range" min="0" max="100" value="75" step="5"></div><button class="preview-button" id="previewEffects" type="button">试听音效</button><small class="music-status" id="effectsStatus" role="status" hidden></small></div>
+        <div class="settings-group"><label for="effectsStyle">✦ 游戏音效</label><select id="effectsStyle"><option value="juice">街机果汁 · 实录材质</option><option value="chime">泡泡乐园 · 轻柔玩具</option><option value="off">关闭音效</option></select><small id="monsterEffectsHint" hidden>使用原授权的游戏音效组映射；英雄误切有粤语提示（设备支持时）与盾牌提示，不是角色专属原声。</small><div class="range-row"><label for="effectsVolume">音效音量 <span id="effectsVolumeValue">75%</span></label><input id="effectsVolume" type="range" min="0" max="100" value="75" step="5"></div><button class="preview-button" id="previewEffects" type="button">试听音效</button><small class="music-status" id="effectsStatus" role="status" hidden></small></div>
         <div class="settings-group local-song" id="monsterLocalPanel" hidden><label for="monsterLocalInput">🎵 使用我设备里的音乐（仅本机）</label><input type="file" id="monsterLocalInput" accept="audio/*,.mp3,.m4a,.wav,.ogg"><small id="monsterLocalStatus" role="status">未选择本机音乐，使用已授权的默认曲目。请仅选择自己有权使用的音乐；不会上传或嵌入游戏。</small><button class="preview-button" id="monsterLocalClear" type="button" disabled>清除本机选择</button></div>
         <label class="motion-control"><input id="reduceMotion" type="checkbox"><span><b>减少画面震动</b><small>减弱冲击扩散与碎片，保留清晰反馈。</small></span></label>
         <details class="music-credits"><summary>真实音乐与音效 · 作者及许可</summary><p>音乐按节奏截取，首尾混合、响度统一并压缩；音效由授权素材剪辑和混合。<a id="musicSource" target="_blank" rel="noopener noreferrer">当前曲目原作</a> · <a id="musicLicense" target="_blank" rel="noopener noreferrer">许可</a> · <a href="./THIRD_PARTY.md" target="_blank" rel="noopener">所有作品及署名</a></p></details>
@@ -110,6 +110,6 @@
       </div>
     </aside>
   </main>
-  <script type="module" src="./src/main.js?v=2.0-hub"></script>
+  <script type="module" src="./src/main.js?v=2.3-w4"></script>
 </body>
 </html>

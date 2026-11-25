@@ -1,0 +1,222 @@
+{
+  "schema": 1,
+  "scope": "private family named character art pilot; actual generated images only; not approved release",
+  "rows": [
+    {
+      "id": "ultraman-hero-ultraseven",
+      "label": "Ultraseven",
+      "series": "ultraman-hero",
+      "file": "sprites/ultraman-hero-ultraseven.png",
+      "cuttable": false,
+      "hero": true,
+      "sha256": "30a995ee71f6b08bd1e38bb45bfa2bc3bc3b24305f889a093beb987d1f6f4136",
+      "bytes": 36021,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "b5e0014d17d2df92da7e87b3a51075f23f40f42a559f449d19a633de3e00c2d1",
+      "source_sheet": "exec-1b4aaf8d-2083-490f-b7b7-91f52fe07256.png",
+      "source_cell": {
+        "row": 0,
+        "col": 0
+      }
+    },
+    {
+      "id": "ultraman-hero-ultraman-taro",
+      "label": "Ultraman Taro",
+      "series": "ultraman-hero",
+      "file": "sprites/ultraman-hero-ultraman-taro.png",
+      "cuttable": false,
+      "hero": true,
+      "sha256": "a21431b8df7f342b1a0f3a83a8ce6cc45e8b77fc085d1dc2faf9647d29aa2568",
+      "bytes": 37721,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "b5e0014d17d2df92da7e87b3a51075f23f40f42a559f449d19a633de3e00c2d1",
+      "source_sheet": "exec-1b4aaf8d-2083-490f-b7b7-91f52fe07256.png",
+      "source_cell": {
+        "row": 0,
+        "col": 1
+      }
+    },
+    {
+      "id": "ultraman-hero-ultraman-zero",
+      "label": "Ultraman Zero",
+      "series": "ultraman-hero",
+      "file": "sprites/ultraman-hero-ultraman-zero.png",
+      "cuttable": false,
+      "hero": true,
+      "sha256": "5207fb50ccd1199bd429d6bfdc758b386d1d629565f185f23c3350b34d58a64d",
+      "bytes": 39066,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "b5e0014d17d2df92da7e87b3a51075f23f40f42a559f449d19a633de3e00c2d1",
+      "source_sheet": "exec-1b4aaf8d-2083-490f-b7b7-91f52fe07256.png",
+      "source_cell": {
+        "row": 0,
+        "col": 2
+      }
+    },
+    {
+      "id": "ultraman-hero-ultraman-mebius",
+      "label": "Ultraman Mebius",
+      "series": "ultraman-hero",
+      "file": "sprites/ultraman-hero-ultraman-mebius.png",
+      "cuttable": false,
+      "hero": true,
+      "sha256": "7356df4ad0077b5b79f512261f0347896f1584e88f262bbfdbc9dbadcb6e4a72",
+      "bytes": 38967,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "b5e0014d17d2df92da7e87b3a51075f23f40f42a559f449d19a633de3e00c2d1",
+      "source_sheet": "exec-1b4aaf8d-2083-490f-b7b7-91f52fe07256.png",
+      "source_cell": {
+        "row": 1,
+        "col": 0
+      }
+    },
+    {
+      "id": "ultraman-hero-ultraman-orb",
+      "label": "Ultraman Orb",
+      "series": "ultraman-hero",
+      "file": "sprites/ultraman-hero-ultraman-orb.png",
+      "cuttable": false,
+      "hero": true,
+      "sha256": "2b457c2994041829e4061abcc1b819ed9d8a22289b049337af4f58ee228337ac",
+      "bytes": 39120,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "b5e0014d17d2df92da7e87b3a51075f23f40f42a559f449d19a633de3e00c2d1",
+      "source_sheet": "exec-1b4aaf8d-2083-490f-b7b7-91f52fe07256.png",
+      "source_cell": {
+        "row": 1,
+        "col": 1
+      }
+    },
+    {
+      "id": "ultraman-hero-ultraman-geed",
+      "label": "Ultraman Geed",
+      "series": "ultraman-hero",
+      "file": "sprites/ultraman-hero-ultraman-geed.png",
+      "cuttable": false,
+      "hero": true,
+      "sha256": "a007f1401f8bc8677cba3e1a7ee32944bcda90d10eb759cdedb9095f5572e4f0",
+      "bytes": 39243,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "b5e0014d17d2df92da7e87b3a51075f23f40f42a559f449d19a633de3e00c2d1",
+      "source_sheet": "exec-1b4aaf8d-2083-490f-b7b7-91f52fe07256.png",
+      "source_cell": {
+        "row": 1,
+        "col": 2
+      }
+    },
+    {
+      "id": "ultraman-kaiju-alien-baltan",
+      "label": "Alien Baltan",
+      "series": "ultraman-kaiju",
+      "file": "sprites/ultraman-kaiju-alien-baltan.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "e2aa617dff1daf03e464708af7bc218ff5be416552dfb5fdb4c67ddf7551007d",
+      "bytes": 62779,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "e2b712ed38dda34a657a92c406c1951be6c20c4e81b0ce2f5cfd99640ce9abd1",
+      "source_sheet": "exec-a19b7646-0464-4e22-b59b-d9357856a39d.png",
+      "source_cell": {
+        "row": 0,
+        "col": 0
+      }
+    },
+    {
+      "id": "ultraman-kaiju-zetton",
+      "label": "Zetton",
+      "series": "ultraman-kaiju",
+      "file": "sprites/ultraman-kaiju-zetton.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "52cb856a61547d7bf95f659eab9d4f28a525be856dbf189810bfd72b6ea2d7e2",
+      "bytes": 58758,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "e2b712ed38dda34a657a92c406c1951be6c20c4e81b0ce2f5cfd99640ce9abd1",
+      "source_sheet": "exec-a19b7646-0464-4e22-b59b-d9357856a39d.png",
+      "source_cell": {
+        "row": 0,
+        "col": 1
+      }
+    },
+    {
+      "id": "ultraman-kaiju-red-king",
+      "label": "Red King",
+      "series": "ultraman-kaiju",
+      "file": "sprites/ultraman-kaiju-red-king.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "82ced4bc0895e8a307a83b5d1b1cfe7ee7c4cf2ffe9587f022234e3244e6fab3",
+      "bytes": 68010,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "e2b712ed38dda34a657a92c406c1951be6c20c4e81b0ce2f5cfd99640ce9abd1",
+      "source_sheet": "exec-a19b7646-0464-4e22-b59b-d9357856a39d.png",
+      "source_cell": {
+        "row": 0,
+        "col": 2
+      }
+    },
+    {
+      "id": "ultraman-kaiju-eleking",
+      "label": "Eleking",
+      "series": "ultraman-kaiju",
+      "file": "sprites/ultraman-kaiju-eleking.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "5844c1af142c34ff2a0553e134f1ab6000f8c7b7bbb400bd1a61fb83b82fc285",
+      "bytes": 63321,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "e2b712ed38dda34a657a92c406c1951be6c20c4e81b0ce2f5cfd99640ce9abd1",
+      "source_sheet": "exec-a19b7646-0464-4e22-b59b-d9357856a39d.png",
+      "source_cell": {
+        "row": 1,
+        "col": 0
+      }
+    },
+    {
+      "id": "ultraman-kaiju-king-joe",
+      "label": "King Joe",
+      "series": "ultraman-kaiju",
+      "file": "sprites/ultraman-kaiju-king-joe.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "b71426fda6b32ca5ccc7392f403d3d3e8cf73996d6243a0a1a3aba9e0280cf0a",
+      "bytes": 78016,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "e2b712ed38dda34a657a92c406c1951be6c20c4e81b0ce2f5cfd99640ce9abd1",
+      "source_sheet": "exec-a19b7646-0464-4e22-b59b-d9357856a39d.png",
+      "source_cell": {
+        "row": 1,
+        "col": 1
+      }
+    },
+    {
+      "id": "ultraman-kaiju-bemstar",
+      "label": "Bemstar",
+      "series": "ultraman-kaiju",
+      "file": "sprites/ultraman-kaiju-bemstar.png",
+      "cuttable": true,
+      "hero": false,
+      "sha256": "39934c42366ceb37e9417e55cb587fd634b532e8fabff74e828095b45d218555",
+      "bytes": 78147,
+      "width": 256,
+      "height": 256,
+      "source_sha256": "e2b712ed38dda34a657a92c406c1951be6c20c4e81b0ce2f5cfd99640ce9abd1",
+      "source_sheet": "exec-a19b7646-0464-4e22-b59b-d9357856a39d.png",
+      "source_cell": {
+        "row": 1,
+        "col": 2
+      }
+    }
+  ]
+}

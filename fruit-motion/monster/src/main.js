@@ -1,4 +1,5 @@
-import { FruitGame } from './game.js?v=2.0-iso';
+import { GravityGame } from './gravity-motion.js?v=2.3-w4';
+import { loadFamilyCandidate, mapNamedAudioEvent, newMotionSeed } from './family-candidate.js?v=2.3-w4';
 import { MotionTracker } from './motion.js';
 import { coverCameraLayout, mapCameraPoint, belongsToCameraLayout } from './camera-layout.js';
 import { createFullscreenController } from './fullscreen.js';
@@ -8,7 +9,7 @@ import { DEFAULT_SFX, SFX_BANK_LABELS, normalizeEffectsStyle } from './sfx-catal
 import { ROUND_SECONDS, formatRoundTime, effectiveFrameSeconds, bestForMode } from './round-config.js';
 import { requestFrontCamera } from './camera-capture.js';
 import { StartGestureGate } from './start-gesture.js';
-import { MONSTER_THEME, roleById, prepareMonsterArt, monsterArtStatus, monsterBestForMode } from './monster-theme.js?v=2.0-iso';
+import { monsterBestForMode } from './monster-theme.js?v=2.0-iso';
 import { MonsterAudio } from './monster-audio.js?v=2.0-iso';
 
 const $ = (id) => document.getElementById(id);
@@ -19,6 +20,7 @@ const noHands = () => ({left:null,right:null});
 const qa = new URLSearchParams(location.search).has('qa');
 let screen = 'intro', mode = 'none', theme='fruit', tracker = null, session = 0, lastFrame = null;
 let heroNoticeUntil=-1;
+let namedTheme=null, artState='idle', artError=null, artPromise=null;
 let countdownEnd = 0, countdownMode = 'new', lastCountdown = null;
 let muted = false, needsCamera = false, lastTrackingAt = 0, trackedSince = 0;
 let missingSince = 0, autoPaused = false;
@@ -56,7 +58,7 @@ const monsterAudio=new MonsterAudio({onLocalPlaybackError:()=>{
   if(theme==='monster'&&!muted&&prefs.music!=='off'&&((screen==='playing'&&!autoPaused)||(screen==='settings'&&previewing)))audio.startMusic();
 }});
 
-const game = new FruitGame({ canvas,
+const game = new GravityGame({ canvas, strategy:'C', seed:newMotionSeed(), captureDiagnostics:qa,
   onScore: (v) => { $('score').textContent = String(v); },
   onTime: (v) => { $('time').textContent = formatRoundTime(v); $('timerBar').style.transform = `scaleX(${Math.max(0,Math.min(1,v / ROUND_SECONDS))})`; },
   onEnd: (result) => finishRound(typeof result === 'number' ? result : result.score),
@@ -65,10 +67,11 @@ const game = new FruitGame({ canvas,
   onSlice: (fruit,_points,detail={}) => {if(theme==='fruit')audio.play('slice',{fruitType:fruit.type,combo:detail.combo||0});},
   onBomb: () => {if(theme==='fruit')audio.play('bomb');},
   onWave: () => {if(theme==='fruit')audio.play('wave');},
-  onRoleEvent:e=>{if(theme!=='monster')return;let result;
-    try{result=monsterAudio.event(e);}catch{}
+  onRoleEvent:e=>{if(theme!=='monster'||!game.running||game.paused||typeof e?.id!=='string'||!e.id.startsWith(`${game.roundSerial}:`))return;let result;
+    try{const mapped=mapNamedAudioEvent(e,namedTheme);if(mapped)result=monsterAudio.event(mapped);}catch{}
     if(e.kind==='wrong'){
-      $('monsterHeroNotice').textContent=`🛡 ${result?.phrase||`${roleById[e.roleId]?.label||'守护者'}系朋友，唔好切！`}`;
+      const label=namedTheme?.roleById[e.roleId]?.label||'奥特曼英雄';
+      $('monsterHeroNotice').textContent=`🛡 ${label} · ${result?.phrase||'唔好切！'}`;
       heroNoticeUntil=game.elapsed+.95;$('monsterHeroNotice').hidden=false;
     }
   },
@@ -84,21 +87,29 @@ function updateLocalStatus(message){
   const selected=monsterAudio.hasLocalMusic();$('monsterLocalClear').disabled=!selected;
   $('monsterLocalStatus').textContent=message||(selected?'已选择本机音乐；只在此设备、此次页面会话播放，不上传。':'未选择本机音乐，使用已授权的曲目。请仅选择自己有权使用的音乐；不会上传或嵌入游戏。');
 }
-function updateArtStatus(){if(theme!=='monster')return;const status=monsterArtStatus(),text=status.missing?`原创素材 ${status.ready}/${status.total} · ${status.missing} 个未载入（占位）`:status.ready===status.total?'14 怪兽 · 6 守护者':`准备原创角色素材 ${status.ready}/${status.total}…`;if($('monsterArtStatus').textContent!==text)$('monsterArtStatus').textContent=text;}
+function updateArtStatus(){const monster=theme==='monster',ready=artState==='ready'&&namedTheme;const text=ready?'24/24 角色已校验 · 18 可切 · 6 英雄禁切':artState==='failed'?'角色文件校验失败，无法开始怪兽模式；请重试。':'正在验证24张角色图片，请稍等…';
+  if($('monsterArtStatus').textContent!==text)$('monsterArtStatus').textContent=text;
+  $('monsterArtStatus').hidden=!monster;$('monsterArtRetry').hidden=!monster||artState!=='failed';$('monsterThemeArt').hidden=!monster||!ready;
+  $('cameraStart').disabled=Boolean(monster&&!ready);$('practiceStart').disabled=Boolean(monster&&!ready);
+}
+function ensureMonsterArt(){if(namedTheme&&artState==='ready')return Promise.resolve(true);if(artPromise)return artPromise;artState='loading';artError=null;updateArtStatus();
+  artPromise=loadFamilyCandidate().then(t=>{namedTheme=t;artState='ready';updateArtStatus();return true;}).catch(e=>{namedTheme=null;artState='failed';artError=String(e?.message||e);if(qa)console.error('Family art verification:',artError);updateArtStatus();return false;}).finally(()=>{artPromise=null;});return artPromise;
+}
+function allowRound(){if(theme!=='monster')return true;if(artState==='ready'&&namedTheme)return true;updateArtStatus();if(artState==='idle')void ensureMonsterArt();return false;}
 function syncThemeUI(){
   const monster=theme==='monster';app.dataset.theme=theme;
   $('fruitTheme').setAttribute('aria-pressed',String(!monster));$('monsterTheme').setAttribute('aria-pressed',String(monster));
-  $('fruitThemeArt').hidden=monster;$('monsterThemeArt').hidden=!monster;$('monsterArtStatus').hidden=!monster;
+  $('fruitThemeArt').hidden=monster;$('monsterThemeArt').hidden=!monster||artState!=='ready';$('monsterArtStatus').hidden=!monster;$('candidateNotice').hidden=!monster;
   $('themeTitleMain').textContent=monster?'怪兽':'果果';$('themeTitleAccent').textContent=monster?'世界':'星球';
-  $('themeSubtitle').textContent=monster?'挥挥小手击败怪兽 · 保护守护者！':'挥挥小手，切出满满果汁！';
-  $('themeCaption').textContent=monster?'怪兽 +10 · 守护者不要切 · 3 分钟':'3 分钟欢乐运动 · 节奏随心选';
+  $('themeSubtitle').textContent=monster?'挥挥小手挑战24角色 · 保护奥特曼英雄！':'挥挥小手，切出满满果汁！';
+  $('themeCaption').textContent=monster?'18 可切角色 +10 · 6 奥特曼英雄不要切 · 3 分钟':'3 分钟欢乐运动 · 节奏随心选';
   $('activeHint').textContent=monster?'快快挑战':'轻快抛果';$('easyHint').textContent=monster?'轻松冒险':'慢慢切果';
-  $('themeHelpTitle').textContent=monster?'挥手击败怪兽，保护英雄':'挥手切果，避开炸弹';
-  $('themeHelpText').textContent=monster?'每只怪兽 +10，守护者有盾牌和「不要切」提示；误切只扣分，不会提前结束。':'自然挥手或小步移动；碰到卡通炸弹会少得一点分，不会提前结束。';
-  $('themeSettingsDesc').textContent=monster?'原创怪兽声音 · 可选本机音乐 · 独立音量。':'5 首成品音乐 · 两套十果独立音色 · 独立音量。';
+  $('themeHelpTitle').textContent=monster?'挥手挑战角色，保护奥特曼英雄':'挥手切果，避开炸弹';
+  $('themeHelpText').textContent=monster?'18种可切角色各+10；奥特曼英雄有盾牌和「不要切」，误切扣10至最低0分，不会提前结束。':'自然挥手或小步移动；碰到卡通炸弹会少得一点分，不会提前结束。';
+  $('themeSettingsDesc').textContent=monster?'复用已授权原声音与BGM · 可选本机音乐；不是角色专属原声。':'5 首成品音乐 · 两套十果独立音色 · 独立音量。';
   $('effectsStyle').hidden=monster;$('previewEffects').hidden=monster;$('monsterEffectsHint').hidden=!monster;$('monsterLocalPanel').hidden=!monster;
   canvas.setAttribute('aria-label',monster?'怪兽游戏区域':'水果游戏区域');
-  if(monster){prepareMonsterArt();updateArtStatus();updateLocalStatus();}
+  updateArtStatus();if(monster){if(artState==='idle')void ensureMonsterArt();updateLocalStatus();}
 }
 function chooseTheme(next){if(!['fruit','monster'].includes(next)||screen!=='intro'||next===theme)return;stopAudio();game.stop();theme=next;prefs=theme==='monster'?monsterPrefs:fruitPrefs;heroNoticeUntil=-1;$('monsterHeroNotice').hidden=true;syncThemeUI();updateModeButtons();applyAudioPrefs();applyMotionPrefs();syncSettings();}
 function syncSettings(){
@@ -342,6 +353,7 @@ function handleHands(hands,timestamp=performance.now(),startPose=null) {
   }
 }
 async function startCamera({resume=false}={}) {
+  if(!allowRound())return;
   startAudio();if(!resume)stopAudio();stopCamera(); setMode('camera');
   if (!resume) game.stop();
   const current = session;
@@ -365,6 +377,7 @@ async function startCamera({resume=false}={}) {
   } catch(e) { showError(e,current); }
 }
 function beginPractice() {
+  if(!allowRound())return;
   stopAudio();stopCamera(); game.stop();game.setCameraBounds(null); game.setReachZone?.(null); startAudio(); setMode('practice'); needsCamera=false; startCountdown('new');
 }
 function beginReadyRound({gesture=false}={}){
@@ -376,6 +389,7 @@ function beginReadyRound({gesture=false}={}){
   calibrateReach();startCountdown('new',{gesture});return true;
 }
 function startCountdown(kind='new',{gesture=false}={}) {
+  if(!allowRound())return;
   game.clearHands(); pointers.clear(); countdownMode=kind;
   if(kind==='new'){ $('score').textContent='0'; $('time').textContent=formatRoundTime(ROUND_SECONDS); $('timerBar').style.transform='scaleX(1)'; }
   $('countdownPrompt').textContent=gesture?'双手确认成功！小手准备！':'小手准备！';
@@ -415,7 +429,8 @@ function drawFrame(now) {
     if(n!==lastCountdown){lastCountdown=n;$('countdownNum').textContent=String(n);if(theme==='fruit')audio.play('countdown');}
     if(now>=countdownEnd) {
       if(theme==='monster')monsterAudio.resume?.();
-      if(countdownMode==='new') game.start({duration:ROUND_SECONDS,difficulty:prefs.mode,theme:theme==='monster'?MONSTER_THEME:null}); else game.resume();
+      if(!allowRound()){home();updateArtStatus();requestAnimationFrame(drawFrame);return;}
+      if(countdownMode==='new') game.start({duration:ROUND_SECONDS,difficulty:prefs.mode,theme:theme==='monster'?namedTheme:null}); else game.resume();
       setScreen('playing'); if(theme==='fruit')audio.play('start');beginMusic();
     }
   }
@@ -470,6 +485,7 @@ for(const button of document.querySelectorAll('[data-fullscreen]'))button.addEve
 $('fullscreenDismiss').addEventListener('click',closeFullscreenNotice);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('fullscreenNotice').hidden){e.preventDefault();closeFullscreenNotice();}});
 
+$('monsterArtRetry').addEventListener('click',()=>{if(theme==='monster')void ensureMonsterArt();});
 $('cameraStart').addEventListener('click',()=>startCamera()); $('practiceStart').addEventListener('click',beginPractice);
 $('helpButton').addEventListener('click',()=>setScreen('help')); $('readyStart').addEventListener('click',()=>beginReadyRound());
 $('diagnosticToggle').addEventListener('click',()=>{if(screen==='calibrate')setDiagnostic(!diagnosticMode);});
@@ -508,7 +524,7 @@ video.addEventListener('loadedmetadata',updateSize);video.addEventListener('resi
 if(typeof ResizeObserver==='function'){const observer=new ResizeObserver(updateSize);observer.observe(app);observer.observe(canvas);observer.observe(video);}
 document.addEventListener('visibilitychange',()=>{if(document.hidden){pauseAudio();previewing=false;effectsPreviewRequest++;if(screen==='settings'){syncSettings();$('effectsStatus').hidden=true;}if(['playing','countdown'].includes(screen))pauseRound(true);else if(['calibrate','loading'].includes(screen)){home();}else if((screen==='paused'||screen==='settings')&&mode==='camera'&&tracker){needsCamera=true;stopCamera();$('pauseText').textContent='屏幕离开时摄像头已关闭，继续前需要重新开启。';$('trackingText').textContent='摄像头已关闭';}}});
 window.addEventListener('pagehide',()=>{stopAudio();monsterAudio.clearLocalFile();stopCamera();game.stop();});
-if(qa) window.__fruitQA={game,audio,monsterAudio,state:()=>({screen,mode,theme,playMode:prefs.mode,prefs:{...prefs},muted,session,tracking:latestHands,needsCamera,geometry:currentGeometry,sampleTime:latestSampleTime,geometryEpoch:geometryChangedAt,diagnosticMode,presentation:fullscreen.state(),captureSettings:lastCaptureSettings,startGesture:startGesture.status(performance.now())}), getTracker:()=>tracker, handleHands:(h,t)=>handleHands(h,t,null), finishRound};
+if(qa) window.__fruitQA={game,audio,monsterAudio,state:()=>({screen,mode,theme,artState,artError,rolePool:namedTheme?{cuttable:namedTheme.targetTypes,heroes:namedTheme.obstacleTypes,formalReady:namedTheme.formalReady}:null,playMode:prefs.mode,prefs:{...prefs},muted,session,tracking:latestHands,needsCamera,geometry:currentGeometry,sampleTime:latestSampleTime,geometryEpoch:geometryChangedAt,diagnosticMode,presentation:fullscreen.state(),captureSettings:lastCaptureSettings,startGesture:startGesture.status(performance.now())}), getTracker:()=>tracker, handleHands:(h,t)=>handleHands(h,t,null), finishRound};
 const musicOptions=$('musicStyle');
 musicOptions.replaceChildren(...Object.values(MUSIC_TRACKS).map(track=>new Option(track.label,track.id)),new Option('关闭音乐','off'));
 $('effectsStyle').replaceChildren(...Object.entries(SFX_BANK_LABELS).map(([id,label])=>new Option(label,id)));

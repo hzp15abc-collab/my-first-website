@@ -1,12 +1,19 @@
 {
-  "name": "果果星球 · 体感游戏",
+  "name": "果果星球 · 怪兽世界 V2.3",
   "short_name": "果果星球",
-  "description": "使用前置摄像头的亲子体感切水果。",
+  "description": "24角色亲子体感游戏；动作在本机识别。",
   "lang": "zh-CN",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#171a36",
   "theme_color": "#171a36",
-  "icons": [{"src": "./assets/icons/fruit-planet.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}]
+  "icons": [
+    {
+      "src": "./assets/icons/fruit-planet.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
 }
