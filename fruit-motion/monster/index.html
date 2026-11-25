@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171a36">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="description" content="使用设备前置摄像头的亲子体感双主题游戏。无账户、无付费服务、动作在本机识别。">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>果果星球 · 双世界 V2.0 研发候选</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/fruit-planet.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./screen-layout.css">
+  <link rel="stylesheet" href="./arcade-theme.css?v=2.0-iso">
+</head>
+<body>
+  <main id="app" data-screen="intro" data-mode="none" data-theme="fruit">
+    <div class="world" aria-hidden="true"><div class="arcade-grid"></div></div>
+    <video id="camera" autoplay muted playsinline aria-hidden="true"></video>
+    <div class="camera-shade" aria-hidden="true"></div>
+    <canvas id="gameCanvas" aria-label="水果游戏区域"></canvas>
+
+    <header class="hud" id="hud" hidden>
+      <div class="hud-block score-block"><span class="hud-label"><i aria-hidden="true"></i> 得分</span><strong id="score">0</strong></div>
+      <div class="hud-block timer-block"><span class="hud-label">剩余时间</span><strong id="time">3:00</strong><span class="timer-track"><span id="timerBar"></span></span></div>
+      <div class="hud-actions">
+        <button class="icon-button fullscreen-control hud-fullscreen" data-fullscreen type="button" aria-label="全屏" aria-pressed="false"><span class="fullscreen-symbol" aria-hidden="true">⛶</span></button>
+        <button class="icon-button" id="soundButton" type="button" aria-label="关闭所有声音" aria-pressed="false"><span id="soundIcon">♪</span></button>
+        <button class="icon-button" id="pauseButton" type="button" aria-label="暂停游戏"><span>Ⅱ</span></button>
+      </div>
+    </header>
+
+    <div class="bottom-status" id="bottomStatus" hidden><span class="status-dot" id="trackingDot"></span><span id="trackingText">正在识别动作…</span><span id="perfText" class="performance" hidden></span></div>
+    <div class="tracking-prompt" id="trackingPrompt" hidden><span>✋</span><strong>小手回来吧！</strong><small>站回画面里，会自动继续。</small></div>
+    <div class="monster-hero-notice" id="monsterHeroNotice" role="status" hidden>🛡 守护者是朋友，不要切！</div>
+
+    <section class="overlay" data-panel="intro">
+      <div class="menu-card hero-card">
+        <div class="kicker"><span class="kicker-dot"></span> 双世界 · MOTION ARCADE <span class="edition-chip">V2.0</span></div>
+        <div class="hero-brand">
+          <div class="hero-fruits" id="fruitThemeArt" aria-hidden="true"><img src="./assets/art/arcade-fruit-mark.svg" alt="" width="420" height="168"></div>
+          <div class="monster-theme-art" id="monsterThemeArt" aria-hidden="true" hidden><img src="./assets/monster/art/fire-dragon.png" alt="" loading="lazy"><img src="./assets/monster/art/robot.png" alt="" loading="lazy"><img src="./assets/monster/art/guardian-blue.png" alt="" loading="lazy"></div>
+          <h1><span id="themeTitleMain">果果</span><span id="themeTitleAccent">星球</span></h1>
+          <p class="subtitle" id="themeSubtitle">挥挥小手，切出满满果汁！</p>
+          <span class="hero-caption" id="themeCaption">3 分钟欢乐运动 · 节奏随心选</span>
+          <small id="monsterArtStatus" class="monster-status" role="status" hidden>正在准备原创角色素材…</small>
+        </div>
+        <div class="play-buttons">
+          <div class="theme-picker" role="group" aria-label="选择游戏世界">
+            <button class="theme-option" type="button" id="fruitTheme" aria-pressed="true"><span>🍉 水果世界</span><small>果汁街机</small></button>
+            <button class="theme-option" type="button" id="monsterTheme" aria-pressed="false"><span>🛡 怪兽世界</span><small>能量冒险</small></button>
+          </div>
+          <div class="mode-picker" role="group" aria-label="游戏难度">
+            <button class="mode-option" id="activeMode" type="button" aria-pressed="true"><span>⚡ 活力</span><small id="activeHint">轻快抛果</small></button>
+            <button class="mode-option" id="calmMode" type="button" aria-pressed="false"><span>🌿 舒缓</span><small id="easyHint">慢慢切果</small></button>
+          </div>
+          <button id="cameraStart" class="primary-button" type="button"><span class="button-symbol" aria-hidden="true">✦</span><span>开始体感游戏<small>使用前置摄像头</small></span><span class="button-end" aria-hidden="true">▶</span></button>
+          <button id="practiceStart" class="secondary-button" type="button"><span>👆 触屏练习</span><small>不使用摄像头</small></button>
+        </div>
+        <div class="menu-links"><button class="text-button" id="helpButton" type="button">怎么玩？</button><button class="text-button" id="settingsButton" type="button">♫ 音乐与设置</button><button class="text-button fullscreen-control" data-fullscreen type="button" aria-label="全屏" aria-pressed="false"><span class="fullscreen-symbol" aria-hidden="true">⛶</span><span data-fullscreen-label>全屏</span></button></div>
+        <div class="privacy-note"><span aria-hidden="true">◈</span> 本机识别 · 不保存摄像头画面 · 免费游玩</div>
+      </div>
+    </section>
+
+    <section class="overlay" data-panel="help" hidden>
+      <div class="menu-card small-card"><div class="eyebrow">游戏说明</div><h2>小手大冒险</h2>
+        <ol class="instruction-list"><li><span>1</span><div><b>放稳设备</b><small>横屏更宽，留出安全空间，让摄像头看到头、肩膀和双手。</small></div></li><li><span>2</span><div><b>举起双手，自动开始</b><small>首次点击授权后，双手举过肩，保持一下；也可手动开始。</small></div></li><li><span>3</span><div><b id="themeHelpTitle">挥手切果，避开炸弹</b><small id="themeHelpText">自然挥手或小步移动；碰到卡通炸弹会少得一点分，不会提前结束。</small></div></li></ol>
+        <button class="primary-button compact" data-home type="button">明白啦！</button>
+      </div>
+    </section>
+
+    <section class="overlay settings-overlay" data-panel="settings" hidden>
+      <div class="menu-card settings-card">
+        <div class="eyebrow">SOUND STUDIO · V2.0</div><h2>选一首喜欢的节奏</h2><p class="settings-desc" id="themeSettingsDesc">5 首成品音乐 · 两套十果独立音色 · 独立音量。</p><p class="settings-camera-note" id="settingsCameraNote" hidden>游戏已暂停，摄像头仍开启；离开页面会关闭。</p>
+        <div class="settings-group"><label for="musicStyle">♫ 背景音乐</label><select id="musicStyle"><option value="groove">水果迪斯科</option><option value="off">关闭音乐</option></select><small id="musicTrackInfo" class="music-track-info"></small><div class="range-row"><label for="musicVolume">音乐音量 <span id="musicVolumeValue">55%</span></label><input id="musicVolume" type="range" min="0" max="100" value="55" step="5"></div><button class="preview-button" id="previewMusic" type="button">试听音乐</button><small class="music-status" id="musicStatus" role="status" hidden></small></div>
+        <div class="settings-group"><label for="effectsStyle">✦ 游戏音效</label><select id="effectsStyle"><option value="juice">街机果汁 · 实录材质</option><option value="chime">泡泡乐园 · 轻柔玩具</option><option value="off">关闭音效</option></select><small id="monsterEffectsHint" hidden>每只怪兽的出现与击败均有独立声音；守护者误切显示禁止提示。</small><div class="range-row"><label for="effectsVolume">音效音量 <span id="effectsVolumeValue">75%</span></label><input id="effectsVolume" type="range" min="0" max="100" value="75" step="5"></div><button class="preview-button" id="previewEffects" type="button">试听音效</button><small class="music-status" id="effectsStatus" role="status" hidden></small></div>
+        <div class="settings-group local-song" id="monsterLocalPanel" hidden><label for="monsterLocalInput">🎵 使用我设备里的音乐（仅本机）</label><input type="file" id="monsterLocalInput" accept="audio/*,.mp3,.m4a,.wav,.ogg"><small id="monsterLocalStatus" role="status">未选择本机音乐，使用已授权的默认曲目。请仅选择自己有权使用的音乐；不会上传或嵌入游戏。</small><button class="preview-button" id="monsterLocalClear" type="button" disabled>清除本机选择</button></div>
+        <label class="motion-control"><input id="reduceMotion" type="checkbox"><span><b>减少画面震动</b><small>减弱冲击扩散与碎片，保留清晰反馈。</small></span></label>
+        <details class="music-credits"><summary>真实音乐与音效 · 作者及许可</summary><p>音乐按节奏截取，首尾混合、响度统一并压缩；音效由授权素材剪辑和混合。<a id="musicSource" target="_blank" rel="noopener noreferrer">当前曲目原作</a> · <a id="musicLicense" target="_blank" rel="noopener noreferrer">许可</a> · <a href="./THIRD_PARTY.md" target="_blank" rel="noopener">所有作品及署名</a></p></details>
+        <button class="primary-button compact" id="settingsBack" type="button">完成设置</button>
+      </div>
+    </section>
+
+    <section class="overlay" data-panel="loading" hidden>
+      <div class="menu-card small-card loading-card"><div class="loader" aria-hidden="true"><span>🍋</span></div><h2 id="loadingTitle">准备摄像头</h2><p id="loadingText">首次加载动作识别模型，请稍等一下。</p><button class="secondary-button compact" data-home type="button">返回</button></div>
+    </section>
+
+    <section class="overlay calibration" data-panel="calibrate" hidden>
+      <div class="calibrate-top"><span class="pill"><span class="status-dot active"></span> 摄像头已开启</span><div class="calibrate-actions"><button class="diagnostic-button" id="diagnosticToggle" type="button" aria-pressed="false">定位检查</button><button class="icon-button" data-home type="button" aria-label="退出体感模式">×</button></div></div>
+      <div class="body-guide" aria-hidden="true"><div class="guide-head"></div><div class="guide-body"></div><div class="guide-arms"></div></div>
+      <div class="calibrate-card"><h2 id="calibrateTitle">🙌 双手举起，开始！</h2><p id="calibrateText">站在屏幕前，头、肩膀和双手都入镜。</p><div class="ready-check" id="readyCheck"><span id="leftCheck">左手 ○</span><span id="rightCheck">右手 ○</span></div><div class="gesture-start"><span id="startGestureText" role="status">等待两只小手</span><div id="startGestureProgress" class="gesture-progress" role="progressbar" aria-label="双手确认进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="startGestureFill"></span></div></div><button id="readyStart" class="secondary-button compact manual-start" type="button" disabled>手动开始</button><p class="safety-hint">自然挥手或小步移动，留出安全空间。</p></div>
+      <div class="diagnostic-legend" id="diagnosticLegend" hidden><strong>家长定位检查</strong><p>用手掌依次靠近九个小圈，看看真实游戏光点是否贴着手。</p><div class="diagnostic-key"><span><i class="key-play"></i>游戏点</span><span id="diagnosticFrameStatus">等待画面</span></div><small id="diagnosticModel">当前模型：正在准备</small><small>只在本机观察，不保存、不上传画面或坐标。</small></div>
+    </section>
+
+    <section class="overlay countdown-overlay" data-panel="countdown" hidden><div class="countdown"><span id="countdownNum">3</span><p id="countdownPrompt">小手准备！</p></div></section>
+
+    <section class="overlay" data-panel="paused" hidden><div class="menu-card small-card"><div class="arcade-badge pause-badge" aria-hidden="true">Ⅱ</div><div class="eyebrow">PAUSED</div><h2>休息一下</h2><p id="pauseText">水果在等你回来！</p><button class="primary-button compact" id="resumeButton" type="button">继续游戏</button><button class="secondary-button compact" data-home type="button">返回首页</button><div class="menu-links"><button class="text-button" id="pauseSettings" type="button">♫ 音乐与设置</button><button class="text-button fullscreen-control" data-fullscreen type="button" aria-label="全屏" aria-pressed="false"><span class="fullscreen-symbol" aria-hidden="true">⛶</span><span data-fullscreen-label>全屏</span></button></div></div></section>
+
+    <section class="overlay" data-panel="result" hidden><div class="menu-card small-card result-card"><div class="arcade-badge result-badge" aria-hidden="true">★</div><div class="eyebrow">ROUND COMPLETE · 闯关完成</div><h2>太棒了！</h2><div class="final-score"><span>本局得分 · SCORE</span><strong id="finalScore">0</strong></div><p class="best-line">3 分钟最高纪录 <b id="bestScore">0</b> · 每一次挥手都是成长</p><button id="replayButton" class="primary-button compact" type="button">再玩一次</button><button class="secondary-button compact" data-home type="button">返回首页</button></div></section>
+
+    <section class="overlay" data-panel="error" hidden><div class="menu-card small-card"><div class="panel-emoji">📷</div><h2>摄像头暂时没准备好</h2><p id="errorText" role="alert">请检查摄像头权限后重试。</p><button id="retryButton" class="primary-button compact" type="button">再试一次</button><button class="secondary-button compact" id="errorPractice" type="button">先玩触屏练习</button><button class="text-button" data-home type="button">返回首页</button></div></section>
+    <aside id="fullscreenNotice" role="region" aria-labelledby="fullscreenTitle" hidden>
+      <div class="menu-card fullscreen-note-card">
+        <h2 id="fullscreenTitle">更开阔的游戏画面</h2>
+        <p id="fullscreenMessage" role="status"></p>
+        <p><strong>iPhone Safari：</strong>点分享按钮 → 添加到主屏幕 → 若有“打开为网页 App”选项，开启它。之后从主屏幕图标启动，再开启摄像头，减少浏览器工具栏占用。</p>
+        <p class="fullscreen-tv-hint">推荐横屏。投屏时，AirPlay 或电视本身的宽高比与系统边框可能仍保留黑边，网页无法控制这些部分。</p>
+        <button class="primary-button compact fullscreen-dismiss" id="fullscreenDismiss" type="button">知道啦</button>
+      </div>
+    </aside>
+  </main>
+  <script type="module" src="./src/main.js?v=2.0-hub"></script>
+</body>
+</html>

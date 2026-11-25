@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 168" role="img" aria-label="原创果果星球街机水果标识">
+  <defs>
+    <radialGradient id="apple" cx="30%" cy="22%" r="86%"><stop stop-color="#ffb09a"/><stop offset=".4" stop-color="#f94e60"/><stop offset="1" stop-color="#ad1c47"/></radialGradient>
+    <radialGradient id="orange" cx="27%" cy="23%" r="90%"><stop stop-color="#fff4a0"/><stop offset=".36" stop-color="#ffb229"/><stop offset="1" stop-color="#d75515"/></radialGradient>
+    <radialGradient id="melon" cx="26%" cy="22%" r="92%"><stop stop-color="#dbff9e"/><stop offset=".37" stop-color="#66c957"/><stop offset="1" stop-color="#19733f"/></radialGradient>
+    <radialGradient id="pulp" cx="29%" cy="14%" r="100%"><stop stop-color="#ffabb0"/><stop offset=".4" stop-color="#ff657b"/><stop offset="1" stop-color="#d52c5a"/></radialGradient>
+    <linearGradient id="leaf" x2=".3" y2="1"><stop stop-color="#d6fa91"/><stop offset=".65" stop-color="#49b968"/><stop offset="1" stop-color="#1e703e"/></linearGradient>
+    <linearGradient id="gleam" x2=".85" y2="1"><stop stop-color="#fff" stop-opacity=".91"/><stop offset="1" stop-color="#fff" stop-opacity=".12"/></linearGradient>
+    <clipPath id="melonClip"><ellipse cx="207" cy="83" rx="64" ry="57" transform="rotate(-13 207 83)"/></clipPath>
+  </defs>
+  <!-- Artwork only, originally drawn for this project. No commercial symbols or sprites. -->
+  <path d="M45 131Q197 170 374 130" fill="none" stroke="#111a37" stroke-width="15" stroke-linecap="round" opacity=".22"/>
+  <path d="M52 112Q156 10 337 36" fill="none" stroke="#77e9f7" stroke-width="11" stroke-linecap="round" opacity=".76"/>
+  <path d="M54 112Q165 10 337 36" fill="none" stroke="#f9fff2" stroke-width="3" stroke-linecap="round"/>
+  <g transform="translate(91 91) rotate(-16)">
+    <path d="M0-33C-55-66-63 1-38 35Q-20 56 0 43Q17 56 36 35C65-5 51-66 0-33Z" fill="url(#apple)" stroke="#8c2848" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M0-36Q-6-47 5-59" stroke="#75492d" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M1-46Q25-76 42-48Q24-32 1-46Z" fill="url(#leaf)" stroke="#245b40" stroke-width="2.5"/>
+    <ellipse cx="-25" cy="-19" rx="19" ry="7" transform="rotate(-30 -25 -19)" fill="url(#gleam)"/>
+    <ellipse cx="-35" cy="-13" rx="5" ry="2.5" transform="rotate(-30 -35 -13)" fill="#fff9e6" opacity=".9"/>
+    <path d="M-24 34Q1 48 23 35" stroke="#ffb995" stroke-width="2.7" opacity=".6" stroke-linecap="round" fill="none"/>
+  </g>
+  <g transform="translate(324 92) rotate(13)">
+    <ellipse cy="3" rx="53" ry="51" fill="url(#orange)" stroke="#a84f20" stroke-width="3.5"/>
+    <g fill="#a04b24" opacity=".35"><circle cx="-32" cy="9" r="2"/><circle cx="-22" cy="25" r="1.8"/><circle cx="14" cy="34" r="2.2"/><circle cx="37" cy="-2" r="1.8"/><circle cx="24" cy="15" r="2"/><circle cx="7" cy="-27" r="1.8"/><circle cx="-11" cy="-12" r="1.5"/><circle cx="15" cy="-3" r="1.5"/><circle cx="-37" cy="-8" r="1.3"/><circle cx="-5" cy="38" r="2"/></g>
+    <path d="M0-46Q22-81 48-53Q27-29 0-46Z" fill="url(#leaf)" stroke="#245b40" stroke-width="2.8"/>
+    <ellipse cx="-24" cy="-20" rx="20" ry="8" transform="rotate(-28 -24 -20)" fill="url(#gleam)"/>
+    <ellipse cx="-35" cy="-14" rx="5" ry="2.4" fill="#fff9df"/>
+    <path d="M-26 37Q2 51 31 32" stroke="#ffe1a6" stroke-width="2.7" opacity=".6" stroke-linecap="round" fill="none"/>
+  </g>
+  <ellipse cx="207" cy="83" rx="64" ry="57" transform="rotate(-13 207 83)" fill="url(#melon)" stroke="#155c38" stroke-width="4"/>
+  <g clip-path="url(#melonClip)" fill="none" stroke-linecap="round" transform="rotate(-13 207 83)">
+    <path d="M147 24Q179 62 151 94T158 142M173 21Q201 65 176 100T184 148M203 18Q231 64 204 102T212 150M231 21Q259 63 231 102T241 146M260 20Q289 67 259 105T269 141" stroke="#217e49" stroke-width="9"/>
+    <path d="M171 22Q197 65 172 100T181 148M201 19Q228 64 200 102T208 150M229 21Q255 63 227 102T237 146" stroke="#efffb5" stroke-width="2.2" opacity=".38"/>
+    <ellipse cx="184" cy="58" rx="24" ry="10" transform="rotate(-21 184 58)" fill="url(#gleam)"/>
+  </g>
+  <g transform="translate(213 108) rotate(15)">
+    <path d="M-68-26A72 72 0 0 0 70-26Z" fill="#207c45" stroke="#155c38" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M-64-27A67 67 0 0 0 66-27Z" fill="#dcf3a1" stroke="#8acd65" stroke-width="2.2"/>
+    <path d="M-53-27A56 56 0 0 0 56-27Z" fill="url(#pulp)" stroke="#ffb1af" stroke-width="2"/>
+    <g fill="#482b46"><ellipse cx="-35" cy="-14" rx="2.9" ry="5" transform="rotate(-24 -35 -14)"/><ellipse cx="-13" cy="1" rx="3" ry="5.2" transform="rotate(-12 -13 1)"/><ellipse cx="12" cy="1" rx="3" ry="5.2" transform="rotate(13 12 1)"/><ellipse cx="35" cy="-14" rx="2.9" ry="5" transform="rotate(24 35 -14)"/><ellipse cx="-13" cy="-16" rx="2.2" ry="4"/><ellipse cx="13" cy="-16" rx="2.2" ry="4"/></g>
+    <path d="M-43-23H43" stroke="#ffe4c7" stroke-width="3.3" stroke-linecap="round" opacity=".75"/>
+  </g>
+  <g fill="#ffcc63"><path d="M30 45l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/><path d="M383 34l3 8 9 3-9 3-3 9-3-9-8-3 8-3z"/><path d="M282 11l2 6 7 3-7 3-2 6-3-6-6-3 6-3z"/></g>
+  <g fill="#ff9f98"><ellipse cx="42" cy="95" rx="3" ry="7" transform="rotate(33 42 95)"/><ellipse cx="371" cy="74" rx="3.5" ry="7" transform="rotate(45 371 74)"/><circle cx="357" cy="137" r="3.9"/></g>
+</svg>

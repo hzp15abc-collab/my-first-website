@@ -1,0 +1,86 @@
+{
+  "revision": "v2-r2-iso",
+  "source": "Original generated toy art, no copied third-party assets; private candidate only",
+  "files": {
+    "alien.png": {
+      "bytes": 60068,
+      "sha256": "1c12344ed1c8958ef81a1b9275da1bd7003996d6bf38a33f4c648c3dc0847db9"
+    },
+    "bat.png": {
+      "bytes": 62593,
+      "sha256": "60062af6fa2ae5ae7aab8bee7bc7255026df634880f2b0ca08eba367d8b24ae3"
+    },
+    "deep-sea.png": {
+      "bytes": 74526,
+      "sha256": "dcacc57a4891e633a56d96f44478e5c0d9d3fe10281c88d56eda40089eeb32b0"
+    },
+    "dinosaur.png": {
+      "bytes": 47768,
+      "sha256": "9eab383d35574704763d20062a471144073c827db5fa6e6d92c24c9ed60306b8"
+    },
+    "electric.png": {
+      "bytes": 66298,
+      "sha256": "9e9434283558aabc3e8a2a968513b8cd198f76cef30ecbf3791a4a06d843ea04"
+    },
+    "fire-dragon.png": {
+      "bytes": 48727,
+      "sha256": "9a4c202db711f90e73fbdfb971bfe850e88fedbed9cf5d9a3753f8ad173a35ed"
+    },
+    "guardian-blue.png": {
+      "bytes": 73945,
+      "sha256": "c27b48406aadffcb7bf6a3d672723a992b89cc559ff680a957a9e915e11c097f"
+    },
+    "guardian-gold.png": {
+      "bytes": 87515,
+      "sha256": "435acdc4dfe7b3e20b426077b978bacc988ad2bc1a973f188534c3ede7b84777"
+    },
+    "guardian-green.png": {
+      "bytes": 73966,
+      "sha256": "842fb48e6a27dd2e2bfd02bb06509f118b1a86b7c892b281ef93ec493905309b"
+    },
+    "guardian-red.png": {
+      "bytes": 70251,
+      "sha256": "f94398223993e6e10983be6c698dfadb6a30621fe3ef0e73eda51cf721e35791"
+    },
+    "guardian-silver.png": {
+      "bytes": 80141,
+      "sha256": "7ac727d2d7453581ba7b3fd89ea4e407c75cc9a436f2954b1ce38e28dacd99fa"
+    },
+    "guardian-violet.png": {
+      "bytes": 79814,
+      "sha256": "d124c80ff64c1a579919f9ff31ab9f7040fac05855f0daf52d8659a71d5cc883"
+    },
+    "horn.png": {
+      "bytes": 50598,
+      "sha256": "68db078d4a6bd1f999f56f41c1f210b742043d93749152abb420ff0c79767ee7"
+    },
+    "ice-dragon.png": {
+      "bytes": 51189,
+      "sha256": "8e0fc52b820cca9895c6f450ab0b138645ac40f4d84e09255852d492e028ade6"
+    },
+    "lava.png": {
+      "bytes": 67889,
+      "sha256": "cc48f98623dd7180760a90f8b1d2c0644d982e62c4a7d261ba3aabb4414f346e"
+    },
+    "octopus.png": {
+      "bytes": 74166,
+      "sha256": "fb891f1c67ae269998ebbe196ff5d71a904a85346d4dd242414746f6ee777a75"
+    },
+    "robot.png": {
+      "bytes": 41623,
+      "sha256": "b419dbc65bdf217c9385935b8af64a4a3578cd7f328a54856c4706f45496a328"
+    },
+    "rock.png": {
+      "bytes": 76810,
+      "sha256": "a75ebf3c0789c4587ad830d950c69382fa65beb9d67d705344c938af3bb70c94"
+    },
+    "slime.png": {
+      "bytes": 60759,
+      "sha256": "e7f63f0c9e5332aaf1bd5c7409adcc95ae806800cf3a11b6a57f18cdbbdf7f55"
+    },
+    "wing.png": {
+      "bytes": 50548,
+      "sha256": "33735a6b3ee117e5d8eb0bb9195b1a60a9ceb1aad724fd16e6322c758ab1ff48"
+    }
+  }
+}

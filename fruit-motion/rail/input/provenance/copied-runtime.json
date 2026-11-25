@@ -1,0 +1,77 @@
+{
+  "description": "W5 I03 exact W4-R2, runtime-only copied subset, byte-compared",
+  "files": [
+    {
+      "path": "motion-w4-r2.mjs",
+      "source": "../pose/motion-w4-r2.mjs",
+      "sha256": "0f00822deebfc4fcef99213597866b5066338ec93c69f6a3aebc89525d67d575",
+      "bytes": 10630
+    },
+    {
+      "path": "motion.mjs",
+      "source": "../pose/motion.mjs",
+      "sha256": "1097e65368705869afe618f25c0bce50a2de02954acc24a9f35ce75de85c72a7",
+      "bytes": 6420
+    },
+    {
+      "path": "vendor/LICENSE-Apache-2.0.txt",
+      "source": "../pose/vendor/LICENSE-Apache-2.0.txt",
+      "sha256": "8707eef0533987efc5b155d64761eeb6e20793f50b9bd1a68dad1cf4719d0ed8",
+      "bytes": 12331
+    },
+    {
+      "path": "vendor/movenet/model/group1-shard1of2.bin",
+      "source": "../pose/vendor/movenet/model/group1-shard1of2.bin",
+      "sha256": "b42c3232bf13b0efc691d3f0693dd3fc74404f709b1deee0a271828af6dbbea2",
+      "bytes": 4194304
+    },
+    {
+      "path": "vendor/movenet/model/group1-shard2of2.bin",
+      "source": "../pose/vendor/movenet/model/group1-shard2of2.bin",
+      "sha256": "8253ab965aa3122c08f331777ca395ce9ca19bb9e7cb278b99de1c46dbdeb6dc",
+      "bytes": 455912
+    },
+    {
+      "path": "vendor/movenet/model/model.json",
+      "source": "../pose/vendor/movenet/model/model.json",
+      "sha256": "c65a3447162efa0c42af29498a4b151f4415b36ff3ae6fae2b28a32e840dcbfb",
+      "bytes": 168013
+    },
+    {
+      "path": "vendor/movenet/pose-detection.min.js",
+      "source": "../pose/vendor/movenet/pose-detection.min.js",
+      "sha256": "eedb38254421de21571e88db202382104b98f36de221a94f956d7bd01f43abcd",
+      "bytes": 72653
+    },
+    {
+      "path": "vendor/movenet/tf-backend-wasm.es2017.min.js",
+      "source": "../pose/vendor/movenet/tf-backend-wasm.es2017.min.js",
+      "sha256": "bdd8c3c1fb0b37601bc2a122efa20b8d78e2936d104b03a44591be4188c63f65",
+      "bytes": 144402
+    },
+    {
+      "path": "vendor/movenet/tf.es2017.min.js",
+      "source": "../pose/vendor/movenet/tf.es2017.min.js",
+      "sha256": "a1f9e32fd9b373cf394905050cf0c8c66238b34925846c065db00d2a34d1c040",
+      "bytes": 1105894
+    },
+    {
+      "path": "vendor/movenet/tfjs-backend-wasm-simd.wasm",
+      "source": "../pose/vendor/movenet/tfjs-backend-wasm-simd.wasm",
+      "sha256": "77ebb28a6d34f371dbbf2086b7f2de8994acd8ea5a3cf1fa24d2c26c840cac7b",
+      "bytes": 424594
+    },
+    {
+      "path": "vendor/movenet/tfjs-backend-wasm-threaded-simd.wasm",
+      "source": "../pose/vendor/movenet/tfjs-backend-wasm-threaded-simd.wasm",
+      "sha256": "c052228d4bef185c27bbe59a9e029570c78bbb9f08b3cb46b597851650373de2",
+      "bytes": 435643
+    },
+    {
+      "path": "vendor/movenet/tfjs-backend-wasm.wasm",
+      "source": "../pose/vendor/movenet/tfjs-backend-wasm.wasm",
+      "sha256": "70a5d516060464e5269f01c74bac1772d6b8ab6cb612acf16b5cdaf61f78d892",
+      "bytes": 311123
+    }
+  ]
+}

@@ -1,0 +1,1801 @@
+{
+  "revision": "v17-cartoon-bomb-24000-mono-1",
+  "candidate": "D2",
+  "sourceBoardSha256": "f8f0c8456cfd1af68b96f4eb3acbf162037a78f32b612b80fd5076ab70dc2471",
+  "previousRevision": "v16-fruit-real-sfx-24000-mono-1",
+  "previousSourceBoardSha256": "af6389ba7bda7ef393046ceff5dc8f161578b95b8604db85ce069dcc543e72a7",
+  "approvedCommit": "c94b762891537a817fb2c4b301c0ac679b75d18c",
+  "recipeSha256": "9831bbc77f0774243446d8b31dd3bf6036e9a3720cce180e470cb9cecbef4df2",
+  "generatedBy": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers",
+  "sampleRate": 24000,
+  "channels": 1,
+  "format": "pcm_s16le",
+  "bytes": 595566,
+  "budgetBytes": 716800,
+  "archives": {
+    "interface.zip": {
+      "title": "Interface Sounds",
+      "author": "Kenney",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/interface-sounds",
+      "downloadUrl": "https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip",
+      "sha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232"
+    },
+    "jingles.zip": {
+      "title": "85 Short music jingles",
+      "author": "Kenney",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/85-short-music-jingles",
+      "downloadUrl": "https://opengameart.org/sites/default/files/jingleSounds_Kenney.zip",
+      "sha256": "be324b6cf26e35c95c2a344569a2470512819d0246cc81328bef3499de3682e5"
+    }
+  },
+  "sources": {
+    "orange.mp3": {
+      "title": "Fruit Slice.mp3",
+      "author": "daymonjlong",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/daymonjlong/sounds/344659/",
+      "downloadUrl": "https://cdn.freesound.org/previews/344/344659_5103151-hq.mp3",
+      "sha256": "7f8a201e4659d389483ca3d2668a4aeaf7257a2a224285ebaf352f235f82121d"
+    },
+    "apple.mp3": {
+      "title": "Food - Slicing a fruit",
+      "author": "Vrymaa",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/Vrymaa/sounds/807394/",
+      "downloadUrl": "https://cdn.freesound.org/previews/807/807394_13973196-hq.mp3",
+      "sha256": "c45fe191e6b079df185327fa35635b068f5dbc53d49ae9d66ad2b77041d4f359"
+    },
+    "air.mp3": {
+      "title": "Whoosh stereo light (transition)",
+      "author": "xkeril",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/xkeril/sounds/701104/",
+      "downloadUrl": "https://cdn.freesound.org/previews/701/701104_13504080-hq.mp3",
+      "sha256": "791bf392615c81ef7b0fd1a92fa39b847241ae0f995669f22573763edbaef07b"
+    },
+    "smallwater.mp3": {
+      "title": "Small Water Splash",
+      "author": "qubodup",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/qubodup/sounds/737233/",
+      "downloadUrl": "https://cdn.freesound.org/previews/737/737233_71257-hq.mp3",
+      "sha256": "3046656ff43ac12651d3f4f0985a76a12065ac1596447cd730d47aaec126d4d6"
+    },
+    "swoosh.mp3": {
+      "title": "swoosh_v2",
+      "author": "migoreng1",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/migoreng1/sounds/786514/",
+      "downloadUrl": "https://cdn.freesound.org/previews/786/786514_16837477-hq.mp3",
+      "sha256": "b5459ce5c20d0cce683f7e28f0c60a5e2efcef57859c3d79dca2915f0c0d6335"
+    },
+    "pop2.wav": {
+      "title": "Pop sounds (pop2.wav)",
+      "author": "EZduzziteh",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/pop-sounds-0",
+      "downloadUrl": "https://opengameart.org/sites/default/files/pop2.wav",
+      "sha256": "4d3ab0324964adfcddca88c9f7340497e6dbe1ab30e7df474022e50a025ff5ba"
+    },
+    "pop4.wav": {
+      "title": "Pop sounds (pop4.wav)",
+      "author": "EZduzziteh",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/pop-sounds-0",
+      "downloadUrl": "https://opengameart.org/sites/default/files/pop4.wav",
+      "sha256": "58f92fff4601ffaf6c789bd636bff03c4a9ead002d0f081834c943968f9072e3"
+    },
+    "pop5.wav": {
+      "title": "Pop sounds (pop5.wav)",
+      "author": "EZduzziteh",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/pop-sounds-0",
+      "downloadUrl": "https://opengameart.org/sites/default/files/pop5.wav",
+      "sha256": "f9cbf450849fd9db716359412664736bbd565800bfd31fb917860bf440c6f82a"
+    },
+    "pop8.wav": {
+      "title": "Pop sounds (pop8.wav)",
+      "author": "EZduzziteh",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/pop-sounds-0",
+      "downloadUrl": "https://opengameart.org/sites/default/files/pop8.wav",
+      "sha256": "cd3aba60c291ad8491dc5f21f3ff1bdd4ab2c575952562566ec1dc0f61fb5f87"
+    },
+    "interface/Audio/confirmation_001.ogg": {
+      "title": "Interface Sounds / Audio/confirmation_001.ogg",
+      "author": "Kenney",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/interface-sounds",
+      "downloadUrl": "https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip",
+      "sha256": "063564703b6094d70718a3e787a55cc9141611e4ecd6b6637f8828f79b4a8c3a",
+      "archive": "interface.zip",
+      "archiveSha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
+      "member": "Audio/confirmation_001.ogg"
+    },
+    "interface/Audio/bong_001.ogg": {
+      "title": "Interface Sounds / Audio/bong_001.ogg",
+      "author": "Kenney",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/interface-sounds",
+      "downloadUrl": "https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip",
+      "sha256": "d21d0f0b782445db579d11e2506b24cd1ac9d664ee33aeaf807761aa7b6fd710",
+      "archive": "interface.zip",
+      "archiveSha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
+      "member": "Audio/bong_001.ogg"
+    },
+    "interface/Audio/select_007.ogg": {
+      "title": "Interface Sounds / Audio/select_007.ogg",
+      "author": "Kenney",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/interface-sounds",
+      "downloadUrl": "https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip",
+      "sha256": "cd4390dd2b24f09016a5fa1be63334fa0f1859811f4cf29c02e8e2750f6a2cd0",
+      "archive": "interface.zip",
+      "archiveSha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
+      "member": "Audio/select_007.ogg"
+    },
+    "interface/Audio/pluck_002.ogg": {
+      "title": "Interface Sounds / Audio/pluck_002.ogg",
+      "author": "Kenney",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/interface-sounds",
+      "downloadUrl": "https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip",
+      "sha256": "c977fe249ff42d1c93a552b33abc13a8399df3879fa510475426e5c4bbac1da9",
+      "archive": "interface.zip",
+      "archiveSha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
+      "member": "Audio/pluck_002.ogg"
+    },
+    "interface/Audio/drop_004.ogg": {
+      "title": "Interface Sounds / Audio/drop_004.ogg",
+      "author": "Kenney",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/interface-sounds",
+      "downloadUrl": "https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip",
+      "sha256": "10738707f9300f9b963ceba46d5da2ed4a221faf7d39484a643c2d3bc151c5f2",
+      "archive": "interface.zip",
+      "archiveSha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
+      "member": "Audio/drop_004.ogg"
+    },
+    "interface/Audio/pluck_001.ogg": {
+      "title": "Interface Sounds / Audio/pluck_001.ogg",
+      "author": "Kenney",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/interface-sounds",
+      "downloadUrl": "https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip",
+      "sha256": "be97ec4893a02d6eccfb678daa76c83e34cb2583b834ec2593d2641def739fa4",
+      "archive": "interface.zip",
+      "archiveSha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
+      "member": "Audio/pluck_001.ogg"
+    },
+    "interface/Audio/click_001.ogg": {
+      "title": "Interface Sounds / Audio/click_001.ogg",
+      "author": "Kenney",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/interface-sounds",
+      "downloadUrl": "https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip",
+      "sha256": "ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9",
+      "archive": "interface.zip",
+      "archiveSha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
+      "member": "Audio/click_001.ogg"
+    },
+    "jingles/OGG/jingles_SAX/jingles_SAX10.ogg": {
+      "title": "85 Short music jingles / OGG/jingles_SAX/jingles_SAX10.ogg",
+      "author": "Kenney",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/85-short-music-jingles",
+      "downloadUrl": "https://opengameart.org/sites/default/files/jingleSounds_Kenney.zip",
+      "sha256": "ee9092e858526e3638f7a639f25c2218f14432466c3e4dd7e1e84073925390ae",
+      "archive": "jingles.zip",
+      "archiveSha256": "be324b6cf26e35c95c2a344569a2470512819d0246cc81328bef3499de3682e5",
+      "member": "OGG/jingles_SAX/jingles_SAX10.ogg"
+    },
+    "jingles/OGG/jingles_PIZZA/jingles_PIZZA10.ogg": {
+      "title": "85 Short music jingles / OGG/jingles_PIZZA/jingles_PIZZA10.ogg",
+      "author": "Kenney",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/85-short-music-jingles",
+      "downloadUrl": "https://opengameart.org/sites/default/files/jingleSounds_Kenney.zip",
+      "sha256": "baf50beffc4cc2dbb92c9d596a22732a8b5249c7648b681c0df6d0af6c561478",
+      "archive": "jingles.zip",
+      "archiveSha256": "be324b6cf26e35c95c2a344569a2470512819d0246cc81328bef3499de3682e5",
+      "member": "OGG/jingles_PIZZA/jingles_PIZZA10.ogg"
+    },
+    "jingles/OGG/jingles_PIZZA/jingles_PIZZA16.ogg": {
+      "title": "85 Short music jingles / OGG/jingles_PIZZA/jingles_PIZZA16.ogg",
+      "author": "Kenney",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/85-short-music-jingles",
+      "downloadUrl": "https://opengameart.org/sites/default/files/jingleSounds_Kenney.zip",
+      "sha256": "1b1211b6360aae37ea685fee057bcabd034a749c1dfac6a9d643086d96e9b9aa",
+      "archive": "jingles.zip",
+      "archiveSha256": "be324b6cf26e35c95c2a344569a2470512819d0246cc81328bef3499de3682e5",
+      "member": "OGG/jingles_PIZZA/jingles_PIZZA16.ogg"
+    },
+    "jingles/OGG/jingles_PIZZA/jingles_PIZZA02.ogg": {
+      "title": "85 Short music jingles / OGG/jingles_PIZZA/jingles_PIZZA02.ogg",
+      "author": "Kenney",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/85-short-music-jingles",
+      "downloadUrl": "https://opengameart.org/sites/default/files/jingleSounds_Kenney.zip",
+      "sha256": "4967dc3cd31257716f455ef50f8980378726ce086954c7a5563c0c57ee129e3e",
+      "archive": "jingles.zip",
+      "archiveSha256": "be324b6cf26e35c95c2a344569a2470512819d0246cc81328bef3499de3682e5",
+      "member": "OGG/jingles_PIZZA/jingles_PIZZA02.ogg"
+    },
+    "win.ogg": {
+      "title": "Win Jingle (fretless)",
+      "author": "Fupi",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://opengameart.org/content/win-jingle",
+      "downloadUrl": "https://opengameart.org/sites/default/files/winfretless.ogg",
+      "sha256": "066d704a58af2bbd293cb9a32488b832be7803e365d3f15a264aa803c238c944"
+    },
+    "banana-b.mp3": {
+      "title": "Slime",
+      "author": "IENBA",
+      "sourceUrl": "https://freesound.org/people/IENBA/sounds/848946/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/848/848946_9616576-hq.mp3",
+      "sha256": "caeb3feb88d4f82115630be1f831c10cb9e2679955e4ef124ea6259cee7d842c",
+      "material": "actual banana squish"
+    },
+    "banana.mp3": {
+      "title": "banana peel",
+      "author": "Anthousai",
+      "sourceUrl": "https://freesound.org/people/Anthousai/sounds/398754/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/398/398754_5923045-hq.mp3",
+      "sha256": "805ea5f08b149b51f0435597458ee556d9150f4941aaf2d97534b56d15dba1ac",
+      "material": "actual banana peel tearing"
+    },
+    "boing.mp3": {
+      "title": "Cartoon Boing.wav",
+      "author": "reelworldstudio",
+      "sourceUrl": "https://freesound.org/people/reelworldstudio/sounds/161122/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/161/161122_2750714-hq.mp3",
+      "sha256": "c354584c0d083c13444a8acb6be4726a90b420463e5a66cec58769f7bb98acf3",
+      "material": "jaw harp cartoon tone; not a real explosion"
+    },
+    "grape-drop.mp3": {
+      "title": "Quick Splash (dropping grapes into a glass of water)",
+      "author": "asherkaye2",
+      "sourceUrl": "https://freesound.org/people/asherkaye2/sounds/538143/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/538/538143_5442309-hq.mp3",
+      "sha256": "ec475658475a3a40281ce0efda4c3412c828811449c62b8385c98de09fd144ac",
+      "material": "real grapes dropped into water, not grape cutting"
+    },
+    "grape-foley.mp3": {
+      "title": "Tomato Squish.wav",
+      "author": "kaydinhamby",
+      "sourceUrl": "https://freesound.org/people/kaydinhamby/sounds/382637/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/382/382637_6478384-hq.mp3",
+      "sha256": "207ad05f22b90a5f72d815bf78caa8cb6213533a38a0d8b534971dc4d977d81e",
+      "material": "small juicy skin rupture foley for grape, not grape recording"
+    },
+    "impact-mic.mp3": {
+      "title": "Simple Impact (processed)",
+      "author": "SoundEffectsForAll",
+      "sourceUrl": "https://freesound.org/people/SoundEffectsForAll/sounds/840614/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/840/840614_17848526-hq.mp3",
+      "sha256": "836dca12802eafe547bc2a235d46038d06cca9ca86b82ffc003c953150ccd777",
+      "material": "processed accidental microphone tap; not a real explosion"
+    },
+    "impact-sofa.mp3": {
+      "title": "COUCH HIT AND SWISH_44100.wav",
+      "author": "stevielematt",
+      "sourceUrl": "https://freesound.org/people/stevielematt/sounds/538067/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/538/538067_8476788-hq.mp3",
+      "sha256": "18df4df938cffb4abdb923438e3156dcecfb66ed50aee34d65bc97124ffbb3fd",
+      "material": "soft hand tap leather chair; not a real explosion"
+    },
+    "interface/Audio/drop_002.ogg": {
+      "title": "Interface Sounds / drop_002.ogg",
+      "author": "Kenney",
+      "sourceUrl": "https://opengameart.org/content/interface-sounds",
+      "downloadUrl": "https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "4ac4d1cef7e936965cbf795852ca2020300b9e2ba7daa59f2bf4f1f7bf416218",
+      "archive": "interface.zip",
+      "archiveSha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
+      "member": "Audio/drop_002.ogg"
+    },
+    "interface/Audio/drop_003.ogg": {
+      "title": "Interface Sounds / drop_003.ogg",
+      "author": "Kenney",
+      "sourceUrl": "https://opengameart.org/content/interface-sounds",
+      "downloadUrl": "https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "43d086d50f90493a98cd2e09aa6dbf150d164f1578e1ec768d21cb185571ad87",
+      "archive": "interface.zip",
+      "archiveSha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
+      "member": "Audio/drop_003.ogg"
+    },
+    "interface/Audio/glass_002.ogg": {
+      "title": "Interface Sounds / glass_002.ogg",
+      "author": "Kenney",
+      "sourceUrl": "https://opengameart.org/content/interface-sounds",
+      "downloadUrl": "https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "08e972c73e53c91d6d310e107e80db60edce78ae47225889a028e628a6f3da49",
+      "archive": "interface.zip",
+      "archiveSha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
+      "member": "Audio/glass_002.ogg"
+    },
+    "interface/Audio/glass_003.ogg": {
+      "title": "Interface Sounds / glass_003.ogg",
+      "author": "Kenney",
+      "sourceUrl": "https://opengameart.org/content/interface-sounds",
+      "downloadUrl": "https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "9a6f16e3c2eff6fe5d017a4755a28306b14555728831cd00d70308e8f9689566",
+      "archive": "interface.zip",
+      "archiveSha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
+      "member": "Audio/glass_003.ogg"
+    },
+    "interface/Audio/glass_005.ogg": {
+      "title": "Interface Sounds / glass_005.ogg",
+      "author": "Kenney",
+      "sourceUrl": "https://opengameart.org/content/interface-sounds",
+      "downloadUrl": "https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "1f6c88008d0d9fe449197512811785e1d4638daf408a96a4a02756530e019172",
+      "archive": "interface.zip",
+      "archiveSha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
+      "member": "Audio/glass_005.ogg"
+    },
+    "interface/Audio/tick_004.ogg": {
+      "title": "Interface Sounds / tick_004.ogg",
+      "author": "Kenney",
+      "sourceUrl": "https://opengameart.org/content/interface-sounds",
+      "downloadUrl": "https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "0253d5f7d8d2afbbc370eac2a4539bb844239f0c98343e516d376b137c06d27c",
+      "archive": "interface.zip",
+      "archiveSha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
+      "member": "Audio/tick_004.ogg"
+    },
+    "juice-splash.mp3": {
+      "title": "Juicy splash",
+      "author": "MrVasLuk",
+      "sourceUrl": "https://freesound.org/people/MrVasLuk/sounds/242425/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/242/242425_3611782-hq.mp3",
+      "sha256": "2b14342723f2e6d49e7d7195b5cc7f39530ce4b945d9bc2eca3eb187edcd0451",
+      "material": "short recorded liquid accent"
+    },
+    "kiwi-foley.mp3": {
+      "title": "Cutting Cucumber",
+      "author": "CarikaDarvall",
+      "sourceUrl": "https://freesound.org/people/CarikaDarvall/sounds/764468/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/764/764468_15688439-hq.mp3",
+      "sha256": "9e83b8f051020ed343fcbeab767facfbe9038f8547135b909472b43a28302e86",
+      "material": "cucumber cut for kiwi moist seeded flesh; foley not kiwi recording"
+    },
+    "melon.mp3": {
+      "title": "Watermelon_Crack1.wav",
+      "author": "lolamadeus",
+      "sourceUrl": "https://freesound.org/people/lolamadeus/sounds/159649/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/159/159649_544580-hq.mp3",
+      "sha256": "34d815dddf1cd69bdfb3c1f644982959b2eb8872db037ff6934e2bdcd07bab3a",
+      "material": "actual watermelon splitting"
+    },
+    "peach-b.mp3": {
+      "title": "Squeezing Lemon",
+      "author": "PhilllChabbb",
+      "sourceUrl": "https://freesound.org/people/PhilllChabbb/sounds/337785/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/337/337785_4205952-hq.mp3",
+      "sha256": "34fa18f6f406b720eac34a6f9b902f33afa9b165882cf242b369ca24a1183298",
+      "material": "soft pulp squeeze foley for peach, not peach recording"
+    },
+    "peach-foley.mp3": {
+      "title": "Tomato squish;wet.wav",
+      "author": "HonorHunter",
+      "sourceUrl": "https://freesound.org/people/HonorHunter/sounds/271666/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/271/271666_5158123-hq.mp3",
+      "sha256": "8feb83dfab5fd71c7002fb8c7777a7e4c80d1e6b2b96a99ffc52e32a173101db",
+      "material": "soft moist fruit flesh foley for peach, not peach recording"
+    },
+    "pear-foley.mp3": {
+      "title": "Biting into an apple.wav",
+      "author": "775noise",
+      "sourceUrl": "https://freesound.org/people/775noise/sounds/494568/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/494/494568_3489769-hq.mp3",
+      "sha256": "81547fdb161b6777bf0aa964ef2536b2bcad8ea734bcbe33caf8177f43e66455",
+      "material": "different apple crisp crunch as pear foley; no pear recording claim"
+    },
+    "pineapple.mp3": {
+      "title": "Wet Pineapple Break.wav",
+      "author": "minituffy",
+      "sourceUrl": "https://freesound.org/people/minituffy/sounds/385963/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/385/385963_4705955-hq.mp3",
+      "sha256": "00b0b27306c14144a374d3fc7a61cdc75097ac0376925805b09d4c40dc3714ff",
+      "material": "actual pineapple breaking"
+    },
+    "strawberry.mp3": {
+      "title": "cutting strawberries.WAV",
+      "author": "mefrancis13",
+      "sourceUrl": "https://freesound.org/people/mefrancis13/sounds/117603/",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://cdn.freesound.org/previews/117/117603_2056891-hq.mp3",
+      "sha256": "078fc3e14bb2bbdd2c2490ed2179f14220b089d221efbd1bc9c877f500dec304",
+      "material": "actual strawberry cutting"
+    },
+    "tinyworlds.wav": {
+      "title": "Explosion (retro game sound created for Duckstruction)",
+      "author": "TinyWorlds",
+      "sourceUrl": "https://opengameart.org/content/explosion-0",
+      "downloadUrl": "https://opengameart.org/sites/default/files/explosion.wav",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "df2594dcef5cf8f8f9b131828224fc47c9e3fdaf677bd9211d1b372dfde47177",
+      "bytes": 86796,
+      "sourceType": "stylized authored retro game effect, mono PCM 44100 Hz, .983583s",
+      "reference": "docs/benchmarks/v1.7/audio-sources/tinyworlds.wav"
+    },
+    "xggw-thud.mp3": {
+      "title": "thud.wav (little cartoon thud, Electronic / Design)",
+      "author": "xggw",
+      "sourceUrl": "https://freesound.org/people/xggw/sounds/339114/",
+      "downloadUrl": "https://cdn.freesound.org/previews/339/339114_5981814-hq.mp3",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "0d7bdff1c93d905b985572fac75392e3f63369a1a0d3b767d94f491b531a67e1",
+      "bytes": 29218,
+      "sourceType": "public HQ MP3 preview of authored cartoon thud; not original WAV; stereo 44100 Hz, 1.410612s",
+      "reference": "docs/benchmarks/v1.7/audio-sources/xggw-thud.mp3"
+    }
+  },
+  "v17Sources": {
+    "tinyworlds.wav": {
+      "title": "Explosion (retro game sound created for Duckstruction)",
+      "author": "TinyWorlds",
+      "sourceUrl": "https://opengameart.org/content/explosion-0",
+      "downloadUrl": "https://opengameart.org/sites/default/files/explosion.wav",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "df2594dcef5cf8f8f9b131828224fc47c9e3fdaf677bd9211d1b372dfde47177",
+      "bytes": 86796,
+      "sourceType": "stylized authored retro game effect, mono PCM 44100 Hz, .983583s",
+      "reference": "docs/benchmarks/v1.7/audio-sources/tinyworlds.wav"
+    },
+    "xggw-thud.mp3": {
+      "title": "thud.wav (little cartoon thud, Electronic / Design)",
+      "author": "xggw",
+      "sourceUrl": "https://freesound.org/people/xggw/sounds/339114/",
+      "downloadUrl": "https://cdn.freesound.org/previews/339/339114_5981814-hq.mp3",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "0d7bdff1c93d905b985572fac75392e3f63369a1a0d3b767d94f491b531a67e1",
+      "bytes": 29218,
+      "sourceType": "public HQ MP3 preview of authored cartoon thud; not original WAV; stereo 44100 Hz, 1.410612s",
+      "reference": "docs/benchmarks/v1.7/audio-sources/xggw-thud.mp3"
+    }
+  },
+  "clips": {
+    "juice-slice-watermelon": {
+      "file": "juice-slice-watermelon.wav",
+      "sha256": "e7f6f93dc9ad48bde04e7950578f66954723592c4633179450ede6d98f79a15d",
+      "bytes": 13244,
+      "duration": 0.275,
+      "peakDb": -9,
+      "rmsDb": -29.12,
+      "activeOnsetMs": 20,
+      "first120msRmsDb": -26.64,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "watermelon",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "melon.mp3",
+          "from": 1.215,
+          "to": 1.49,
+          "level": 1,
+          "delay": 0,
+          "low": 5800,
+          "high": 75,
+          "sha256": "34d815dddf1cd69bdfb3c1f644982959b2eb8872db037ff6934e2bdcd07bab3a"
+        },
+        {
+          "file": "juice-splash.mp3",
+          "from": 0.065,
+          "to": 0.235,
+          "level": 0.22,
+          "delay": 0.025,
+          "low": 4500,
+          "high": 95,
+          "sha256": "2b14342723f2e6d49e7d7195b5cc7f39530ce4b945d9bc2eca3eb187edcd0451"
+        }
+      ]
+    },
+    "juice-slice-orange": {
+      "file": "juice-slice-orange.wav",
+      "sha256": "3b640f580b4dbd483bc3c01eed930a1cb0ed81f67e218bc9f9611c2428764f17",
+      "bytes": 13964,
+      "duration": 0.29,
+      "peakDb": -9,
+      "rmsDb": -29.53,
+      "activeOnsetMs": 10,
+      "first120msRmsDb": -26.57,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "orange",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "orange.mp3",
+          "from": 0.84,
+          "to": 1.13,
+          "level": 1,
+          "delay": 0,
+          "low": 6300,
+          "high": 90,
+          "sha256": "7f8a201e4659d389483ca3d2668a4aeaf7257a2a224285ebaf352f235f82121d"
+        },
+        {
+          "file": "pop2.wav",
+          "from": 0,
+          "to": 0.12,
+          "level": 0.27,
+          "delay": 0.014,
+          "low": 4700,
+          "high": 90,
+          "sha256": "4d3ab0324964adfcddca88c9f7340497e6dbe1ab30e7df474022e50a025ff5ba"
+        }
+      ]
+    },
+    "juice-slice-apple": {
+      "file": "juice-slice-apple.wav",
+      "sha256": "c974ca476718ae65a2afc5d666530feac43d47ebc183c222202777f380b08a03",
+      "bytes": 13964,
+      "duration": 0.29,
+      "peakDb": -9,
+      "rmsDb": -26.8,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -23.16,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "apple",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "apple.mp3",
+          "from": 2.68,
+          "to": 2.97,
+          "level": 1,
+          "delay": 0,
+          "low": 6700,
+          "high": 90,
+          "sha256": "c45fe191e6b079df185327fa35635b068f5dbc53d49ae9d66ad2b77041d4f359"
+        },
+        {
+          "file": "interface/Audio/click_001.ogg",
+          "from": 0,
+          "to": 0.07,
+          "level": 0.15,
+          "delay": 0.01,
+          "low": 5200,
+          "high": 90,
+          "sha256": "ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9"
+        }
+      ]
+    },
+    "juice-slice-kiwi": {
+      "file": "juice-slice-kiwi.wav",
+      "sha256": "93a91d04b9503e2a18cd9fbec5ca26e735b240f3b78d97e5530cc81e986adcbe",
+      "bytes": 12524,
+      "duration": 0.26,
+      "peakDb": -9,
+      "rmsDb": -28.78,
+      "activeOnsetMs": 20,
+      "first120msRmsDb": -25.99,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "kiwi",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "kiwi-foley.mp3",
+          "from": 2.32,
+          "to": 2.58,
+          "level": 1,
+          "delay": 0,
+          "low": 5200,
+          "high": 90,
+          "sha256": "9e83b8f051020ed343fcbeab767facfbe9038f8547135b909472b43a28302e86"
+        },
+        {
+          "file": "juice-splash.mp3",
+          "from": 0.16,
+          "to": 0.34,
+          "level": 0.23,
+          "delay": 0.02,
+          "low": 4500,
+          "high": 95,
+          "sha256": "2b14342723f2e6d49e7d7195b5cc7f39530ce4b945d9bc2eca3eb187edcd0451"
+        }
+      ]
+    },
+    "juice-slice-strawberry": {
+      "file": "juice-slice-strawberry.wav",
+      "sha256": "dfc8647f6851e17bb76bb2fde0b2d2c6ac67dde04cb43c7b78b54ad2d811b702",
+      "bytes": 12284,
+      "duration": 0.255,
+      "peakDb": -9,
+      "rmsDb": -29.46,
+      "activeOnsetMs": 20,
+      "first120msRmsDb": -26.21,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "strawberry",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "strawberry.mp3",
+          "from": 17.89,
+          "to": 18.145,
+          "level": 1,
+          "delay": 0,
+          "low": 7100,
+          "high": 115,
+          "sha256": "078fc3e14bb2bbdd2c2490ed2179f14220b089d221efbd1bc9c877f500dec304"
+        },
+        {
+          "file": "pop4.wav",
+          "from": 0,
+          "to": 0.12,
+          "level": 0.27,
+          "delay": 0.018,
+          "low": 4700,
+          "high": 90,
+          "sha256": "58f92fff4601ffaf6c789bd636bff03c4a9ead002d0f081834c943968f9072e3"
+        }
+      ]
+    },
+    "juice-slice-banana": {
+      "file": "juice-slice-banana.wav",
+      "sha256": "26d1536c7b64707ecd0596ea2353f35b6bfad0b4ea6fc3b34c1f80e37428025f",
+      "bytes": 12284,
+      "duration": 0.255,
+      "peakDb": -9,
+      "rmsDb": -30.69,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -27.74,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "banana",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "banana.mp3",
+          "from": 1.715,
+          "to": 1.97,
+          "level": 1,
+          "delay": 0,
+          "low": 3900,
+          "high": 90,
+          "sha256": "805ea5f08b149b51f0435597458ee556d9150f4941aaf2d97534b56d15dba1ac"
+        },
+        {
+          "file": "banana-b.mp3",
+          "from": 9.13,
+          "to": 9.335,
+          "level": 0.35,
+          "delay": 0.018,
+          "low": 4000,
+          "high": 85,
+          "sha256": "caeb3feb88d4f82115630be1f831c10cb9e2679955e4ef124ea6259cee7d842c"
+        },
+        {
+          "file": "juice-splash.mp3",
+          "from": 0.08,
+          "to": 0.24,
+          "level": 0.12,
+          "delay": 0.022,
+          "low": 4500,
+          "high": 95,
+          "sha256": "2b14342723f2e6d49e7d7195b5cc7f39530ce4b945d9bc2eca3eb187edcd0451"
+        }
+      ]
+    },
+    "juice-slice-grape": {
+      "file": "juice-slice-grape.wav",
+      "sha256": "319bd3c29c290409f8c23f02e96fe33726857ef0510923627c201362d3590b98",
+      "bytes": 13724,
+      "duration": 0.285,
+      "peakDb": -9,
+      "rmsDb": -25.25,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -22.76,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "grape",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "grape-foley.mp3",
+          "from": 0.19,
+          "to": 0.4,
+          "level": 1,
+          "delay": 0,
+          "low": 5900,
+          "high": 95,
+          "sha256": "207ad05f22b90a5f72d815bf78caa8cb6213533a38a0d8b534971dc4d977d81e"
+        },
+        {
+          "file": "grape-drop.mp3",
+          "from": 1.43,
+          "to": 1.68,
+          "level": 0.39,
+          "delay": 0.035,
+          "low": 5400,
+          "high": 115,
+          "sha256": "ec475658475a3a40281ce0efda4c3412c828811449c62b8385c98de09fd144ac"
+        },
+        {
+          "file": "pop4.wav",
+          "from": 0,
+          "to": 0.12,
+          "level": 0.24,
+          "delay": 0.012,
+          "low": 4700,
+          "high": 90,
+          "sha256": "58f92fff4601ffaf6c789bd636bff03c4a9ead002d0f081834c943968f9072e3"
+        }
+      ]
+    },
+    "juice-slice-pineapple": {
+      "file": "juice-slice-pineapple.wav",
+      "sha256": "6886c13c1d516fdf17d034e89ae5ef3ca8dbfaf44adaa2a606e2ded5dcb479d2",
+      "bytes": 15164,
+      "duration": 0.315,
+      "peakDb": -9,
+      "rmsDb": -33.03,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -29.22,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "pineapple",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "pineapple.mp3",
+          "from": 0.115,
+          "to": 0.43,
+          "level": 1,
+          "delay": 0,
+          "low": 7300,
+          "high": 75,
+          "sha256": "00b0b27306c14144a374d3fc7a61cdc75097ac0376925805b09d4c40dc3714ff"
+        },
+        {
+          "file": "pop5.wav",
+          "from": 0,
+          "to": 0.12,
+          "level": 0.2,
+          "delay": 0.018,
+          "low": 4700,
+          "high": 90,
+          "sha256": "f9cbf450849fd9db716359412664736bbd565800bfd31fb917860bf440c6f82a"
+        }
+      ]
+    },
+    "juice-slice-pear": {
+      "file": "juice-slice-pear.wav",
+      "sha256": "ac1f55ca10da8e3f5012e44a000eebadccfdb55f4bf392732ae5dc5fc540ef48",
+      "bytes": 13724,
+      "duration": 0.285,
+      "peakDb": -9,
+      "rmsDb": -26.29,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -22.62,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "pear",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "pear-foley.mp3",
+          "from": 3.56,
+          "to": 3.845,
+          "level": 1,
+          "delay": 0,
+          "low": 7200,
+          "high": 115,
+          "sha256": "81547fdb161b6777bf0aa964ef2536b2bcad8ea734bcbe33caf8177f43e66455"
+        },
+        {
+          "file": "interface/Audio/tick_004.ogg",
+          "from": 0,
+          "to": 0.1,
+          "level": 0.22,
+          "delay": 0.019,
+          "low": 5200,
+          "high": 90,
+          "sha256": "0253d5f7d8d2afbbc370eac2a4539bb844239f0c98343e516d376b137c06d27c"
+        }
+      ]
+    },
+    "juice-slice-peach": {
+      "file": "juice-slice-peach.wav",
+      "sha256": "145885020cace129b2ed89be838a1179203f4a276febaf72f2ac175614a7a8c6",
+      "bytes": 11612,
+      "duration": 0.241,
+      "peakDb": -9,
+      "rmsDb": -24.88,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -22.91,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "peach",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "peach-foley.mp3",
+          "from": 0.054,
+          "to": 0.295,
+          "level": 1,
+          "delay": 0,
+          "low": 4800,
+          "high": 90,
+          "sha256": "8feb83dfab5fd71c7002fb8c7777a7e4c80d1e6b2b96a99ffc52e32a173101db"
+        },
+        {
+          "file": "peach-b.mp3",
+          "from": 6.77,
+          "to": 6.975,
+          "level": 0.31,
+          "delay": 0.02,
+          "low": 4200,
+          "high": 95,
+          "sha256": "34fa18f6f406b720eac34a6f9b902f33afa9b165882cf242b369ca24a1183298"
+        },
+        {
+          "file": "juice-splash.mp3",
+          "from": 0.05,
+          "to": 0.185,
+          "level": 0.22,
+          "delay": 0.016,
+          "low": 4500,
+          "high": 95,
+          "sha256": "2b14342723f2e6d49e7d7195b5cc7f39530ce4b945d9bc2eca3eb187edcd0451"
+        }
+      ]
+    },
+    "juice-combo": {
+      "file": "juice-combo.wav",
+      "sha256": "d8bc1788aedd8c2f9c46999f37faa7e0362a8369ec54344b0d0459c77f1bc25d",
+      "bytes": 13484,
+      "duration": 0.28,
+      "peakDb": -14.5,
+      "rmsDb": -24.68,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -21.83,
+      "first120msPeakDb": -14.5,
+      "level": 0.83,
+      "targetPeakDb": -14.5,
+      "leveling": null,
+      "layers": [
+        {
+          "file": "interface/Audio/confirmation_001.ogg",
+          "from": 0,
+          "to": 0.28,
+          "level": 1,
+          "delay": 0,
+          "low": 5400,
+          "high": 95,
+          "sha256": "063564703b6094d70718a3e787a55cc9141611e4ecd6b6637f8828f79b4a8c3a"
+        }
+      ]
+    },
+    "juice-bomb": {
+      "file": "juice-bomb.df79ee481e5c.wav",
+      "sha256": "df79ee481e5ce242295c2de343d0de6d833b70c2f19192c564cec40a0693fba5",
+      "bytes": 27884,
+      "duration": 0.58,
+      "peakDb": -9.5,
+      "rmsDb": -20.68,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -17.4,
+      "first120msPeakDb": -9.5,
+      "level": 0.9,
+      "targetPeakDb": -9.5,
+      "leveling": {
+        "relativeThresholdDb": -9,
+        "ratio": 2.2,
+        "maximumReductionDb": 3.5,
+        "releaseMs": 14
+      },
+      "tailShape": {
+        "start": 0.18,
+        "endLevel": 0.8
+      },
+      "reference": "docs/benchmarks/v1.7/audio-samples/d2-juice-bomb.wav",
+      "sourceIds": [
+        "tinyworlds.wav",
+        "xggw-thud.mp3"
+      ],
+      "layers": [
+        {
+          "file": "tinyworlds.wav",
+          "start": 0,
+          "duration": 0.58,
+          "highpass": 45,
+          "lowpass": 5500,
+          "fadeIn": 0.004,
+          "fadeOut": 0.09,
+          "relativePeak": 1,
+          "offset": 0,
+          "sha256": "df2594dcef5cf8f8f9b131828224fc47c9e3fdaf677bd9211d1b372dfde47177"
+        },
+        {
+          "file": "xggw-thud.mp3",
+          "start": 0.235,
+          "duration": 0.572,
+          "highpass": 80,
+          "lowpass": 4500,
+          "fadeIn": 0.004,
+          "fadeOut": 0.12,
+          "relativePeak": 0.25,
+          "offset": 0.008,
+          "sha256": "0d7bdff1c93d905b985572fac75392e3f63369a1a0d3b767d94f491b531a67e1"
+        }
+      ]
+    },
+    "juice-wave": {
+      "file": "juice-wave.wav",
+      "sha256": "1d6a43d1217bfdbdb6dc4a5065b6ed28645602cdce403858ee5a75d6cc1a909b",
+      "bytes": 19004,
+      "duration": 0.395,
+      "peakDb": -15,
+      "rmsDb": -31.05,
+      "activeOnsetMs": 10,
+      "first120msRmsDb": -34.95,
+      "first120msPeakDb": -22.25,
+      "level": 0.5,
+      "targetPeakDb": -15,
+      "leveling": null,
+      "layers": [
+        {
+          "file": "air.mp3",
+          "from": 0.285,
+          "to": 0.68,
+          "level": 1,
+          "delay": 0,
+          "low": 5800,
+          "high": 85,
+          "sha256": "791bf392615c81ef7b0fd1a92fa39b847241ae0f995669f22573763edbaef07b"
+        }
+      ]
+    },
+    "juice-countdown": {
+      "file": "juice-countdown.wav",
+      "sha256": "e411a15ee41d4a382c0663a7aa92995c48a10e1c2091d592dedb9bfa389bf5e0",
+      "bytes": 2876,
+      "duration": 0.059,
+      "peakDb": -13,
+      "rmsDb": -26.54,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -26.54,
+      "first120msPeakDb": -13,
+      "level": 0.8,
+      "targetPeakDb": -13,
+      "leveling": null,
+      "layers": [
+        {
+          "file": "interface/Audio/select_007.ogg",
+          "from": 0,
+          "to": 0.059,
+          "level": 1,
+          "delay": 0,
+          "low": 4300,
+          "high": 80,
+          "sha256": "cd4390dd2b24f09016a5fa1be63334fa0f1859811f4cf29c02e8e2750f6a2cd0"
+        }
+      ]
+    },
+    "juice-start": {
+      "file": "juice-start.wav",
+      "sha256": "8882ec1bac3f96c9968f12d6a3710ce8fe5f581a915377c9ad47dbab361c1f4c",
+      "bytes": 30668,
+      "duration": 0.638,
+      "peakDb": -11,
+      "rmsDb": -21.32,
+      "activeOnsetMs": 80,
+      "first120msRmsDb": -27.81,
+      "first120msPeakDb": -12.05,
+      "level": 0.9,
+      "targetPeakDb": -11,
+      "leveling": null,
+      "layers": [
+        {
+          "file": "jingles/OGG/jingles_SAX/jingles_SAX10.ogg",
+          "from": 0,
+          "to": 0.638,
+          "level": 1,
+          "delay": 0,
+          "low": 5000,
+          "high": 75,
+          "sha256": "ee9092e858526e3638f7a639f25c2218f14432466c3e4dd7e1e84073925390ae"
+        }
+      ]
+    },
+    "juice-end": {
+      "file": "juice-end.wav",
+      "sha256": "6bce8e7ef5ae2889b3bc698bbf4e59250ed2325fd790e05f3029f9cb3c19be66",
+      "bytes": 111884,
+      "duration": 2.33,
+      "peakDb": -12,
+      "rmsDb": -25.23,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -26.38,
+      "first120msPeakDb": -17.31,
+      "level": 0.85,
+      "targetPeakDb": -12,
+      "leveling": null,
+      "layers": [
+        {
+          "file": "win.ogg",
+          "from": 0,
+          "to": 2.33,
+          "level": 1,
+          "delay": 0,
+          "low": 5300,
+          "high": 55,
+          "sha256": "066d704a58af2bbd293cb9a32488b832be7803e365d3f15a264aa803c238c944"
+        }
+      ]
+    },
+    "chime-slice-watermelon": {
+      "file": "chime-slice-watermelon.wav",
+      "sha256": "08e8a336b2e36ae4b727f0e962eec49a62b755643c7697de63dffff2398dfd9e",
+      "bytes": 13244,
+      "duration": 0.275,
+      "peakDb": -9,
+      "rmsDb": -28.3,
+      "activeOnsetMs": 20,
+      "first120msRmsDb": -24.72,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "watermelon",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "melon.mp3",
+          "from": 1.215,
+          "to": 1.49,
+          "level": 1,
+          "delay": 0,
+          "low": 5800,
+          "high": 75,
+          "sha256": "34d815dddf1cd69bdfb3c1f644982959b2eb8872db037ff6934e2bdcd07bab3a"
+        },
+        {
+          "file": "interface/Audio/drop_004.ogg",
+          "from": 0,
+          "to": 0.18,
+          "level": 0.35,
+          "delay": 0.025,
+          "low": 5200,
+          "high": 90,
+          "sha256": "10738707f9300f9b963ceba46d5da2ed4a221faf7d39484a643c2d3bc151c5f2"
+        }
+      ]
+    },
+    "chime-slice-orange": {
+      "file": "chime-slice-orange.wav",
+      "sha256": "633433b99450ccd0255c6c4c428861e83b04866d706909ffacca57c352daa3bf",
+      "bytes": 13964,
+      "duration": 0.29,
+      "peakDb": -9,
+      "rmsDb": -28.31,
+      "activeOnsetMs": 10,
+      "first120msRmsDb": -25.05,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "orange",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "orange.mp3",
+          "from": 0.84,
+          "to": 1.13,
+          "level": 1,
+          "delay": 0,
+          "low": 6300,
+          "high": 90,
+          "sha256": "7f8a201e4659d389483ca3d2668a4aeaf7257a2a224285ebaf352f235f82121d"
+        },
+        {
+          "file": "interface/Audio/pluck_002.ogg",
+          "from": 0,
+          "to": 0.18,
+          "level": 0.53,
+          "delay": 0.018,
+          "low": 5200,
+          "high": 90,
+          "sha256": "c977fe249ff42d1c93a552b33abc13a8399df3879fa510475426e5c4bbac1da9"
+        }
+      ]
+    },
+    "chime-slice-apple": {
+      "file": "chime-slice-apple.wav",
+      "sha256": "653338dc6ec3b523aea13ccc5a703e2c85f62d9343339cc3db5db5aa0a777002",
+      "bytes": 13964,
+      "duration": 0.29,
+      "peakDb": -9,
+      "rmsDb": -26.28,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -22.62,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "apple",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "apple.mp3",
+          "from": 2.68,
+          "to": 2.97,
+          "level": 1,
+          "delay": 0,
+          "low": 6700,
+          "high": 90,
+          "sha256": "c45fe191e6b079df185327fa35635b068f5dbc53d49ae9d66ad2b77041d4f359"
+        },
+        {
+          "file": "interface/Audio/glass_005.ogg",
+          "from": 0,
+          "to": 0.13,
+          "level": 0.48,
+          "delay": 0.015,
+          "low": 5200,
+          "high": 90,
+          "sha256": "1f6c88008d0d9fe449197512811785e1d4638daf408a96a4a02756530e019172"
+        }
+      ]
+    },
+    "chime-slice-kiwi": {
+      "file": "chime-slice-kiwi.wav",
+      "sha256": "45b35a1d9d58250163849861f507950bc48b8cb580bfde2b21757bf63b24911e",
+      "bytes": 12524,
+      "duration": 0.26,
+      "peakDb": -9,
+      "rmsDb": -29.47,
+      "activeOnsetMs": 40,
+      "first120msRmsDb": -26.21,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "kiwi",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "kiwi-foley.mp3",
+          "from": 2.32,
+          "to": 2.58,
+          "level": 1,
+          "delay": 0,
+          "low": 5200,
+          "high": 90,
+          "sha256": "9e83b8f051020ed343fcbeab767facfbe9038f8547135b909472b43a28302e86"
+        },
+        {
+          "file": "interface/Audio/glass_003.ogg",
+          "from": 0,
+          "to": 0.17,
+          "level": 0.35,
+          "delay": 0.025,
+          "low": 5200,
+          "high": 90,
+          "sha256": "9a6f16e3c2eff6fe5d017a4755a28306b14555728831cd00d70308e8f9689566"
+        }
+      ]
+    },
+    "chime-slice-strawberry": {
+      "file": "chime-slice-strawberry.wav",
+      "sha256": "3f57f1bd9671d8e8f64994037bc78e9bb9d60db6f514370ee3c8cd8a47f7d223",
+      "bytes": 12284,
+      "duration": 0.255,
+      "peakDb": -9,
+      "rmsDb": -27.69,
+      "activeOnsetMs": 20,
+      "first120msRmsDb": -24.43,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "strawberry",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "strawberry.mp3",
+          "from": 17.89,
+          "to": 18.145,
+          "level": 1,
+          "delay": 0,
+          "low": 7100,
+          "high": 115,
+          "sha256": "078fc3e14bb2bbdd2c2490ed2179f14220b089d221efbd1bc9c877f500dec304"
+        },
+        {
+          "file": "pop2.wav",
+          "from": 0,
+          "to": 0.12,
+          "level": 0.48,
+          "delay": 0.022,
+          "low": 4700,
+          "high": 90,
+          "sha256": "4d3ab0324964adfcddca88c9f7340497e6dbe1ab30e7df474022e50a025ff5ba"
+        }
+      ]
+    },
+    "chime-slice-banana": {
+      "file": "chime-slice-banana.wav",
+      "sha256": "6bd378c1052e452911d097a53821826b9483ccdf166ac79411013e807b3e4502",
+      "bytes": 12284,
+      "duration": 0.255,
+      "peakDb": -9,
+      "rmsDb": -27.51,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -24.26,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "banana",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "banana.mp3",
+          "from": 1.715,
+          "to": 1.97,
+          "level": 1,
+          "delay": 0,
+          "low": 3900,
+          "high": 90,
+          "sha256": "805ea5f08b149b51f0435597458ee556d9150f4941aaf2d97534b56d15dba1ac"
+        },
+        {
+          "file": "banana-b.mp3",
+          "from": 9.13,
+          "to": 9.335,
+          "level": 0.35,
+          "delay": 0.018,
+          "low": 4000,
+          "high": 85,
+          "sha256": "caeb3feb88d4f82115630be1f831c10cb9e2679955e4ef124ea6259cee7d842c"
+        },
+        {
+          "file": "interface/Audio/drop_002.ogg",
+          "from": 0,
+          "to": 0.16,
+          "level": 0.43,
+          "delay": 0.018,
+          "low": 5200,
+          "high": 90,
+          "sha256": "4ac4d1cef7e936965cbf795852ca2020300b9e2ba7daa59f2bf4f1f7bf416218"
+        }
+      ]
+    },
+    "chime-slice-grape": {
+      "file": "chime-slice-grape.wav",
+      "sha256": "74d5ee4653074e9195814fc5f39b6646148968e653e6265c14840f1dc6264ff9",
+      "bytes": 13724,
+      "duration": 0.285,
+      "peakDb": -9,
+      "rmsDb": -26.13,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -23.48,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "grape",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "grape-foley.mp3",
+          "from": 0.19,
+          "to": 0.4,
+          "level": 1,
+          "delay": 0,
+          "low": 5900,
+          "high": 95,
+          "sha256": "207ad05f22b90a5f72d815bf78caa8cb6213533a38a0d8b534971dc4d977d81e"
+        },
+        {
+          "file": "grape-drop.mp3",
+          "from": 1.43,
+          "to": 1.68,
+          "level": 0.39,
+          "delay": 0.035,
+          "low": 5400,
+          "high": 115,
+          "sha256": "ec475658475a3a40281ce0efda4c3412c828811449c62b8385c98de09fd144ac"
+        },
+        {
+          "file": "pop8.wav",
+          "from": 0,
+          "to": 0.12,
+          "level": 0.51,
+          "delay": 0.016,
+          "low": 4700,
+          "high": 90,
+          "sha256": "cd3aba60c291ad8491dc5f21f3ff1bdd4ab2c575952562566ec1dc0f61fb5f87"
+        }
+      ]
+    },
+    "chime-slice-pineapple": {
+      "file": "chime-slice-pineapple.wav",
+      "sha256": "108dd708489bd8398d991d923781e245478ab871950375af6e1d42cad3b662b6",
+      "bytes": 15164,
+      "duration": 0.315,
+      "peakDb": -9,
+      "rmsDb": -31,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -27.04,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "pineapple",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "pineapple.mp3",
+          "from": 0.115,
+          "to": 0.43,
+          "level": 1,
+          "delay": 0,
+          "low": 7300,
+          "high": 75,
+          "sha256": "00b0b27306c14144a374d3fc7a61cdc75097ac0376925805b09d4c40dc3714ff"
+        },
+        {
+          "file": "interface/Audio/pluck_001.ogg",
+          "from": 0,
+          "to": 0.16,
+          "level": 0.46,
+          "delay": 0.018,
+          "low": 5200,
+          "high": 90,
+          "sha256": "be97ec4893a02d6eccfb678daa76c83e34cb2583b834ec2593d2641def739fa4"
+        }
+      ]
+    },
+    "chime-slice-pear": {
+      "file": "chime-slice-pear.wav",
+      "sha256": "c6994d6f14d75e884a17b77b749c88bd5c936fabc9332d08f52dd8c187de35da",
+      "bytes": 13724,
+      "duration": 0.285,
+      "peakDb": -9,
+      "rmsDb": -25.69,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -22.01,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "pear",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "pear-foley.mp3",
+          "from": 3.56,
+          "to": 3.845,
+          "level": 1,
+          "delay": 0,
+          "low": 7200,
+          "high": 115,
+          "sha256": "81547fdb161b6777bf0aa964ef2536b2bcad8ea734bcbe33caf8177f43e66455"
+        },
+        {
+          "file": "interface/Audio/glass_002.ogg",
+          "from": 0,
+          "to": 0.14,
+          "level": 0.45,
+          "delay": 0.018,
+          "low": 5200,
+          "high": 90,
+          "sha256": "08e972c73e53c91d6d310e107e80db60edce78ae47225889a028e628a6f3da49"
+        }
+      ]
+    },
+    "chime-slice-peach": {
+      "file": "chime-slice-peach.wav",
+      "sha256": "93500e0b54d9d3146cf956372aecd24feb459c298a24c0f583911ef7e958c8a1",
+      "bytes": 11612,
+      "duration": 0.241,
+      "peakDb": -9,
+      "rmsDb": -24.2,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -22.04,
+      "first120msPeakDb": -9,
+      "level": 1.12,
+      "fruitType": "peach",
+      "targetPeakDb": -9,
+      "leveling": {
+        "thresholdDb": -11,
+        "ratio": 1.75,
+        "maxReductionDb": 4.5,
+        "releaseMs": 14
+      },
+      "layers": [
+        {
+          "file": "peach-foley.mp3",
+          "from": 0.054,
+          "to": 0.295,
+          "level": 1,
+          "delay": 0,
+          "low": 4800,
+          "high": 90,
+          "sha256": "8feb83dfab5fd71c7002fb8c7777a7e4c80d1e6b2b96a99ffc52e32a173101db"
+        },
+        {
+          "file": "peach-b.mp3",
+          "from": 6.77,
+          "to": 6.975,
+          "level": 0.31,
+          "delay": 0.02,
+          "low": 4200,
+          "high": 95,
+          "sha256": "34fa18f6f406b720eac34a6f9b902f33afa9b165882cf242b369ca24a1183298"
+        },
+        {
+          "file": "interface/Audio/drop_003.ogg",
+          "from": 0,
+          "to": 0.15,
+          "level": 0.48,
+          "delay": 0.018,
+          "low": 5200,
+          "high": 90,
+          "sha256": "43d086d50f90493a98cd2e09aa6dbf150d164f1578e1ec768d21cb185571ad87"
+        }
+      ]
+    },
+    "chime-combo": {
+      "file": "chime-combo.wav",
+      "sha256": "2790b5240cade34716a79e188ec84c9f9c23d65855550a4fa4b9b4e65837472e",
+      "bytes": 14444,
+      "duration": 0.3,
+      "peakDb": -14.5,
+      "rmsDb": -24.02,
+      "activeOnsetMs": 20,
+      "first120msRmsDb": -24.1,
+      "first120msPeakDb": -16.47,
+      "level": 0.83,
+      "targetPeakDb": -14.5,
+      "leveling": null,
+      "layers": [
+        {
+          "file": "jingles/OGG/jingles_PIZZA/jingles_PIZZA10.ogg",
+          "from": 0,
+          "to": 0.3,
+          "level": 1,
+          "delay": 0,
+          "low": 4700,
+          "high": 95,
+          "sha256": "baf50beffc4cc2dbb92c9d596a22732a8b5249c7648b681c0df6d0af6c561478"
+        }
+      ]
+    },
+    "chime-bomb": {
+      "file": "chime-bomb.2ea43c60e9a3.wav",
+      "sha256": "2ea43c60e9a3bb5d362628b9126f25bb65c3259851c45ba7b246d725bca8c886",
+      "bytes": 23084,
+      "duration": 0.48,
+      "peakDb": -9.5,
+      "rmsDb": -20.51,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -17.79,
+      "first120msPeakDb": -9.5,
+      "level": 0.9,
+      "targetPeakDb": -9.5,
+      "leveling": {
+        "relativeThresholdDb": -9,
+        "ratio": 2.2,
+        "maximumReductionDb": 3.5,
+        "releaseMs": 14
+      },
+      "tailShape": {
+        "start": 0.18,
+        "endLevel": 0.8
+      },
+      "reference": "docs/benchmarks/v1.7/audio-samples/d2-chime-bomb.wav",
+      "sourceIds": [
+        "tinyworlds.wav",
+        "xggw-thud.mp3"
+      ],
+      "layers": [
+        {
+          "file": "tinyworlds.wav",
+          "start": 0,
+          "duration": 0.48,
+          "highpass": 70,
+          "lowpass": 3800,
+          "fadeIn": 0.004,
+          "fadeOut": 0.09,
+          "relativePeak": 1,
+          "offset": 0,
+          "sha256": "df2594dcef5cf8f8f9b131828224fc47c9e3fdaf677bd9211d1b372dfde47177"
+        },
+        {
+          "file": "xggw-thud.mp3",
+          "start": 0.235,
+          "duration": 0.474,
+          "highpass": 110,
+          "lowpass": 3100,
+          "fadeIn": 0.004,
+          "fadeOut": 0.12,
+          "relativePeak": 0.25,
+          "offset": 0.006,
+          "sha256": "0d7bdff1c93d905b985572fac75392e3f63369a1a0d3b767d94f491b531a67e1"
+        }
+      ]
+    },
+    "chime-wave": {
+      "file": "chime-wave.wav",
+      "sha256": "1f3b716357631b98e7b0db795bb6b5d54050f23c55ed2e854a5bbbafd2a8200f",
+      "bytes": 14444,
+      "duration": 0.3,
+      "peakDb": -15,
+      "rmsDb": -19.29,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -18.24,
+      "first120msPeakDb": -15,
+      "level": 0.34,
+      "targetPeakDb": -15,
+      "leveling": null,
+      "layers": [
+        {
+          "file": "swoosh.mp3",
+          "from": 0,
+          "to": 0.3,
+          "level": 1,
+          "delay": 0,
+          "low": 4200,
+          "high": 110,
+          "sha256": "b5459ce5c20d0cce683f7e28f0c60a5e2efcef57859c3d79dca2915f0c0d6335"
+        }
+      ]
+    },
+    "chime-countdown": {
+      "file": "chime-countdown.wav",
+      "sha256": "5ba79b33109b82da9798aabb138b479e6728e7db95c2a2339b1cd7942f9bbedb",
+      "bytes": 4700,
+      "duration": 0.097,
+      "peakDb": -13,
+      "rmsDb": -32.08,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -32.08,
+      "first120msPeakDb": -13,
+      "level": 0.8,
+      "targetPeakDb": -13,
+      "leveling": null,
+      "layers": [
+        {
+          "file": "interface/Audio/click_001.ogg",
+          "from": 0,
+          "to": 0.097,
+          "level": 1,
+          "delay": 0,
+          "low": 4600,
+          "high": 90,
+          "sha256": "ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9"
+        }
+      ]
+    },
+    "chime-start": {
+      "file": "chime-start.wav",
+      "sha256": "cbc3034352e5e1bf4cf2670f8cce4e49d51e570720921eb2be794e0d34f893dd",
+      "bytes": 22198,
+      "duration": 0.462,
+      "peakDb": -11,
+      "rmsDb": -22.73,
+      "activeOnsetMs": 0,
+      "first120msRmsDb": -18.86,
+      "first120msPeakDb": -11.6,
+      "level": 0.9,
+      "targetPeakDb": -11,
+      "leveling": null,
+      "layers": [
+        {
+          "file": "jingles/OGG/jingles_PIZZA/jingles_PIZZA16.ogg",
+          "from": 0,
+          "to": 0.462,
+          "level": 1,
+          "delay": 0,
+          "low": 5200,
+          "high": 80,
+          "sha256": "1b1211b6360aae37ea685fee057bcabd034a749c1dfac6a9d643086d96e9b9aa"
+        }
+      ]
+    },
+    "chime-end": {
+      "file": "chime-end.wav",
+      "sha256": "cbedf106a1503b256abff9439bb35680308259b2aa9edd95e57502b52a50c4a9",
+      "bytes": 45920,
+      "duration": 0.956,
+      "peakDb": -12,
+      "rmsDb": -23.43,
+      "activeOnsetMs": 10,
+      "first120msRmsDb": -21.73,
+      "first120msPeakDb": -14.68,
+      "level": 0.85,
+      "targetPeakDb": -12,
+      "leveling": null,
+      "layers": [
+        {
+          "file": "jingles/OGG/jingles_PIZZA/jingles_PIZZA02.ogg",
+          "from": 0,
+          "to": 0.956,
+          "level": 1,
+          "delay": 0,
+          "low": 5200,
+          "high": 80,
+          "sha256": "4967dc3cd31257716f455ef50f8980378726ce086954c7a5563c0c57ee129e3e"
+        }
+      ]
+    }
+  }
+}
